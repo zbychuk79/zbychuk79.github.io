@@ -62,7 +62,7 @@ Aby wygenerować obrazy dla moich urządzeń należy użyć skryptu wrt:</descri
       <guid>https://zbychuk79.github.io/posts/it/docker/</guid>
       <description>Przedstawię teraz jak utworzyć środowisko przydatne do generowania obrazów systemu OpenWRT dla moich punktów WiFi działających na SBC Raspberry Pi. Pozwala to też na kompilowanie własnej wersji iPXE.
 Najpierw tworzymy katalog, gdzie bedą wszystkie potrzebne nam pliki (np. debian-wrt). W tym katalogu tworzymy następujące pliki:
- Dockerfile - konfiguracja obrazu dla Docker&amp;lsquo;a  FROM debian:latest COPY wrt_script / RUN /wrt_script  wrt_script - uruchamiany podczas tworzenia obrazu  #!/bin/bash  apt update apt upgrade -y apt install -y mc gawk python aptitude links wget curl build-essential genisoimage \  libncurses5-dev zlib1g-dev isolinux git gettext libssl-dev xsltproc liblzma-dev \  dnsutils serwer=&amp;#34;https://0to2.</description>
+ Dockerfile - konfiguracja obrazu dla Docker&amp;lsquo;a  FROM debian:latest COPY wrt_script / RUN /wrt_script  wrt_script - uruchamiany podczas tworzenia obrazu  #!/bin/bash  apt update apt upgrade -y apt install -y mc gawk python aptitude links wget curl build-essential genisoimage \  libncurses5-dev zlib1g-dev isolinux git gettext libssl-dev xsltproc liblzma-dev \  dnsutils serwer=&amp;#34;https://zbychuk79.</description>
     </item>
     
     <item>

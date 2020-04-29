@@ -1,5 +1,4 @@
 #!ipxe
-#!ipxe
 set serwer https://zbychuk79.github.io
 
 dhcp

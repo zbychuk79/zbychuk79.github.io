@@ -1,0 +1,21 @@
+#!/bin/bash
+
+apt update
+apt upgrade -y
+apt install -y mc gawk python aptitude links wget curl build-essential genisoimage \
+ libncurses5-dev zlib1g-dev isolinux git gettext libssl-dev xsltproc liblzma-dev \
+ dnsutils
+
+serwer="https://zbychuk79.github.io"
+
+cd /usr/local/bin 
+wget $serwer/openwrt/wrt
+wget $serwer/ipxe/ipxe
+chmod +x *
+
+cd /
+wget $serwer/docker-wrt/.config/mc.tar.gz
+mkdir -p /root/.config
+cd /root/.config
+tar xvfz /mc.tar.gz
+rm /mc.tar.gz

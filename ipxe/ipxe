@@ -1,0 +1,85 @@
+#!/bin/bash
+
+serwer="https://zbychuk79.github.io"
+
+usage()
+{
+    echo "
+Jak używać: ipxe [ -d ] [ -c ... ] | [ -h ]
+
+ -d ściągnij źródła
+ -c kompiluj - jaki iPXE budować
+     zbychuk: buduję go dla mojej domowej sieci LAN (autor).
+    internet: iPXE dla konfiguracji z poza sieci -zbychuk-.
+
+ -h wyświetlenie tej instrukcji
+"
+}
+
+if [ "$#" = 0 ]; then
+    usage
+    exit 1
+fi
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -d )          download="yes"
+                                ;;
+        -c )          shift
+                      net=$1
+                      compile="yes"
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+        * )                     usage
+                                exit 0
+    esac
+    shift
+done
+
+cd
+mkdir -p ipxe
+mkdir -p ipxe-image
+
+if [ "$download" = "yes" ]; then
+    rm -rf ipxe
+    mkdir -p ipxe
+    wget -c https://github.com/ipxe/ipxe/archive/master.zip -O ipxe-master.zip
+    unzip ipxe-master.zip
+    rm ipxe-master.zip
+    mv ipxe-master/* ipxe
+    rm -rf ipxe-master
+
+    #git clone git://git.ipxe.org/ipxe.git
+fi
+
+if [ "$compile" = "yes" ]; then
+    case $net in
+        zbychuk )      echo "#!ipxe
+dhcp
+chain --replace --autofree http://omv1:82/ipxe/setup.php
+" > ~/ipxe/src/embeded.ipxe
+                       ipxe_config="$serwer/ipxe/general.h"
+                                ;;
+        internet )     ipxe_config="$serwer/ipxe/general.h"
+                       menu="$serwer/ipxe/inet.ipxe"
+                       curl -sSL $menu -o ~/ipxe/src/embeded.ipxe
+                                ;;
+        * )            echo
+                       echo "Nie podałeś parametru -c [ zbychuk | internet ]"
+                       echo
+                       exit 0
+    esac
+
+    mkdir -p ~/ipxe-image/$net
+    cd ~/ipxe/src
+    curl -sSL $ipxe_config -o ~/ipxe/src/config/general.h
+    make clean
+    make bin/ipxe.iso EMBED=embeded.ipxe
+    make bin/ipxe.usb EMBED=embeded.ipxe
+    cp bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.iso ~/ipxe-image/$net
+    cp ~/ipxe/src/config/general.h ~/ipxe-image/$net/
+    cp embeded.ipxe ~/ipxe-image/$net/
+    cp $0 ~/ipxe-image/$net/
+fi

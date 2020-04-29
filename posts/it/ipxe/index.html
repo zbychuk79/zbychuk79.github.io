@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>iPXE w mojej sieci LAN - Mój portal</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="iPXE w mojej sieci LAN" />
+<meta property="og:description" content="Jak ustawić uruchamianie komputerów z sieci lokalnej przez iPXE." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zbychuk79.github.io/posts/it/ipxe/" />
+<meta property="article:published_time" content="2020-04-21T17:56:50+02:00" />
+<meta property="article:modified_time" content="2020-04-21T17:56:50+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="iPXE w mojej sieci LAN"/>
+<meta name="twitter:description" content="Jak ustawić uruchamianie komputerów z sieci lokalnej przez iPXE."/>
+
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://zbychuk79.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://zbychuk79.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+</head>
+<body>
+	<div class="content">
+		<div class="content">
+<header>
+<div class="main">
+	<a href="https://zbychuk79.github.io/">Mój portal</a>
+</div>
+<nav>
+			
+</nav>
+</header>
+<main>
+<article>
+		<div class="title">
+			<h1 class="title">iPXE w mojej sieci LAN</h1>
+			<div class="meta"> </div>
+		</div>
+		<div>
+			
+		</div>
+
+		<section class="body">
+			<hr>
+<h2 id="użycie-ipxe-do-instalacji-systemu-debian-10-buster">Użycie iPXE do instalacji systemu Debian 10 &ldquo;Buster&rdquo;.</h2>
+<p>W tym miejscu opiszę jak można ustawić proste (lub też bardzo rozbudowane) środowisko do startowania systemu operacyjnego lub jego instalatora bez pobierania z Internetu dużego pliku nośnika startowego typu CD-Rom lub Pendrive.</p>
+<hr>
+<p>Najpierw przygotuję system <strong>Debian</strong>, gdzie będę przeprowadzał całą procedurę.</p>
+<p>Zrobiłem to pod <strong>VirtualBox</strong> dlatego, że jest mi tym sposobem łatwiej. System host&rsquo;a to <strong>Linux Manjaro</strong>, który działa dobrze, ale prościej mi się pod <strong>Debian</strong>&lsquo;em ustawia obrazy <strong>OpenWRT</strong> i łatwiej jest wyłapać błędy na prawie gołym systemie.</p>
+<p>Instalację systemu można proprowadzić z normalnego obrazu, lub też można użyć niewielkiego pliku (&lt; 1MB) <a href="/ipxe/ipxe.iso">ipxe.iso</a>, który udostępniłem. Jest to obraz bootloadera <strong>iPXE</strong> z osadzonym w nim skrypem ładującym <em>menu</em> z różnymi opcjami do wyboru.</p>
+<p>Maszynę wirtualną ustawiłem tak:</p>
+<ul>
+<li>CPU (dwa rdzenie)</li>
+<li>chipset ICH9</li>
+<li>4GB RAM</li>
+<li>włączyłem akcelerację 3D</li>
+<li>karta sieciowa w trybie mostkowym</li>
+<li>usunąłem kontroler IDE</li>
+<li>w kontrolerze SATA ustawiłem buforowanie I/O</li>
+<li>dysk ustawiłem na 20GB</li>
+<li>dodałem napęd optyczny z wspomnianym wyżej obrazem ISO</li>
+</ul>
+<p>Potem ustawiłem uruchamianie VM z obrazu ISO, który udostępniłem i startujemy system pod <strong>VirtualBox</strong>-em. Maszyna VM powinna wystartować i wyświetli się kilka możliwości do wyboru.</p>
+<p>Pliki <a href="/ipxe/preseed-10-base.txt">preseed-10-base.txt</a> <a href="/ipxe/preseed-10-wrt.txt">preseed-10-wrt.txt</a>
+<a href="/ipxe/preseed-10-desktop-mate.txt">preseed-10-desktop-mate.txt</a> zawierają odpowiedzi dla instalatora systemu <strong>Debian</strong>.</p>
+<p>Do systemu jest dodane repozytorium &ldquo;buster-backports&rdquo;.</p>
+<p>Jeśli wybierzemy instalację <strong>Debian</strong>&lsquo;a, to zostanie pobrany <em>kernel</em> i <em>initrd</em> z instalatorem oraz będzie mu przekazany link do pliku <em>&ldquo;preseed&rdquo;</em> z ustawieniami instalowanego systemu. Odpowiadamy jeszcze na kilka pytań (trzeba samemu zdecydować o tym, jak będzie podzielony dysk) i system się zainstaluje.</p>
+<p>Teraz ustawiamy startowanie VM z dysku wirtualnego i możemy się cieszyć działającym systemem.</p>
+<hr>
+<p>Jeśli zainstalowałeś <strong>Debian</strong>&lsquo;a z użyciem normalnego nośnika instalacyjnego, to dodatkowo trzeba doinstalować kilka pakietów:</p>
+<pre><code>sudo apt update
+sudo apt install openssh-server mc rsync aptitude curl zstd p7zip-full growisofs \
+  genisoimage build-essential libncurses5-dev zlib1g-dev gawk git gettext \
+  libssl-dev xsltproc wget unzip python liblzma-dev
+sudo apt clean
+</code></pre>
+<p>Będziesz mógł wtedy kompilować <strong>iPXE</strong> oraz budować obrazy systemu <strong>OpenWRT</strong> przy użyciu <strong>OpenWRT Image Builder</strong>.</p>
+<hr>
+<h2 id="konfiguracja-serwera-tftp-na-routerze-z-systemem-openwrt">Konfiguracja serwera TFTP na routerze z systemem OpenWRT.</h2>
+<p>Mój router mam ustawiony w ten sposób, że zapytania o start komputerów z sieci LAN są przekierowywane na mój serwer o nazwie <em>omv1</em> i adresie IP: <em>192.168.77.10</em>.</p>
+<p>Jak widać na poniższym obrazku, jest tu przedstawiona konfiguracja routera, gdy serwer <strong>TFTP</strong> działa na innym urządzeniu niż router.</p>
+<p><img src="/ipxe/openwrt_tftp.png" alt="Router konfiguracja TFTP"></p>
+<p>Konfiguracji <strong>TFTP</strong> na <strong>OpenMediaVault</strong> nie będę tu opisywać (jest bardzo prosta). Jeśli chodzi o zawartość katalogu na serwerze <strong>TFTP</strong>, to mam tam następujące pliki:</p>
+<ul>
+<li>lpxelinux.0</li>
+<li>ldlinux.c32</li>
+<li>memdisk</li>
+<li>wimboot</li>
+</ul>
+<p>Jest tam też plik <em>/pxelinux.cfg/default</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">DEFAULT ipxe
+PROMPT 0
+DELAY 0
+
+label ipxe
+        MENU LABEL iPXE
+        KERNEL http://omv1:82/ipxe/ipxe.lkrn
+        TEXT HELP
+                iPXE - open source boot firmware
+        ENDTEXT
+</code></pre></div><p>Plik <em>http://omv1:82/ipxe/ipxe.lkrn</em> to wersja <strong>iPXE</strong> dla mojej sieci LAN wygenerowana przez niżej wspomniany skrypt. Ładuje on Menu, które mam ustawione dla mojej domowej sieci LAN.</p>
+<p>Katalog udostępniany przez <strong>TFTP</strong> jest też udostępniony w mojej sieci LAN pod adresem <em>http://omv1:82/</em> przez serwer WWW <strong>Nginx</strong>.</p>
+<hr>
+<p>Start komputera w mojej sieci LAN wygląda tak, że:</p>
+<p>Gdy serwer DHCP na routerze dostaje zapytanie o plik startowy, to jest ono przekazywane do serwera TFTP na <em>omv1</em>, który to przekazuje klientowi przez protokół TFTP plik bootloadera <em>lpxelinux.0</em>. Po jego uruchomieniu, ładuje on konfigurację z pliku <em>/pxelinux.cfg/default</em>.</p>
+<p>Powoduje to załadowanie przez protokół HTTP (reszta transmisji odbywa się już tym sposobem) binarki iPXE z osadzonym w niej skryptem.</p>
+<p>Skrypt ten ładuje następnie menu z adresu <em>http://omv1:82/ipxe/setup.php</em>, które to zarządza resztą procesu ładowania różnych opcji w nim zdefiniowanych.</p>
+<p>Są to między innymi opcje odpowiedzialne za:</p>
+<ul>
+<li>ładowanie instalatora <strong>Debian 10 &ldquo;Buster&rdquo;</strong> z opcjami <em>preseed</em> zależnymi od adresu MAC i innych zmiennych</li>
+<li>ładowanie LiveISO systemu <strong>ArchLinux</strong></li>
+<li>ładowanie z internetu instalatora systemu OpenBSD (dawno go nie używałem)</li>
+<li>ładowanie ISO z różnymi programami narzędziowymi (Ultimate BootCD)</li>
+<li>ładowanie systemu CloneZilla w celu robienia backup-u dysku twardego na serwer</li>
+</ul>
+<hr>
+<h2 id="konfiguracja-bootloadera-ipxe">Konfiguracja bootloader&rsquo;a iPXE.</h2>
+<p>Mam skrypt, który zapisałem w <em>~/.bin/ipxe</em> i służy on do kompilacji <strong>iPXE</strong> oraz obsadzenia w nim skryptu ładującego Menu z opcjami do wyboru.</p>
+<ul>
+<li>skrypt <a href="/ipxe/ipxe">ipxe</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+serwer<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://0to2.github.io&#34;</span>
+
+usage<span style="color:#f92672">()</span>
+<span style="color:#f92672">{</span>
+    echo <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">Jak używać: ipxe [ -d ] [ -c ... ] | [ -h ]
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"> -d ściągnij źródła
+</span><span style="color:#e6db74"> -c kompiluj - jaki iPXE budować
+</span><span style="color:#e6db74">     zbychuk: buduję go dla mojej domowej sieci LAN (autor).
+</span><span style="color:#e6db74">    internet: iPXE dla konfiguracji z poza sieci -zbychuk-.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"> -h wyświetlenie tej instrukcji
+</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    usage
+    exit <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span>
+    <span style="color:#66d9ef">case</span> $1 in
+        -d <span style="color:#f92672">)</span>          download<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+                                ;;
+        -c <span style="color:#f92672">)</span>          shift
+                      net<span style="color:#f92672">=</span>$1
+                      compile<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+                                ;;
+        -h | --help <span style="color:#f92672">)</span>           usage
+                                exit
+                                ;;
+        * <span style="color:#f92672">)</span>                     usage
+                                exit <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">esac</span>
+    shift
+<span style="color:#66d9ef">done</span>
+
+cd
+mkdir -p ipxe
+mkdir -p ipxe-image
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$download<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    rm -rf ipxe
+    mkdir -p ipxe
+    wget -c https://github.com/ipxe/ipxe/archive/master.zip -O ipxe-master.zip
+    unzip ipxe-master.zip
+    rm ipxe-master.zip
+    mv ipxe-master/* ipxe
+    rm -rf ipxe-master
+
+    <span style="color:#75715e">#git clone git://git.ipxe.org/ipxe.git</span>
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$compile<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    <span style="color:#66d9ef">case</span> $net in
+        zbychuk <span style="color:#f92672">)</span>      echo <span style="color:#e6db74">&#34;#!ipxe
+</span><span style="color:#e6db74">dhcp
+</span><span style="color:#e6db74">chain --replace --autofree http://omv1:82/ipxe/setup.php
+</span><span style="color:#e6db74">&#34;</span> &gt; ~/ipxe/src/embeded.ipxe
+                       ipxe_config<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$serwer<span style="color:#e6db74">/ipxe/general.h&#34;</span>
+                                ;;
+        internet <span style="color:#f92672">)</span>     ipxe_config<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$serwer<span style="color:#e6db74">/ipxe/general.h&#34;</span>
+                       menu<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$serwer<span style="color:#e6db74">/ipxe/inet.ipxe&#34;</span>
+                       curl -sSL $menu -o ~/ipxe/src/embeded.ipxe
+                                ;;
+        * <span style="color:#f92672">)</span>            echo
+                       echo <span style="color:#e6db74">&#34;Nie podałeś parametru -c [ zbychuk | internet ]&#34;</span>
+                       echo
+                       exit <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">esac</span>
+
+    mkdir -p ~/ipxe-image/$net
+    cd ~/ipxe/src
+    curl -sSL $ipxe_config -o ~/ipxe/src/config/general.h
+    make clean
+    make bin/ipxe.iso EMBED<span style="color:#f92672">=</span>embeded.ipxe
+    make bin/ipxe.usb EMBED<span style="color:#f92672">=</span>embeded.ipxe
+    cp bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.iso ~/ipxe-image/$net
+    cp ~/ipxe/src/config/general.h ~/ipxe-image/$net/
+    cp embeded.ipxe ~/ipxe-image/$net/
+    cp $0 ~/ipxe-image/$net/
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><p>Tu jest skrypt osadzony w binarce <strong>iPXE</strong>:</p>
+<ul>
+<li><a href="/ipxe/inet.ipxe">inet.ipxe</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">#!ipxe
+set serwer https://0to2.github.io
+
+dhcp
+chain --replace --autofree ${serwer}/ipxe/menu.ipxe
+</code></pre></div><p>Tu jest skrypt menu ładowany przez <strong>iPXE</strong>:</p>
+<ul>
+<li><a href="/ipxe/menu.ipxe">menu.ipxe</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">#!ipxe
+# serwer set already
+
+:start
+############################ INSTALLER MENU #########################
+:menu-install
+menu Installers
+item --key a debian-10-install [a] Install Debian 10 &#34;Buster&#34; GNU/Linux
+choose selected &amp;&amp; goto ${selected} || goto start
+
+########### Debian
+
+:debian-10-install
+set os Debian
+set ver buster
+cpuid --ext 29 &amp;&amp; set arch amd64 || set arch i386
+
+menu ${os} &#34;${ver}&#34; dla ${arch} - wybierz rodzaj instalacji
+item --key a preseed-10-base [a] (preseed) Base System
+item --key b preseed-10-wrt [b] (preseed) Base System for OpenWRT amd iPXE Compiling
+item --key c preseed-10-desktop-mate [c] (preseed) Desktop Mate
+choose selected &amp;&amp; goto ${selected} || goto menu-install
+
+:preseed-10-base
+set pre preseed-10-base.txt
+goto deb-10-install
+
+:preseed-10-wrt
+set pre preseed-10-wrt.txt
+goto deb-10-install
+
+:preseed-10-desktop-mate
+set pre preseed-10-desktop-mate.txt
+goto deb-10-install
+
+:deb-10-install
+set pre ${serwer}/ipxe/${pre}
+set ver buster
+cpuid --ext 29 &amp;&amp; set arch amd64 || set arch i386
+set url http://ftp.pl.debian.org
+set dir ${url}/debian/dists/${ver}/main/installer-${arch}/current/images/netboot
+set debinstaller /debian-installer/${arch}
+kernel ${dir}${debinstaller}/linux
+initrd ${dir}${debinstaller}/initrd.gz
+imgargs linux priority=high vga=788 keymap=pl language=pl country=PL locale=pl_PL.UTF-8 auto url=${pre} --
+boot
+</code></pre></div><p>c.d.n.</p>
+<hr>
+<p>Przydatne linki:</p>
+<p><a href="http://ipxe.org/">http://ipxe.org/</a></p>
+<p><a href="https://www.pcsuggest.com/how-to-setup-an-openwrt-pxe-boot-server/">https://www.pcsuggest.com/how-to-setup-an-openwrt-pxe-boot-server/</a></p>
+<p><a href="https://www.pcsuggest.com/booting-slax-linux-from-openwrt-pxe-server/">https://www.pcsuggest.com/booting-slax-linux-from-openwrt-pxe-server/</a></p>
+
+		</section>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		
+	
+	<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+<script>
+      feather.replace()
+</script>
+
+
+	</div>
+</body>
+</html>

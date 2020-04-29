@@ -1,0 +1,47 @@
+#!ipxe
+# zbychuk set to "yes" already
+# serwer set already
+
+:start
+############################ INSTALLER MENU #########################
+:menu-install
+menu Installers
+item --key a debian-10-install [a] Install Debian 10 "Buster" GNU/Linux
+choose selected && goto ${selected} || goto start
+
+########### Debian
+
+:debian-10-install
+set os Debian
+set ver buster
+cpuid --ext 29 && set arch amd64 || set arch i386
+
+menu ${os} "${ver}" dla ${arch} - wybierz rodzaj instalacji
+item --key a preseed-10-base [a] (preseed) Base System
+item --key b preseed-10-wrt [b] (preseed) Base System for OpenWRT amd iPXE Compiling
+item --key c preseed-10-desktop-mate [c] (preseed) Desktop Mate
+choose selected && goto ${selected} || goto menu-install
+
+:preseed-10-base
+set pre preseed-10-base.txt
+goto deb-10-install
+
+:preseed-10-wrt
+set pre preseed-10-wrt.txt
+goto deb-10-install
+
+:preseed-10-desktop-mate
+set pre preseed-10-desktop-mate.txt
+goto deb-10-install
+
+:deb-10-install
+set pre http://${serwer}/ipxe/${pre}
+set ver buster
+cpuid --ext 29 && set arch amd64 || set arch i386
+set url http://ftp.pl.debian.org
+set dir ${url}/debian/dists/${ver}/main/installer-${arch}/current/images/netboot
+set debinstaller /debian-installer/${arch}
+kernel ${dir}${debinstaller}/linux
+initrd ${dir}${debinstaller}/initrd.gz
+imgargs linux priority=high vga=788 keymap=pl language=pl country=PL locale=pl_PL.UTF-8 auto url=${pre} --
+boot

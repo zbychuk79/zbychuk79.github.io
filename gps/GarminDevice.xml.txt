@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Device xmlns="http://www.garmin.com/xmlschemas/GarminDevice/v2" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.garmin.com/xmlschemas/GarminDevice/v2 http://www.garmin.com/xmlschemas/GarminDevicev2.xsd">
+  <Model>
+    <PartNumber>000-BBBB-00</PartNumber>
+    <Description>GPSmap 76CSx</Description>
+  </Model>
+  <Id>12345678</Id>
+  <MassStorageMode>
+    <DataType>
+      <Name>GPSData</Name>
+      <File>
+        <Specification>
+          <Identifier>http://www.topografix.com/GPX/1/1</Identifier>
+          <Documentation>http://www.topografix.com/GPX/1/1/gpx.xsd</Documentation>
+        </Specification>
+        <Location>
+          <Path>.</Path>
+        </Location>
+      </File>
+    </DataType>
+  </MassStorageMode>
+</Device>

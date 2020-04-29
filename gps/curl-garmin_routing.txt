@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd ~/curl
+
+file="poland-latest.osm.pbf"
+uri="http://download.geofabrik.de/europe/poland-latest.osm.pbf"
+
+if test -e "$file"
+then zflag="-z $file"
+else zflag=
+fi
+curl -s -o "$file" $zflag "$uri"

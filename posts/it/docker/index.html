@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Docker - debian-wrt image - Mój portal</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Docker - debian-wrt image" />
+<meta property="og:description" content="Generowanie obrazu systemu Debian przydatnego do tworzenia obrazów OpenWRT." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zbychuk79.github.io/posts/it/docker/" />
+<meta property="article:published_time" content="2020-04-21T19:24:00+02:00" />
+<meta property="article:modified_time" content="2020-04-21T19:24:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker - debian-wrt image"/>
+<meta name="twitter:description" content="Generowanie obrazu systemu Debian przydatnego do tworzenia obrazów OpenWRT."/>
+
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://zbychuk79.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://zbychuk79.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+</head>
+<body>
+	<div class="content">
+		<div class="content">
+<header>
+<div class="main">
+	<a href="https://zbychuk79.github.io/">Mój portal</a>
+</div>
+<nav>
+			
+</nav>
+</header>
+<main>
+<article>
+		<div class="title">
+			<h1 class="title">Docker - debian-wrt image</h1>
+			<div class="meta"> </div>
+		</div>
+		<div>
+			
+		</div>
+
+		<section class="body">
+			<hr>
+<p>Przedstawię teraz jak utworzyć środowisko przydatne do generowania obrazów systemu
+<strong>OpenWRT</strong> dla moich punktów WiFi działających na SBC <strong>Raspberry Pi</strong>. Pozwala to też
+na kompilowanie własnej wersji <strong>iPXE</strong>.</p>
+<p>Najpierw tworzymy katalog, gdzie bedą wszystkie potrzebne nam pliki (np. <em>debian-wrt</em>).
+W tym katalogu tworzymy następujące pliki:</p>
+<ul>
+<li><a href="/docker-wrt/Dockerfile">Dockerfile</a> - konfiguracja obrazu dla <strong>Docker</strong>&lsquo;a</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">FROM debian:latest
+COPY wrt_script /
+RUN /wrt_script
+</code></pre></div><ul>
+<li><a href="/docker-wrt/wrt_script">wrt_script</a> - uruchamiany podczas tworzenia obrazu</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+apt update
+apt upgrade -y
+apt install -y mc gawk python aptitude links wget curl build-essential genisoimage <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span> libncurses5-dev zlib1g-dev isolinux git gettext libssl-dev xsltproc liblzma-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span> dnsutils
+
+serwer<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://0to2.github.io&#34;</span>
+
+cd /usr/local/bin
+wget $serwer/openwrt/wrt
+wget $serwer/ipxe/ipxe
+chmod +x *
+
+cd /
+wget $serwer/docker-wrt/.config/mc.tar.gz
+mkdir -p /root/.config
+cd /root/.config
+tar xvfz /mc.tar.gz
+rm /mc.tar.gz
+</code></pre></div><ul>
+<li><a href="/docker-wrt/docker-build-wrt-image">docker-build-wrt-image</a> - generowanie obrazu
+<strong>Debian</strong>&lsquo;a z potrzebnymi programami i ustawieniami</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>sudo docker build -t debian-wrt .
+</code></pre></div><ul>
+<li><a href="/docker-wrt/docker-wrt-container">docker-wrt-container</a> - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>sudo docker run -d -t --name wrt debian-wrt
+</code></pre></div><ul>
+<li><a href="/docker-wrt/docker-wrt-bash">docker-wrt-bash</a> - uruchomienie <strong>bash</strong> w naszym nowym kontenerze</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>sudo docker exec -it wrt bash
+</code></pre></div><p>Teraz można wykonywać polecenia w naszym nowym kontenerze. W <em>/usr/local/bin</em> są skrypty
+<em><strong>wrt</strong></em> i <em><strong>ipxe</strong></em>, którymi możemy się posłużyć.</p>
+<hr>
+<p>Inne przydatne skrypty:</p>
+<ul>
+<li><a href="/docker-wrt/docker-rm-ex-c">docker-rm-ex-c</a> - kasowanie ostatnio uruchomionych i
+zatrzymanych kontenerów</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>sudo docker ps -a | grep Exit | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f <span style="color:#ae81ff">1</span> | xargs sudo docker rm
+</code></pre></div>
+		</section>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		
+	
+	<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+<script>
+      feather.replace()
+</script>
+
+
+	</div>
+</body>
+</html>

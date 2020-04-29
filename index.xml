@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mój portal</title>
+    <link>https://zbychuk79.github.io/</link>
+    <description>Recent content on Mój portal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 27 Apr 2020 12:32:23 +0200</lastBuildDate>
+    
+	<atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Qmapshack</title>
+      <link>https://zbychuk79.github.io/posts/it/qmapshack/</link>
+      <pubDate>Mon, 27 Apr 2020 12:32:23 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/it/qmapshack/</guid>
+      <description> Kurs wideo na temat programu QmapShack:  część 1     część 2     część 3     część 4    </description>
+    </item>
+    
+    <item>
+      <title>Garmin GPS</title>
+      <link>https://zbychuk79.github.io/posts/it/gps/</link>
+      <pubDate>Sun, 26 Apr 2020 09:24:34 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/it/gps/</guid>
+      <description>Posiadam odbiornik GPSMap 76CSx firmy Garmin z dodatkowym uchwytem na rower. Wraz z odbiornikiem zakupiłem GPMapa 2007, ale dodatkowych aktualizacji już nie kupowałem.
+Darmowe mapy do Garmin GPSMap 76CSx. Miałem załadowaną do niego mapę UMP-PL TOPO. Mapa ta nadawała się doskonale do jazdy na rowerze, po wcześniejszym załadowaniu trasy. Powodem tego jest to, że posiada zaznaczone dużo obiektów i szlaków, których próżno szukać na innych mapach oraz to, że uaktualniana jest prawie codziennie.</description>
+    </item>
+    
+    <item>
+      <title>FreeNAS</title>
+      <link>https://zbychuk79.github.io/posts/it/freenas/</link>
+      <pubDate>Sat, 25 Apr 2020 16:04:22 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/it/freenas/</guid>
+      <description>Około 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
+Pierwotnie serwerem był:
+ MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 3.8139 TB lub 2.3125 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
+ MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na modele o pojemności 2 TB  Teraz macierz dyskowa w tym serwerze składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT Image Builder</title>
+      <link>https://zbychuk79.github.io/posts/it/openwrt/</link>
+      <pubDate>Wed, 22 Apr 2020 14:35:28 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/it/openwrt/</guid>
+      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 10 “Buster”. Jego zadaniem jest generowanie obrazu systemu dla moich punktów WiFi AP.
+W moim przypadku działa on pod maszyną wirtualną z systemem Debian 10 “Buster”.
+Skrypt ten zapisałem jako ~/bin/wrt. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu i po rozpakowaniu archiwum umieściłem je w katalogu ~/wrt-config/.
+Aby wygenerować obrazy dla moich urządzeń należy użyć skryptu wrt:</description>
+    </item>
+    
+    <item>
+      <title>Docker - debian-wrt image</title>
+      <link>https://zbychuk79.github.io/posts/it/docker/</link>
+      <pubDate>Tue, 21 Apr 2020 19:24:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/it/docker/</guid>
+      <description>Przedstawię teraz jak utworzyć środowisko przydatne do generowania obrazów systemu OpenWRT dla moich punktów WiFi działających na SBC Raspberry Pi. Pozwala to też na kompilowanie własnej wersji iPXE.
+Najpierw tworzymy katalog, gdzie bedą wszystkie potrzebne nam pliki (np. debian-wrt). W tym katalogu tworzymy następujące pliki:
+ Dockerfile - konfiguracja obrazu dla Docker&amp;lsquo;a  FROM debian:latest COPY wrt_script / RUN /wrt_script  wrt_script - uruchamiany podczas tworzenia obrazu  #!/bin/bash  apt update apt upgrade -y apt install -y mc gawk python aptitude links wget curl build-essential genisoimage \  libncurses5-dev zlib1g-dev isolinux git gettext libssl-dev xsltproc liblzma-dev \  dnsutils serwer=&amp;#34;https://0to2.</description>
+    </item>
+    
+    <item>
+      <title>iPXE w mojej sieci LAN</title>
+      <link>https://zbychuk79.github.io/posts/it/ipxe/</link>
+      <pubDate>Tue, 21 Apr 2020 17:56:50 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/it/ipxe/</guid>
+      <description>Użycie iPXE do instalacji systemu Debian 10 &amp;ldquo;Buster&amp;rdquo;. W tym miejscu opiszę jak można ustawić proste (lub też bardzo rozbudowane) środowisko do startowania systemu operacyjnego lub jego instalatora bez pobierania z Internetu dużego pliku nośnika startowego typu CD-Rom lub Pendrive.
+ Najpierw przygotuję system Debian, gdzie będę przeprowadzał całą procedurę.
+Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej. System host&amp;rsquo;a to Linux Manjaro, który działa dobrze, ale prościej mi się pod Debian&amp;lsquo;em ustawia obrazy OpenWRT i łatwiej jest wyłapać błędy na prawie gołym systemie.</description>
+    </item>
+    
+    <item>
+      <title>Moje klucze publiczne GnuPG</title>
+      <link>https://zbychuk79.github.io/posts/omnie/gnupg/</link>
+      <pubDate>Tue, 21 Apr 2020 16:49:35 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/omnie/gnupg/</guid>
+      <description>Ostatnio (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
+ OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide   Podpisywanie kluczy Key Signing Party   Serwer kluczy keys.openpgp.org  No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
+Jeśli chcesz wysłać mi wiadomość, to poniżej są informacje na temat moich kluczy publicznych dla programu GnuPG.</description>
+    </item>
+    
+    <item>
+      <title>O mnie</title>
+      <link>https://zbychuk79.github.io/posts/omnie/omnie/</link>
+      <pubDate>Tue, 21 Apr 2020 16:49:35 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/omnie/omnie/</guid>
+      <description>Moje zainteresowania to:
+ IT  Komputery Sieci komputerowe Informatyka Automatyka domowa   Fotografia cyfrowa Jazda na rowerze Wędrówki po polskich lasach i górach Trening siłowy  Ta strona jest miejscem, gdzie rozpisuję się na różne tematy, które mnie interesują.
+ Większe pliki z mojej strony będą udostępnione na specjalnie do tego przeznaczonym publicznym kanale programu Telegram pod tym adresem.
+Dyskusja na temat tej strony internetowej możliwa jest na odpowiednim forum w sieci Telegram.</description>
+    </item>
+    
+  </channel>
+</rss>

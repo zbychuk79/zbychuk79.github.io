@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Garmin GPS - Mój portal</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Garmin GPS" />
+<meta property="og:description" content="Obsługa mojego odbiornika Garmin GPS Map 76CSx pod Linuksem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zbychuk79.github.io/posts/it/gps/" />
+<meta property="article:published_time" content="2020-04-26T09:24:34+02:00" />
+<meta property="article:modified_time" content="2020-04-26T09:24:34+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Garmin GPS"/>
+<meta name="twitter:description" content="Obsługa mojego odbiornika Garmin GPS Map 76CSx pod Linuksem."/>
+
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://zbychuk79.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://zbychuk79.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+</head>
+<body>
+	<div class="content">
+		<div class="content">
+<header>
+<div class="main">
+	<a href="https://zbychuk79.github.io/">Mój portal</a>
+</div>
+<nav>
+			
+</nav>
+</header>
+<main>
+<article>
+		<div class="title">
+			<h1 class="title">Garmin GPS</h1>
+			<div class="meta"> </div>
+		</div>
+		<div>
+			
+		</div>
+
+		<section class="body">
+			<hr>
+<p>Posiadam odbiornik <strong>GPSMap 76CSx</strong> firmy Garmin z dodatkowym uchwytem na rower. Wraz z odbiornikiem zakupiłem <strong>GPMapa 2007</strong>, ale dodatkowych aktualizacji już nie kupowałem.</p>
+<h2 id="darmowe-mapy-do-garmin-gpsmap-76csx">Darmowe mapy do <strong>Garmin GPSMap 76CSx</strong>.</h2>
+<p>Miałem załadowaną do niego mapę <strong>UMP-PL TOPO</strong>. Mapa ta nadawała się doskonale do jazdy na rowerze, po wcześniejszym załadowaniu trasy. Powodem tego jest to, że posiada zaznaczone dużo obiektów i szlaków, których próżno szukać na innych mapach oraz to, że uaktualniana jest prawie codziennie.</p>
+<p>Kilka dni temu (dziś jest 2016.06.01) znalazłem informację, jak załadować mapy <strong>OpenStreetMap</strong> do odbiorników firmy Garmin. No i w tym momencie chyba muszę stwierdzić, że te właśnie mapy są dużo lepsze niż wyżej wspomniana <strong>UMP-PL TOPO</strong>. Jedynym minusem może być brak topografi terenu w mapie rowerowej (podstawowej mapy dokładnie nie sprawdzałem).</p>
+<p>Mapy do mojego GPS&rsquo;a wygenerowane na podstawie danych <strong>OpenStreetMap</strong> ściągnąłem spod <a href="http://garmin.openstreetmap.nl/">garmin.openstreetmap.nl</a>.</p>
+<p>Pobrałem mapy w wersjach <em>Generic Routable</em>, <em>Generic Routable (New Style)</em> oraz <em>Routable Bicycle (Openfietsmap Lite)</em>.</p>
+<p>Mapę topograficzną <strong>OpenTopoMap</strong> znalazłem na <a href="http://garmin.opentopomap.org/">garmin.opentopomap.org</a>.</p>
+<p>Mapę do jazdy MTB pobrałem z <a href="http://openmtbmap.org/">openmtbmap.org</a>.</p>
+<h2 id="programy-do-obróbki-danych-gps">Programy do obróbki danych GPS.</h2>
+<p>Do zarządzania danymi z mojego GPS znalazłem fajny program o nazwie <strong>QMapShack</strong>, a do wysyłania danych do odbiornika używam <strong>GPS Babel</strong> (a dokładniej jego interfejs graficzny).</p>
+<p>W momencie pisania tego akapitu używam systemu <strong>Arch Linux</strong> z jądrem systemu w wersji 4.5.4.</p>
+<p>Aby w programie <strong>QMapShack</strong> było widać listę logów z <strong>GPSMap 76CSx</strong> (i podobnych), trzeba uruchomić automatyczne montowanie urządzeń USB-Storage (opis jest <a href="https://wiki.archlinux.org/index.php/udisks">tu</a>). Należy jeszcze w katalogu <em>Garmin</em> na karcie pamięci odbiornika zapisać plik <em><a href="/gps/GarminDevice.xml.txt">GarminDevice.xml</a></em>.</p>
+<p>Pozwoli to przynajmniej na odczyt zapisanych śladów z odbiornika, po przełączeniu go w tryb pamięci masowej.</p>
+<p>Do obróbki i oglądania danych statystycznych z zapisanych logów GPS używam programu <strong>Viking</strong>.</p>
+<h2 id="wysyłanie-danych-do-gpsmap-76csx">Wysyłanie danych do <strong>GPSMap 76CSx</strong>.</h2>
+<p>Aby można było użyć <strong>GPS Babel</strong> do wymiany danych z odbiornikiem, należy wykonać kilka rzeczy.</p>
+<ul>
+<li>Zablokować ładowanie modułu garmin_gps. W <em>/etc/modprobe.d/garmindev.conf</em> dopisać:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">blacklist garmin_gps
+</code></pre></div><ul>
+<li>Przyznać odpowiednie prawa dostępnu dla urządzenia, aby można go było używać jako zwykły użytkownik systemu. W pliku <em>/etc/udev/rules.d/51-garmin.rules</em> dopisać:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">ATTRS{idVendor}==&#34;091e&#34;, ATTRS{idProduct}==&#34;0003&#34;, MODE=&#34;0666&#34;, GROUP=&#34;users&#34;
+</code></pre></div><ul>
+<li>Wyłączyć zarządzanie energią urządzeń USB dla naszego odbiornika. Zakładając, że używamy pakietu tlp, w pliku <em>/etc/default/tlp</em> dopisujemy:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">USB_BLACKLIST=&#34;091e:0003&#34;
+</code></pre></div><ul>
+<li>Restartujemy komputer.</li>
+</ul>
+<h2 id="dane-wysokości-terenu">Dane wysokości terenu.</h2>
+<p>Mapy <strong>OpenStreetMap</strong> bardzo mi odpowiadają z powodu swojej szczegółowości. Jedyne czego mi w nich brakuje, to profil wysokości terenu.</p>
+<p>Można sobie z tym poradzić dodając te dane do mapy. Pytanie tylko jak je zdobyć? Otóż sprawa jest dość prosta. W moim przypadku użyłem danych SRTM3 w postaci plików GeoTiff dostępnych dla interesującego nas obszaru, które można znależć <a href="http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp">tu</a>.</p>
+<p>Najpierw sprawdziłem dokładnie na jakich koordynatach leży Polska (robimy to przesuwając kursorem myszki na mapie świata i powyżej wyświetla nam interesujące nas dane). Na podstawie tych danych w punkcie 2 (Data selection method) wybieramy <strong>Input coordinates</strong> i wpisujemy odpowiednie dane geograficzne. Potem wciskamy przycisk <strong>Mark area</strong> i sprawdzamy, czy zaznaczyło nam nasz obszar. Jeśli interesuje nas tylko format GeoTiff, to nic nie zmieniamy w trzecim punkcie na tej stronie i możemy rozpocząć przeszukiwanie bazy dla zaznaczonego obszaru.</p>
+<p>Nie ma sensu zaznaczania niepotrzebnych nam terenów, gdyż dane te zajmują dość dużo miejsca. Dla przykładu teren Polski wymagał ściągnięcia danych dla dziewięciu segmentów. Po rozpakowaniu zajęły one 620MB miejsca na dysku.</p>
+<p>Gdy już mamy pobrane interesujące nas dane, trzeba je rozpakować do jednego katalogu. Ja osobiście mapy trzymam w katalogu <em>~/maps</em>, a dane wysokościowe SRTM3 w <em>~/maps/DEM/srtm</em>.</p>
+<p>Teraz trzeba wygenerować index danych wysokościowych, które pobraliśmy. Jest on potrzebny w programie <strong>QMapShack</strong>.</p>
+<p>Robimy to przez wybranie opcji (Menu <strong>Tool</strong> -&gt; <strong>VRT Builder</strong>).</p>
+<p>Teraz pozostaje już tylko wskazanie katalogu z tym indeksem w programie <strong>QMapShack</strong> i możemy się cieszyć dostępnością danych o wysokości na mapach <strong>OpenStreetMap</strong>.</p>
+<p>Jeśli chcesz dokładne dane wysokościowe dla całej Europy, to możesz je ściągnąć z adresu <a href="http://www.eea.europa.eu/data-and-maps/data/eu-dem">EEA</a>. Potrzebne są pliki <em>eudem_dem_3035_europe.tif</em> i <em>eudem_dem_3035_europe.tif.ovr</em>. Ten pierwszy ma 22,5GB objętości, a drugi 2,2GB. Dane te są dokładniejsze niż SRTM3.</p>
+<h2 id="dane-routingu">Dane routingu.</h2>
+<p>Zostało jeszcze dodać dane służące do wyznaczania tras. Oczywiście nie pobieramy danych dla całej Europy, ponieważ zajmują one ponad 21GB. Wybieramy tylko kraj, w którym mamy zamiar podróżować (może ich być kilka, albo może to być też tylko jedno województwo). Dokładnie chodzi o pliki <em>.osm.pbf</em>. W tym celu trzeba pobrać je z <a href="http://download.geofabrik.de/europe.html">http://download.geofabrik.de/europe.html</a> (<a href="http://download.geofabrik.de/europe/poland-latest.osm.pbf">Polska</a>,  <a href="http://download.geofabrik.de/europe/germany-latest.osm.pbf">Niemcy</a>).</p>
+<p>Pliki te zapisałem w katalogu <em>~/maps/routing_data_osm</em> (dane dla całej Polski zajmują ponad 1.1GB). Potem trzeba tylko uruchomić generowanie bazy danych routing&rsquo;u (Menu <strong>Tool</strong> -&gt; <strong>Create Routino Database</strong>).</p>
+<p>Trochę trwało generowanie bazy typu <strong>Routino</strong>. W tym momencie trzeba tylko podać do programu, gdzie jest nasza baza i możemy się cieszyć automatycznym wyznaczaniem tras.</p>
+<p>Napisałem sobie <a href="/gps/curl-garmin_routing.txt">skrypt</a>, który się uruchamia na jednym z moich serwerków <strong>Raspberry Pi</strong>. Jest on uruchamiany codziennie o 4:40 rano. Sprawdza on czy plik dostępny na serwerze jest nowszy niż ten, który już mamy. Jeśli tak jest, to zostanie pobrana jego nowa wersja.</p>
+<p>Po zalogowaniu się na serwer trzeba zapisać ten skrypt w odpowiednie miejsce. U mnie jest to <em>/home/pi/.bin/curl-garmin_routing</em>.</p>
+<p>Następnie musimy jeszcze ustawić uruchamianie tego skryptu przez <strong>cron</strong>:</p>
+<pre><code>$ crontab -e
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">40 4 * * *      /home/pi/.bin/curl-garmin_routing
+</code></pre></div><p>Wystarczy teraz udostępnić katalog z tym plikiem przez protokół NFS lub SAMBA i można po jego zamontowaniu na komputerze z Linuksem w programie <strong>Qmapshack</strong> wskazać go do obróbki w celu generowania danych routingu (jak pokazano powyżej).</p>
+<hr>
+<p>Znalazłem też darmowe oprogramowanie <strong>OpenGTS</strong> do śledzenia aktualnej pozycji przez GPS, ale jeszcze nie próbowałem go ustawiać.</p>
+<hr>
+<p>Za jakiś czas przebuduję ten artykuł. Teraz mam to ustawione inaczej i na innym serwerze.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		
+	
+	<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+<script>
+      feather.replace()
+</script>
+
+
+	</div>
+</body>
+</html>

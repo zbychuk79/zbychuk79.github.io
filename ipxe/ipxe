@@ -1,6 +1,6 @@
 #!/bin/bash
 
-serwer="https://zbychuk79.github.io"
+#serwer="https://zbychuk79.github.io"
 
 usage()
 {
@@ -52,19 +52,17 @@ if [ "$download" = "yes" ]; then
     rm -rf ipxe-master
 
     #git clone git://git.ipxe.org/ipxe.git
+
+    git clone https://github.com/zbychuk79/ipxe-custom.git
 fi
 
 if [ "$compile" = "yes" ]; then
     case $net in
-        zbychuk )      echo "#!ipxe
-dhcp
-chain --replace --autofree http://omv1:82/ipxe/setup.php
-" > ~/ipxe/src/embeded.ipxe
-                       ipxe_config="$serwer/ipxe/general.h"
+        zbychuk )      cp ~/ipxe-custom/zbychuk/embeded.ipxe ~/ipxe/src/embeded.ipxe
+                       cp ~/ipxe-custom/ipxe-config/config.h ~/ipxe/src/config/general.h
                                 ;;
-        internet )     ipxe_config="$serwer/ipxe/general.h"
-                       menu="$serwer/ipxe/inet.ipxe"
-                       curl -sSL $menu -o ~/ipxe/src/embeded.ipxe
+        internet )     cp ~/ipxe-custom/internet/embeded.ipxe ~/ipxe/src/embeded.ipxe
+                       cp ~/ipxe-custom/ipxe-config/config.h ~/ipxe/src/config/general.h
                                 ;;
         * )            echo
                        echo "Nie podałeś parametru -c [ zbychuk | internet ]"
@@ -74,7 +72,7 @@ chain --replace --autofree http://omv1:82/ipxe/setup.php
 
     mkdir -p ~/ipxe-image/$net
     cd ~/ipxe/src
-    curl -sSL $ipxe_config -o ~/ipxe/src/config/general.h
+    #curl -sSL $ipxe_config -o ~/ipxe/src/config/general.h
     make clean
     make bin/ipxe.iso EMBED=embeded.ipxe
     make bin/ipxe.usb EMBED=embeded.ipxe

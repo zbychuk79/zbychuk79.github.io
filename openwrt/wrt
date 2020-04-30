@@ -14,7 +14,7 @@ usage()
     echo "
 Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ]
  -w wersja OpenWRT do budowy (domyślne: $wersja)
- -c kasuje z dysku i pobiera ponownie automatycznie ImageBuilder
+ -c czyści po sobie i pobiera potrzebne pliki
  -h wyświetlenie tej instrukcji
 "
 }

@@ -115,7 +115,7 @@ Dodalem jeszcze skrypty do "/usr/local/bin":
 EOF
 
 wget $serwer/debian-rescue/deb-rescue
-wget $serwer/docker-wrt/.config/mc.tar.gz
+wget https://github.com/zbychuk79/zbychuk79.github.io/raw/master/docker-wrt/.config/mc.tar.gz
 
 cd
 hdir=`pwd`

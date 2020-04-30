@@ -110,9 +110,12 @@ Wstepnie ustawilem Midnight Commander na koncie "root".
 Dodalem jeszcze skrypty do "/usr/local/bin":
 - #sysupdate
 - #restic-script
-- deb
+- deb-rescue
 
 EOF
+
+wget $serwer/debian-rescue/deb-rescue
+wget $serwer/docker-wrt/.config/mc.tar.gz
 
 cd
 hdir=`pwd`
@@ -123,12 +126,12 @@ sudo mv $hdir/tmp/czytaj.txt .
 sudo mv $hdir/tmp/install_script.sh .
 
 cd $hdir/
-wget $serwer/docker-wrt/.config/mc.tar.gz
 #wget $serwer/debian/.aptitude.tar.gz
 #wget $serwer/debian/sysupdate
 #wget $serwer/debian/restic-script
-cd $hdir/usr/local/bin/
-wget $serwer/debian-rescue/deb-rescue
+sudo mv $hdir/tmp/install_script.sh .
+
+
 }
 
 if [ "$#" = 0 ]; then

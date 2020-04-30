@@ -45,7 +45,7 @@ if [ ! -d wrt-config ]; then
     echo
     echo "Nie ma na dysku konfiguracji dla OpenWRT ( katalog wrt-config )."
     echo
-	git clone https://github.com/zbychuk79/wrt-config.git
+    git clone https://github.com/zbychuk79/wrt-config.git
 fi
 
 if [ "$clean" = "yes" ]; then

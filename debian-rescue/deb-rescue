@@ -128,7 +128,7 @@ wget $serwer/docker-wrt/.config/mc.tar.gz
 #wget $serwer/debian/sysupdate
 #wget $serwer/debian/restic-script
 cd $hdir/usr/local/bin/
-wget $serwer/debian-rescue/deb
+wget $serwer/debian-rescue/deb-rescue
 }
 
 if [ "$#" = 0 ]; then

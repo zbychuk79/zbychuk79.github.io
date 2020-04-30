@@ -63,11 +63,12 @@ mkdir -p ~/tmp
 cat << EOF > ~/tmp/install_script.sh
 #!/bin/bash
 serwer="https://zbychuk79.github.io"
+echo "Ustaw hasło dla użytkownika 'root':"
 passwd
 dpkg-reconfigure tzdata
 echo "deb http://security.debian.org/ buster/updates main" >> /etc/apt/sources.list.d/security.list
 apt update
-apt upgrade
+apt upgrade -y
 apt install tasksel dialog -y
 tasksel install standard
 apt install mc openssh-client wget sudo net-tools curl aptitude zstd -y
@@ -77,7 +78,7 @@ apt clean
 pip3 install telegram-send
 mkdir -p /root/.config
 cd /root/.config
-wget $serwer/debian/.config/mc.tar.gz
+wget $serwer/docker-wrt/.config/mc.tar.gz
 tar xvfz mc.tar.gz
 rm mc.tar.gz
 cd ..

@@ -1,5 +1,5 @@
 #!ipxe
-set serwer https://zbychuk79.github.io
+set serwer zbychuk79.github.io
 
 dhcp
 chain --replace --autofree ${serwer}/ipxe/menu.ipxe

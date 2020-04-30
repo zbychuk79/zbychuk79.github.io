@@ -88,12 +88,11 @@ usage<span style="color:#f92672">()</span>
 <span style="color:#66d9ef">done</span>
 
 cd
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f wrt-config.tar.xz <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d wrt-config <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
     echo
-    echo <span style="color:#e6db74">&#34;Nie ma na dysku konfiguracji dla OpenWRT ( wrt-config.tar.xz ).&#34;</span>
+    echo <span style="color:#e6db74">&#34;Nie ma na dysku konfiguracji dla OpenWRT ( katalog wrt-config ).&#34;</span>
     echo
-    wget -c $serwer/openwrt/wrt-config.tar.xz
-    xzcat wrt-config.tar.xz | tar xvf -
+	git clone https://github.com/zbychuk79/wrt-config.git
 <span style="color:#66d9ef">fi</span>
 
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$clean<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>

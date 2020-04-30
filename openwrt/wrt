@@ -41,12 +41,11 @@ while [ "$1" != "" ]; do
 done
 
 cd
-if [ ! -f wrt-config.tar.xz ]; then
+if [ ! -d wrt-config ]; then
     echo
-    echo "Nie ma na dysku konfiguracji dla OpenWRT ( wrt-config.tar.xz )."
+    echo "Nie ma na dysku konfiguracji dla OpenWRT ( katalog wrt-config )."
     echo
-    wget -c $serwer/openwrt/wrt-config.tar.xz
-    xzcat wrt-config.tar.xz | tar xvf -
+	git clone https://github.com/zbychuk79/wrt-config.git
 fi
 
 if [ "$clean" = "yes" ]; then

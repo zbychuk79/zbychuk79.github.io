@@ -1,0 +1,173 @@
+#!/bin/bash
+
+# Skrypt generuje środowisko chroot z Debianem.
+# Generuje skrypty do wykonania pod chroot instalujące i
+# ustawiające potrzebne oprogramowanie.
+# Potem można wygenerować image systemu do nagrania na pendrive.
+#
+# Do działania wymagane są programy: debootstrap, debootstick
+# i ew. telegram-send
+#
+skrypt=`printf '%s\n' "${0##*/}"`
+dir="/home/chroot_debian"
+subdir="rescue"
+#mirror="http://omv1:88/debian/"		# Mój lokalny mirror.
+mirror="http://deb.debian.org/debian/"
+
+usage()
+{
+echo "
+Jak używać: $skrypt [ -d ] [ -s ] [ -r ] [ -i ] [ -c ]
+ -d tworzy na dysku środowisko chroot z Debianem w $dir
+ -s tworzy skrypty do wykonania w chroot z Debianem
+ -r wejdź do chroot z Debianem
+ -i generuje uruchamialny obraz systemu przez debootstick
+ -c kasuje z dysku środowisko chroot z Debianem
+"
+}
+
+dbstrap()
+{
+sudo mkdir -p $dir
+cd $dir
+sudo debootstrap --arch=amd64 buster $subdir $mirror
+}
+
+debian_chroot()
+{
+    cd $dir
+    #sudo mount proc $subdir/proc -t proc
+    #sudo mount sysfs $subdir/sys -t sysfs
+    sudo LC_ALL=C chroot $dir/$subdir /bin/bash
+    #sudo umount $subdir/proc $subdir/sys
+}
+
+stick()
+{
+    czas=`date +%Y%m%d-%H%M`
+    echo "
+    $czas
+    "
+    cd $dir
+    img="debian-rescue-$czas.img"
+    sudo debootstick rescue $img
+    sudo xz -z -9 -T 0 -v $img
+    echo "Wygenerowano obraz $img.xz ..."
+    #scp $img.xz omv1:/sharedfolders/sysimages/Debian/
+    #telegram-send "Wygenerowano obraz $img.xz ..."
+}
+
+skrypty_chroot()
+{
+mkdir -p ~/tmp
+cat << EOF > ~/tmp/install_script.sh
+#!/bin/bash
+serwer="https://zbychuk79.github.io"
+passwd
+dpkg-reconfigure tzdata
+echo "deb http://security.debian.org/ buster/updates main" >> /etc/apt/sources.list.d/security.list
+apt update
+apt upgrade
+apt install tasksel dialog -y
+tasksel install standard
+apt install mc openssh-client wget sudo net-tools curl aptitude zstd -y
+apt install unzip gnupg links debtags python3-pip debootstick debootstrap -y
+apt install restic rsync fsarchiver dar -y
+apt clean
+pip3 install telegram-send
+mkdir -p /root/.config
+cd /root/.config
+wget $serwer/debian/.config/mc.tar.gz
+tar xvfz mc.tar.gz
+rm mc.tar.gz
+cd ..
+wget $serwer/debian/.aptitude.tar.gz
+tar xvfz .aptitude.tar.gz
+rm .aptitude.tar.gz
+cd /usr/local/bin
+#wget $serwer/debian/sysupdate
+#wget $serwer/debian/restic-script
+wget $serwer/debian-rescue/deb
+chmod +x *
+echo "rescue" > /etc/hostname
+rm -rf ~/.cache
+rm /install_script.sh
+EOF
+cat << EOF > ~/tmp/czytaj.txt
+
+Dodane repozytorium z poprawkami bezpieczenstwa.
+
+Doinstalowano:
+- mc openssh-client wget sudo net-tools curl aptitude zstd
+- unzip gnupg links debtags python3-pip debootstick debootstrap
+- restic rsync fsarchiver dar
+
+Z repozytorium paczek dla python3 dodano:
+- telegram-send (trzeba go sobie skonfigurowac)
+
+Wstepnie ustawilem Midnight Commander na koncie "root".
+
+Dodalem jeszcze skrypty do "/usr/local/bin":
+- #sysupdate
+- #restic-script
+- deb
+
+EOF
+
+cd
+hdir=`pwd`
+chmod +x tmp/*.sh
+
+cd $dir/$subdir
+sudo mv $hdir/tmp/czytaj.txt .
+sudo mv $hdir/tmp/install_script.sh .
+}
+
+if [ "$#" = 0 ]; then
+    usage
+    echo
+fi
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -d )			debstrap="yes"
+                                ;;
+        -s )			skrypty="yes"
+                                ;;
+        -r )			chroot_debian="yes"
+                                ;;
+        -i )			stick="yes"
+                                ;;
+        -c )			clean="yes"
+                                ;;
+        * )			usage
+                                exit 0
+    esac
+    shift
+done
+
+if [ "$debstrap" = "yes" ]; then
+    echo "Generowanie środowiska chroot ..."
+    dbstrap
+fi
+
+if [ "$skrypty" = "yes" ]; then
+    echo "Generowanie skryptów do wykonania w chroot ..."
+    skrypty_chroot
+fi
+
+if [ "$chroot_debian" = "yes" ]; then
+    echo "Wejście do środowiska chroot ..."
+    debian_chroot
+fi
+
+if [ "$stick" = "yes" ]; then
+    echo "Generuję uruchamialny obraz systemu przez debootstick ..."
+    stick
+fi
+
+if [ "$clean" = "yes" ]; then
+    echo "Kasowanie środowiska chroot ..."
+    sudo rm -rf $dir/$subdir
+    exit 0
+fi

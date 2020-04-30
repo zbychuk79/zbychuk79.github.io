@@ -10,6 +10,7 @@
 #
 
 serwer="https://zbychuk79.github.io"
+zbychuk79bin="https://github.com/zbychuk79/zbychuk79.github.io/raw/master"
 
 skrypt=`printf '%s\n' "${0##*/}"`
 dir="/home/chroot_debian"
@@ -114,16 +115,19 @@ Dodalem jeszcze skrypty do "/usr/local/bin":
 
 EOF
 
+cd ~/tmp
 wget $serwer/debian-rescue/deb-rescue
-wget https://github.com/zbychuk79/zbychuk79.github.io/raw/master/docker-wrt/.config/mc.tar.gz
+wget $zbychuk79bin/docker-wrt/.config/mc.tar.gz
 
 cd
 hdir=`pwd`
 chmod +x tmp/*.sh
+chmod +x tmp/deb-rescue
 
 cd $dir/$subdir
 sudo mv $hdir/tmp/czytaj.txt .
 sudo mv $hdir/tmp/install_script.sh .
+sudo mv $hdir/tmp/deb-rescue ./usr/local/bin/
 
 cd $hdir/
 #wget $serwer/debian/.aptitude.tar.gz

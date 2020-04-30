@@ -82,9 +82,9 @@ wget $serwer/docker-wrt/.config/mc.tar.gz
 tar xvfz mc.tar.gz
 rm mc.tar.gz
 cd ..
-wget $serwer/debian/.aptitude.tar.gz
-tar xvfz .aptitude.tar.gz
-rm .aptitude.tar.gz
+#wget $serwer/debian/.aptitude.tar.gz
+#tar xvfz .aptitude.tar.gz
+#rm .aptitude.tar.gz
 cd /usr/local/bin
 #wget $serwer/debian/sysupdate
 #wget $serwer/debian/restic-script

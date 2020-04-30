@@ -131,7 +131,6 @@ cd $hdir/
 #wget $serwer/debian/restic-script
 sudo mv $hdir/tmp/install_script.sh .
 
-
 }
 
 if [ "$#" = 0 ]; then

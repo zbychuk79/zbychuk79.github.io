@@ -8,6 +8,9 @@
 # Do działania wymagane są programy: debootstrap, debootstick
 # i ew. telegram-send
 #
+
+serwer="https://zbychuk79.github.io"
+
 skrypt=`printf '%s\n' "${0##*/}"`
 dir="/home/chroot_debian"
 subdir="rescue"
@@ -78,22 +81,18 @@ apt clean
 pip3 install telegram-send
 mkdir -p /root/.config
 cd /root/.config
-wget $serwer/docker-wrt/.config/mc.tar.gz
-tar xvfz mc.tar.gz
-rm mc.tar.gz
-cd ..
-#wget $serwer/debian/.aptitude.tar.gz
-#tar xvfz .aptitude.tar.gz
-#rm .aptitude.tar.gz
+tar xvfz /mc.tar.gz
+rm /mc.tar.gz
+cd /root
+#tar xvfz /.aptitude.tar.gz
+#rm /.aptitude.tar.gz
 cd /usr/local/bin
-#wget $serwer/debian/sysupdate
-#wget $serwer/debian/restic-script
-wget $serwer/debian-rescue/deb
 chmod +x *
 echo "rescue" > /etc/hostname
 rm -rf ~/.cache
 rm /install_script.sh
 EOF
+
 cat << EOF > ~/tmp/czytaj.txt
 
 Dodane repozytorium z poprawkami bezpieczenstwa.
@@ -122,6 +121,14 @@ chmod +x tmp/*.sh
 cd $dir/$subdir
 sudo mv $hdir/tmp/czytaj.txt .
 sudo mv $hdir/tmp/install_script.sh .
+
+cd $hdir/
+wget $serwer/docker-wrt/.config/mc.tar.gz
+#wget $serwer/debian/.aptitude.tar.gz
+#wget $serwer/debian/sysupdate
+#wget $serwer/debian/restic-script
+cd $hdir/usr/local/bin/
+wget $serwer/debian-rescue/deb
 }
 
 if [ "$#" = 0 ]; then

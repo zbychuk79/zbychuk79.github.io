@@ -34,7 +34,7 @@ set pre preseed-10-desktop-mate.txt
 goto deb-10-install
 
 :deb-10-install
-set pre http://${serwer}/ipxe/${pre}
+set pre ${serwer}/ipxe/${pre}
 set ver buster
 cpuid --ext 29 && set arch amd64 || set arch i386
 set url http://ftp.pl.debian.org

@@ -6,23 +6,10 @@
     <description>Recent content on Mój portal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 30 Apr 2020 11:29:03 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2020 12:32:23 +0200</lastBuildDate>
     
 	<atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Debian Rescue</title>
-      <link>https://zbychuk79.github.io/posts/it/debian-rescue/</link>
-      <pubDate>Thu, 30 Apr 2020 11:29:03 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/it/debian-rescue/</guid>
-      <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu LiveUSB.
-Czynności będę przeprowadzał na pełnym systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
-Napisałem prosty skrypt
-Wymaga on do działania zainstalowanych paczek:
- debootstrap debootstick ew. programu telegram-send z repozytoriów python3-pip  Po wejściu do wygenerowanego katalogu chroot, trzeba wykonać skrypt /install_script.sh, który zainstaluje w chroot wymagane programy.</description>
-    </item>
     
     <item>
       <title>Qmapshack</title>
@@ -68,10 +55,10 @@ Skrypt ten zapisałem jako ~/bin/wrt. Dodatkowe pliki konfiguracyjne dla moich u
     
     <item>
       <title>Docker - debian-wrt image</title>
-      <link>https://zbychuk79.github.io/posts/it/docker/</link>
+      <link>https://zbychuk79.github.io/posts/it/docker-wrt/</link>
       <pubDate>Tue, 21 Apr 2020 19:24:00 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/it/docker/</guid>
+      <guid>https://zbychuk79.github.io/posts/it/docker-wrt/</guid>
       <description>Przedstawię teraz jak utworzyć środowisko przydatne do generowania obrazów systemu OpenWRT dla moich punktów WiFi działających na SBC Raspberry Pi. Pozwala to też na kompilowanie własnej wersji iPXE.
 Najpierw pobieramy potrzebne nam pliki:
 git clone https://github.com/zbychuk79/docker-wrt.git  W katalogu docker-wrt mamy następujące pliki:

@@ -43,17 +43,17 @@
 <p>Przedstawię teraz jak utworzyć środowisko przydatne do generowania obrazów systemu
 <strong>OpenWRT</strong> dla moich punktów WiFi działających na SBC <strong>Raspberry Pi</strong>. Pozwala to też
 na kompilowanie własnej wersji <strong>iPXE</strong>.</p>
-<p>Najpierw tworzymy katalog, gdzie bedą wszystkie potrzebne nam pliki (np. <em>debian-wrt</em>).
-W tym katalogu tworzymy następujące pliki:</p>
+<p>Najpierw pobieramy potrzebne nam pliki:</p>
+<pre><code>git clone https://github.com/zbychuk79/docker-wrt.git
+</code></pre>
+<p>W katalogu <em>docker-wrt</em> mamy następujące pliki:</p>
 <ul>
 <li>Dockerfile - konfiguracja obrazu dla <strong>Docker</strong>&lsquo;a</li>
 <li>wrt_script - uruchamiany podczas tworzenia obrazu</li>
-</ul>
-<ol>
 <li>docker-build-wrt-image - generowanie obrazu <strong>Debian</strong>&lsquo;a z potrzebnymi programami i ustawieniami</li>
 <li>docker-wrt-container - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu</li>
 <li>docker-wrt-bash - uruchomienie <strong>bash</strong> w naszym nowym kontenerze</li>
-</ol>
+</ul>
 <p>Teraz można wykonywać polecenia w naszym nowym kontenerze. W <em>/usr/local/bin</em> są skrypty
 <em><strong>wrt</strong></em> i <em><strong>ipxe</strong></em>, którymi możemy się posłużyć.</p>
 <hr>

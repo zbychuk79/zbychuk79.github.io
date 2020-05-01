@@ -9,10 +9,6 @@
 # i ew. telegram-send
 #
 
-serwer="https://zbychuk79.github.io"
-zbychuk79bin="https://github.com/zbychuk79/zbychuk79.github.io/raw/master"
-
-
 skrypt=`printf '%s\n' "${0##*/}"`
 dir="/home/chroot_debian"
 subdir="rescue"
@@ -64,78 +60,12 @@ stick()
 
 skrypty_chroot()
 {
-mkdir -p ~/tmp
-cat << EOF > ~/tmp/install_script.sh
-#!/bin/bash
-serwer="https://zbychuk79.github.io"
-echo "Ustaw hasło dla użytkownika 'root':"
-passwd
-dpkg-reconfigure tzdata
-echo "deb http://security.debian.org/ buster/updates main" >> /etc/apt/sources.list.d/security.list
-apt update
-apt upgrade -y
-apt install tasksel dialog -y
-tasksel install standard
-apt install mc openssh-client wget sudo net-tools curl aptitude zstd -y
-apt install unzip gnupg links debtags python3-pip debootstick debootstrap -y
-apt install restic rsync fsarchiver dar -y
-apt clean
-pip3 install telegram-send
-mkdir -p /root/.config
-cd /root/.config
-tar xvfz /mc.tar.gz
-rm /mc.tar.gz
-cd /root
-#tar xvfz /.aptitude.tar.gz
-#rm /.aptitude.tar.gz
-cd /usr/local/bin
-chmod +x *
-echo "rescue" > /etc/hostname
-rm -rf ~/.cache
-rm /install_script.sh
-EOF
-
-cat << EOF > ~/tmp/czytaj.txt
-
-Dodane repozytorium z poprawkami bezpieczenstwa.
-
-Doinstalowano:
-- mc openssh-client wget sudo net-tools curl aptitude zstd
-- unzip gnupg links debtags python3-pip debootstick debootstrap
-- restic rsync fsarchiver dar
-
-Z repozytorium paczek dla python3 dodano:
-- telegram-send (trzeba go sobie skonfigurowac)
-
-Wstepnie ustawilem Midnight Commander na koncie "root".
-
-Dodalem jeszcze skrypty do "/usr/local/bin":
-- #sysupdate
-- #restic-script
-- deb-rescue
-
-EOF
-
+hdir="$HOME"
 cd ~/tmp
-wget $serwer/debian-rescue/deb-rescue
-wget $zbychuk79bin/docker-wrt/.config/mc.tar.gz
+cp $0 ./
+chmod +x ./deb-rescue
 
-cd
-hdir=`pwd`
-chmod +x tmp/*.sh
-chmod +x tmp/deb-rescue
-
-cd $dir/$subdir
-sudo mv $hdir/tmp/czytaj.txt .
-sudo mv $hdir/tmp/install_script.sh .
-sudo mv $hdir/tmp/mc.tar.gz .
-cd $dir/$subdir/usr/local/bin
-sudo mv $hdir/tmp/deb-rescue
-
-cd $hdir/
-#wget $serwer/debian/.aptitude.tar.gz
-#wget $serwer/debian/sysupdate
-#wget $serwer/debian/restic-script
+git clone https://github.com/zbychuk79/debian-rescue.git
 
 }
 

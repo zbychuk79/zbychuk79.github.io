@@ -62,8 +62,9 @@ skrypty_chroot()
 {
 hdir="$HOME"
 cd ~/tmp
-cp $0 ./
-chmod +x ./deb-rescue
+cp $0 .
+chmod +x deb-rescue
+cp deb-rescue $dir/$subdir/usr/local/bin
 
 git clone https://github.com/zbychuk79/debian-rescue.git
 cd debian-rescue

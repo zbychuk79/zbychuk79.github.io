@@ -66,6 +66,9 @@ cp $0 ./
 chmod +x ./deb-rescue
 
 git clone https://github.com/zbychuk79/debian-rescue.git
+cd debian-rescue
+mv czytaj.txt $dir/$subdir
+mv install_script.sh $dir/$subdir
 
 }
 

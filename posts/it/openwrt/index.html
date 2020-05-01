@@ -42,12 +42,12 @@
 			<hr>
 <h2 id="ustawienie-openwrt-image-builder">Ustawienie <strong>OpenWRT Image Builder</strong></h2>
 <p>Napisałem skrypt, który uruchamiam pod systemem <strong>Debian 10 “Buster”</strong>. Jego zadaniem jest generowanie obrazu systemu dla moich punktów WiFi AP.</p>
-<p>W moim przypadku działa on pod maszyną wirtualną z systemem <strong>Debian 10 “Buster”</strong>.</p>
-<p>Skrypt ten zapisałem jako <em>~/bin/<a href="/openwrt/wrt">wrt</a></em>. Dodatkowe pliki konfiguracyjne dla moich urządzeń są <a href="/openwrt/wrt-config.tar.xz">tu</a> i po rozpakowaniu archiwum umieściłem je w katalogu <em>~/wrt-config/</em>.</p>
+<p>W moim przypadku działa on pod maszyną wirtualną z systemem <strong>Debian 10 “Buster”</strong> lub w kontenerze <strong>Docker</strong>-a z tym systemem.</p>
+<p>Skrypt ten zapisałem jako <em>~/bin/<a href="/openwrt/wrt">wrt</a></em>. Dodatkowe pliki konfiguracyjne dla moich urządzeń są <a href="https://github.com/zbychuk79/wrt-config.git">tu</a> i po rozpakowaniu archiwum umieściłem je w katalogu <em>~/wrt-config/</em>. Są one automatycznie pobierane przez mój skrypt.</p>
 <p>Aby wygenerować obrazy dla moich urządzeń należy użyć skryptu <em><strong>wrt</strong></em>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
-serwer<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://zbychuk79.github.io&#34;</span>
+<span style="color:#75715e">#serwer=&#34;https://zbychuk79.github.io&#34;</span>
 
 <span style="color:#75715e"># Wersja RPi dla generowanego obrazu.</span>
 #
@@ -61,7 +61,7 @@ usage<span style="color:#f92672">()</span>
     echo <span style="color:#e6db74">&#34;
 </span><span style="color:#e6db74">Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ]
 </span><span style="color:#e6db74"> -w wersja OpenWRT do budowy (domyślne: </span>$wersja<span style="color:#e6db74">)
-</span><span style="color:#e6db74"> -c czyści po sobie i pobiera potrzebne pliki
+</span><span style="color:#e6db74"> -c czyści swoje pliki z systemu
 </span><span style="color:#e6db74"> -h wyświetlenie tej instrukcji
 </span><span style="color:#e6db74">&#34;</span>
 <span style="color:#f92672">}</span>
@@ -88,18 +88,19 @@ usage<span style="color:#f92672">()</span>
 <span style="color:#66d9ef">done</span>
 
 cd
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$clean<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    echo <span style="color:#e6db74">&#34;Czyszczę ...&#34;</span>
+    rm -rf $HOME/wrt-config
+    rm -rf $HOME/wrt-$wersja
+    rm -rf $HOME/openwrt-$wersja-images
+    exit <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">fi</span>
+
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d wrt-config <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
     echo
     echo <span style="color:#e6db74">&#34;Nie ma na dysku konfiguracji dla OpenWRT ( katalog wrt-config ).&#34;</span>
     echo
-	git clone https://github.com/zbychuk79/wrt-config.git
-<span style="color:#66d9ef">fi</span>
-
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$clean<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-    echo <span style="color:#e6db74">&#34;Czyszczę ...&#34;</span>
-    rm -rf $HOME/wrt-$wersja
-    rm -rf $HOME/openwrt-$wersja-images
-    exit <span style="color:#ae81ff">0</span>
+    git clone https://github.com/zbychuk79/wrt-config.git
 <span style="color:#66d9ef">fi</span>
 
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d $HOME/wrt-$wersja/openwrt-imagebuilder-$wersja-brcm2708-$rpi.Linux-x86_64 <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
@@ -110,7 +111,7 @@ cd
     tar xvfJ openwrt-imagebuilder-$wersja-brcm2708-$rpi.Linux-x86_64.tar.xz
 <span style="color:#66d9ef">fi</span>
 
-echo <span style="color:#e6db74">&#34;Generuję nowy firmware ...&#34;</span>
+echo <span style="color:#e6db74">&#34;Generuję obrazy ...&#34;</span>
 <span style="color:#66d9ef">for</span> ap in ap1; <span style="color:#66d9ef">do</span>
     <span style="color:#75715e"># RPi 1 B + ath9k WiFi USB card</span>
     cd $HOME/wrt-$wersja/openwrt-imagebuilder-$wersja-brcm2708-$rpi.Linux-x86_64
@@ -134,7 +135,6 @@ echo <span style="color:#e6db74">&#34;Generuję nowy firmware ...&#34;</span>
     tar cvfJ $HOME/openwrt-$wersja-images/$ap/$ap-config.tar.xz wrt-config/$ap
 <span style="color:#66d9ef">done</span>
 cp $0 $HOME/openwrt-$wersja-images/
-
 </code></pre></div><hr>
 <p>Kilka ciekawych stron na powyższy temat:</p>
 <ul>

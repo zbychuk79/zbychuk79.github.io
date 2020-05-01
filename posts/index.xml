@@ -62,9 +62,8 @@ Pierwotnie serwerem był:
       
       <guid>https://zbychuk79.github.io/posts/it/openwrt/</guid>
       <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 10 “Buster”. Jego zadaniem jest generowanie obrazu systemu dla moich punktów WiFi AP.
-W moim przypadku działa on pod maszyną wirtualną z systemem Debian 10 “Buster”.
-Skrypt ten zapisałem jako ~/bin/wrt. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu i po rozpakowaniu archiwum umieściłem je w katalogu ~/wrt-config/.
-Aby wygenerować obrazy dla moich urządzeń należy użyć skryptu wrt:</description>
+W moim przypadku działa on pod maszyną wirtualną z systemem Debian 10 “Buster” lub w kontenerze Docker-a z tym systemem.
+Skrypt ten zapisałem jako ~/bin/wrt. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu i po rozpakowaniu archiwum umieściłem je w katalogu ~/wrt-config/. Są one automatycznie pobierane przez mój skrypt.</description>
     </item>
     
     <item>

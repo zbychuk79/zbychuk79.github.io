@@ -1,6 +1,6 @@
 #!/bin/bash
 
-serwer="https://zbychuk79.github.io"
+#serwer="https://zbychuk79.github.io"
 
 # Wersja RPi dla generowanego obrazu.
 #
@@ -14,7 +14,7 @@ usage()
     echo "
 Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ]
  -w wersja OpenWRT do budowy (domyślne: $wersja)
- -c czyści po sobie i pobiera potrzebne pliki
+ -c czyści swoje pliki z systemu
  -h wyświetlenie tej instrukcji
 "
 }
@@ -41,18 +41,19 @@ while [ "$1" != "" ]; do
 done
 
 cd
+if [ "$clean" = "yes" ]; then
+    echo "Czyszczę ..."
+    rm -rf $HOME/wrt-config
+    rm -rf $HOME/wrt-$wersja
+    rm -rf $HOME/openwrt-$wersja-images
+    exit 0
+fi
+
 if [ ! -d wrt-config ]; then
     echo
     echo "Nie ma na dysku konfiguracji dla OpenWRT ( katalog wrt-config )."
     echo
     git clone https://github.com/zbychuk79/wrt-config.git
-fi
-
-if [ "$clean" = "yes" ]; then
-    echo "Czyszczę ..."
-    rm -rf $HOME/wrt-$wersja
-    rm -rf $HOME/openwrt-$wersja-images
-    exit 0
 fi
 
 if [ ! -d $HOME/wrt-$wersja/openwrt-imagebuilder-$wersja-brcm2708-$rpi.Linux-x86_64 ]; then

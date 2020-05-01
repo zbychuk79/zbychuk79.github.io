@@ -18,7 +18,7 @@
       
       <guid>https://zbychuk79.github.io/posts/it/debian-rescue/</guid>
       <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu LiveUSB.
-Czynności będę przeprowadzał na pełnym systemie Debian (pod VirtualBox-em), ponieważ udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
+Czynności będę przeprowadzał na pełnym systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
 Napisałem prosty skrypt
 Wymaga on do działania zainstalowanych paczek:
  debootstrap debootstick ew. programu telegram-send z repozytoriów python3-pip  Po wejściu do wygenerowanego katalogu chroot, trzeba wykonać skrypt /install_script.sh, który zainstaluje w chroot wymagane programy.</description>

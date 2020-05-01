@@ -46,62 +46,22 @@ na kompilowanie własnej wersji <strong>iPXE</strong>.</p>
 <p>Najpierw tworzymy katalog, gdzie bedą wszystkie potrzebne nam pliki (np. <em>debian-wrt</em>).
 W tym katalogu tworzymy następujące pliki:</p>
 <ul>
-<li><a href="/docker-wrt/Dockerfile">Dockerfile</a> - konfiguracja obrazu dla <strong>Docker</strong>&lsquo;a</li>
+<li>Dockerfile - konfiguracja obrazu dla <strong>Docker</strong>&lsquo;a</li>
+<li>wrt_script - uruchamiany podczas tworzenia obrazu</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">FROM debian:latest
-COPY wrt_script /
-RUN /wrt_script
-</code></pre></div><ul>
-<li><a href="/docker-wrt/wrt_script">wrt_script</a> - uruchamiany podczas tworzenia obrazu</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-apt update
-apt upgrade -y
-apt install -y mc gawk python aptitude links wget curl build-essential genisoimage <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> libncurses5-dev zlib1g-dev isolinux git gettext libssl-dev xsltproc liblzma-dev <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> dnsutils
-
-serwer<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://zbychuk79.github.io&#34;</span>
-
-cd /usr/local/bin
-wget $serwer/openwrt/wrt
-wget $serwer/ipxe/ipxe
-chmod +x *
-
-cd /
-wget $serwer/docker-wrt/.config/mc.tar.gz
-mkdir -p /root/.config
-cd /root/.config
-tar xvfz /mc.tar.gz
-rm /mc.tar.gz
-</code></pre></div><ul>
-<li><a href="/docker-wrt/docker-build-wrt-image">docker-build-wrt-image</a> - generowanie obrazu
-<strong>Debian</strong>&lsquo;a z potrzebnymi programami i ustawieniami</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>sudo docker build -t debian-wrt .
-</code></pre></div><ul>
-<li><a href="/docker-wrt/docker-wrt-container">docker-wrt-container</a> - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>sudo docker run -d -t --name wrt debian-wrt
-</code></pre></div><ul>
-<li><a href="/docker-wrt/docker-wrt-bash">docker-wrt-bash</a> - uruchomienie <strong>bash</strong> w naszym nowym kontenerze</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>sudo docker exec -it wrt bash
-</code></pre></div><p>Teraz można wykonywać polecenia w naszym nowym kontenerze. W <em>/usr/local/bin</em> są skrypty
+<ol>
+<li>docker-build-wrt-image - generowanie obrazu <strong>Debian</strong>&lsquo;a z potrzebnymi programami i ustawieniami</li>
+<li>docker-wrt-container - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu</li>
+<li>docker-wrt-bash - uruchomienie <strong>bash</strong> w naszym nowym kontenerze</li>
+</ol>
+<p>Teraz można wykonywać polecenia w naszym nowym kontenerze. W <em>/usr/local/bin</em> są skrypty
 <em><strong>wrt</strong></em> i <em><strong>ipxe</strong></em>, którymi możemy się posłużyć.</p>
 <hr>
 <p>Inne przydatne skrypty:</p>
 <ul>
-<li><a href="/docker-wrt/docker-rm-ex-c">docker-rm-ex-c</a> - kasowanie ostatnio uruchomionych i
-zatrzymanych kontenerów</li>
+<li>docker-rm-ex-c - kasowanie ostatnio uruchomionych i zatrzymanych kontenerów</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>sudo docker ps -a | grep Exit | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f <span style="color:#ae81ff">1</span> | xargs sudo docker rm
-</code></pre></div>
+
 		</section>
 
 		<div class="post-tags">

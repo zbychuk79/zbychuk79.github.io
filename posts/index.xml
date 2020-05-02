@@ -6,10 +6,35 @@
     <description>Recent content in Posts on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 27 Apr 2020 12:32:23 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 16:01:49 +0200</lastBuildDate>
     
 	<atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Skaner książek</title>
+      <link>https://zbychuk79.github.io/posts/it/book-scanner/</link>
+      <pubDate>Fri, 01 May 2020 16:01:49 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/it/book-scanner/</guid>
+      <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
+W pierwotnej wersji zbudowałem dość duże urzadzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
+Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
+Kilka dni temu producent Raspberry Pi przedstawił nową kamerę, która zapowiada się dość ciekawie do możliwości skanowania książek.</description>
+    </item>
+    
+    <item>
+      <title>System ratunkowy Debian</title>
+      <link>https://zbychuk79.github.io/posts/it/system-ratunkowy/</link>
+      <pubDate>Thu, 30 Apr 2020 11:29:03 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/it/system-ratunkowy/</guid>
+      <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu LiveUSB.
+Czynności będę przeprowadzał na pełnym systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
+Napisałem prosty o nazwie deb-rescue
+Wymaga on do działania zainstalowanych paczek:
+ git debootstrap debootstick ew. programu telegram-send z repozytoriów python3-pip  Po wejściu do wygenerowanego katalogu chroot, trzeba wykonać skrypt /install_script.</description>
+    </item>
     
     <item>
       <title>Qmapshack</title>

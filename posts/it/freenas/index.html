@@ -61,7 +61,7 @@
 <p>Pierwsze dwa z tych dysków kupiłem jeszcze w lipcu przed powodziami w Tajlandii, kiedy to były one po 215 zł. Kolejne cztery zakupiłem dopiero gdy spadły ceny, ale było to prawie jakieś dwa lata później. Tak więc dopiero, gdy miałem wszystkie 6 dysków, mogłem złożyć tą macierz.</p>
 </blockquote>
 <p>Przez długi czas miałem na swoim serwerze <strong>FreeNAS 9.10</strong>. Ostatnio postanowiłem go uaktualnić do nowej wersji. Popełniłem błąd próbując to zrobić od razu do najnowszej wersji. No i w tym momencie system nie chciał już poprawnie się uruchomić, a dokładnie to jego interfejs WWW odrzucał połączenia.</p>
-<p>Teraz (początek roku 2020) postanowiłem zainstalować nową wersję <strong>11.3-U2.1</strong> na nowym Pendrive. Pierwotnie miałem jako nośnik systemowy jakiś nijaki Pendrive 8 GB. W pewnym momencie jednak się on sypnął i postanowiłem zainstalować <strong>FreeNAS</strong> na dwóch Pendrive w konfiguracji Mirror1. Działało do sprawnie do czasu ostatniej próby aktualizacji do najnowszej wersji.</p>
+<p>Teraz (początek roku 2020) postanowiłem zainstalować wersję <strong>FreeNAS 11.3-U2.1</strong> na nowym Pendrive. Pierwotnie miałem jako nośnik systemowy jakiś nijaki Pendrive 8 GB. W pewnym momencie jednak się on sypnął i postanowiłem zainstalować <strong>FreeNAS</strong> na dwóch Pendrive w konfiguracji Mirror1. Działało do sprawnie do czasu ostatniej próby aktualizacji do najnowszej wersji.</p>
 <p>Zapisałem zgrany ze strony <a href="https://www.freenas.org/download-freenas-release/">freenas.org</a> obraz instalacyjny systemu w najnowszej wersji przy pomocy programu <strong>Etcher</strong> na Pendrive. Uruchomiłem z niego komputer, który będzie działał jako serwer NAS. Wcześniej podpiąłem jeszcze do niego następny Pendrive, na którym zainstaluję nowy <strong>FreeNAS</strong>. Docelowo mam zamiar ponownie zainstalować <strong>FreeNAS</strong> na konfiguracji Mirror1, jak to miałem poprzednio.</p>
 <p>Przy okazji zmieniłem serwer na jeszcze nowszy (dotychczasowy komputer):</p>
 <ul>
@@ -73,7 +73,7 @@
 <p>Po zakończeniu instalacji odłączyłem od komputera Pendrive instalacyjny i uruchomiłem komputer z Pendrive, na którym instalowałem <strong>FreeNAS</strong>.</p>
 <p>W następnej kolejności zaimportowałem istniejącą już macierz dyskową ZFS RaidZ2.</p>
 <blockquote>
-<p>Jeśli w tym momencie kupowałbym dyski do tego serwera, to byłby to model Toshiba N300 8 TB. Problemem jest jednak cena, bo mocno by mnie to szarpnęło po kieszeni. Dyski te są teraz w cenie ok. 1145 zł/szt.</p>
+<p>Jeśli w tym momencie kupowałbym dyski do tego serwera, to byłyby to Toshiba N300 8 TB. Problemem jest jednak cena, bo mocno by mnie to szarpnęło po kieszeni. Dyski te są teraz w cenie ok. 1145 zł/szt.</p>
 </blockquote>
 <p>Ustawiłem domenę w ustawieniach sieciowych (IP serwera ustawiane przez DHCP). Potem dodałem potrzebnych użytkowników.</p>
 <p>W w/w macierzy dyskowej miałem zdefiniowane kilka <em><strong>dataset</strong></em>&lsquo;ów, które mogę potem udostępnić przez NFS lub SMB.</p>

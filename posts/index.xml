@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Mój portal</title>
+    <title>Posts on zbychuk79.github.io HomePage</title>
     <link>https://zbychuk79.github.io/posts/</link>
-    <description>Recent content in Posts on Mój portal</description>
+    <description>Recent content in Posts on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 27 Apr 2020 12:32:23 +0200</lastBuildDate>
@@ -36,10 +36,10 @@ Darmowe mapy do Garmin GPSMap 76CSx. Miałem załadowaną do niego mapę UMP-PL 
       <pubDate>Sat, 25 Apr 2020 16:04:22 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/it/freenas/</guid>
-      <description>Około 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
+      <description>Artukuł ten jest dość stary i mam zamiar go w niedługim czasie uaktualnić.
+ Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
 Pierwotnie serwerem był:
- MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 3.8139 TB lub 2.3125 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
- MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na modele o pojemności 2 TB  Teraz macierz dyskowa w tym serwerze składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
+ MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 3.8139 TB lub 2.3125 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ git clone https://github.com/zbychuk79/docker-wrt.git  W katalogu docker-wrt mam
       <guid>https://zbychuk79.github.io/posts/it/ipxe/</guid>
       <description>Użycie iPXE do instalacji systemu Debian 10 &amp;ldquo;Buster&amp;rdquo;. W tym miejscu opiszę jak można ustawić proste (lub też bardzo rozbudowane) środowisko do startowania systemu operacyjnego lub jego instalatora bez pobierania z Internetu dużego pliku nośnika startowego typu CD-Rom lub Pendrive.
  Najpierw przygotuję system Debian, gdzie będę przeprowadzał całą procedurę.
-Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej. System host&amp;rsquo;a to Linux Manjaro, który działa dobrze, ale prościej mi się pod Debian&amp;lsquo;em ustawia obrazy OpenWRT i łatwiej jest wyłapać błędy na prawie gołym systemie.</description>
+Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej. System host&amp;rsquo;a to ArchLinux, który działa dobrze, ale prościej mi się pod Debian&amp;lsquo;em ustawia obrazy OpenWRT i łatwiej jest wyłapać błędy na prawie gołym systemie.</description>
     </item>
     
     <item>

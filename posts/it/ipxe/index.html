@@ -165,7 +165,6 @@ goto deb-10-install
 :deb-10-install
 set pre ${serwer}/ipxe/${pre}
 set ver buster
-cpuid --ext 29 &amp;&amp; set arch amd64 || set arch i386
 set url http://ftp.pl.debian.org
 set dir ${url}/debian/dists/${ver}/main/installer-${arch}/current/images/netboot
 set debinstaller /debian-installer/${arch}

@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zbychuk79.github.io/book-scanner/</loc>
+    <loc>https://zbychuk79.github.io/posts/</loc>
+    <lastmod>2020-05-01T16:01:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zbychuk79.github.io/posts/book-scanner/</loc>
     <lastmod>2020-05-01T16:01:49+02:00</lastmod>
   </url>
   
@@ -13,47 +18,47 @@
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/system-ratunkowy/</loc>
+    <loc>https://zbychuk79.github.io/posts/system-ratunkowy/</loc>
     <lastmod>2020-04-30T11:29:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/qmapshack/</loc>
+    <loc>https://zbychuk79.github.io/posts/qmapshack/</loc>
     <lastmod>2020-04-27T12:32:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/gps/</loc>
+    <loc>https://zbychuk79.github.io/posts/gps/</loc>
     <lastmod>2020-04-26T09:24:34+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/freenas/</loc>
+    <loc>https://zbychuk79.github.io/posts/freenas/</loc>
     <lastmod>2020-04-25T16:04:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/openwrt/</loc>
+    <loc>https://zbychuk79.github.io/posts/openwrt/</loc>
     <lastmod>2020-04-22T14:35:28+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/docker-wrt/</loc>
+    <loc>https://zbychuk79.github.io/posts/docker-wrt/</loc>
     <lastmod>2020-04-21T19:24:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/ipxe/</loc>
+    <loc>https://zbychuk79.github.io/posts/ipxe/</loc>
     <lastmod>2020-04-21T17:56:50+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/gnupg/</loc>
+    <loc>https://zbychuk79.github.io/posts/gnupg/</loc>
     <lastmod>2020-04-21T16:49:35+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/omnie/</loc>
+    <loc>https://zbychuk79.github.io/posts/omnie/</loc>
     <lastmod>2020-04-21T16:49:35+02:00</lastmod>
   </url>
   

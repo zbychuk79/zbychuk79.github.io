@@ -74,9 +74,11 @@ Pierwotnie serwerem był:
       <pubDate>Wed, 22 Apr 2020 14:35:28 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
-      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 10 “Buster”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
-W moim przypadku działa on pod maszyną wirtualną z systemem Debian 10 “Buster” lub w kontenerze Docker-a z tym systemem.
-Skrypt ten zapisałem jako ~/bin/wrt. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu i po rozpakowaniu archiwum umieściłem je w katalogu ~/wrt-config/. Są one automatycznie pobierane przez mój skrypt.</description>
+      <description> Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 10 “Buster”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
+W moim przypadku działa on pod maszyną wirtualną (lub w kontenerze Docker-a) z systemem Debian 10 “Buster”.
+Skrypt ten zapisałem jako ~/bin/wrt. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
+ Przydatne linki na powyższy temat:
+ lede-project.org  </description>
     </item>
     
     <item>

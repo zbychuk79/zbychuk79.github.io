@@ -31,7 +31,7 @@ Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem 
       <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
       <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu LiveUSB.
 Czynności będę przeprowadzał na pełnym systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
-Napisałem prosty o nazwie deb-rescue
+Napisałem prosty skrypt o nazwie deb-rescue
 Wymaga on do działania zainstalowanych paczek:
  git debootstrap debootstick ew. programu telegram-send z repozytoriów python3-pip  Po wejściu do wygenerowanego katalogu chroot, trzeba wykonać skrypt /install_script.</description>
     </item>
@@ -65,7 +65,7 @@ Darmowe mapy do Garmin GPSMap 76CSx. Miałem załadowaną do niego mapę UMP-PL 
       <description>Artukuł ten jest dość stary i mam zamiar go w niedługim czasie uaktualnić.
  Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
 Pierwotnie serwerem był:
- MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.240234 TB lub 2.463164 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:</description>
+ MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:</description>
     </item>
     
     <item>
@@ -98,8 +98,9 @@ git clone https://github.com/zbychuk79/docker-wrt.git  W katalogu docker-wrt mam
       
       <guid>https://zbychuk79.github.io/posts/ipxe/</guid>
       <description>Użycie iPXE do instalacji systemu Debian 10 &amp;ldquo;Buster&amp;rdquo;. W tym miejscu opiszę jak można ustawić proste (lub też bardzo rozbudowane) środowisko do startowania systemu operacyjnego lub jego instalatora bez pobierania z Internetu dużego pliku nośnika startowego typu CD-Rom lub Pendrive.
+Przedstawię jak skompilować własną wersję iPXE.
  Najpierw przygotuję system Debian, gdzie będę przeprowadzał całą procedurę.
-Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej. System host&amp;rsquo;a to ArchLinux, który działa dobrze, ale prościej mi się pod Debian&amp;lsquo;em ustawia obrazy OpenWRT i łatwiej jest wyłapać błędy na prawie gołym systemie.</description>
+Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze Docker-a).</description>
     </item>
     
     <item>

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#serwer="https://zbychuk79.github.io"
-
 usage()
 {
     echo "
@@ -44,16 +42,7 @@ mkdir -p ipxe-image
 
 if [ "$download" = "yes" ]; then
     rm -rf ipxe
-
-    #mkdir -p ipxe
-    #wget -c https://github.com/ipxe/ipxe/archive/master.zip -O ipxe-master.zip
-    #unzip ipxe-master.zip
-    #rm ipxe-master.zip
-    #mv ipxe-master/* ipxe
-    #rm -rf ipxe-master
-
     git clone git://git.ipxe.org/ipxe.git
-
     rm -rf ipxe-custom
     git clone https://github.com/zbychuk79/ipxe-custom.git
 fi
@@ -61,22 +50,20 @@ fi
 if [ "$compile" = "yes" ]; then
                        cp ~/ipxe-custom/ipxe-config/general.h ~/ipxe/src/config/general.h
     case $net in
-        zbychuk )      cp ~/ipxe-custom/zbychuk/embeded.ipxe ~/ipxe/src/embeded.ipxe
+        zbychuk )      cp ~/ipxe-custom/$net/embeded.ipxe ~/ipxe/src/embeded.ipxe
                                 ;;
-        internet )     cp ~/ipxe-custom/internet/embeded.ipxe ~/ipxe/src/embeded.ipxe
+        internet )     cp ~/ipxe-custom/$net/embeded.ipxe ~/ipxe/src/embeded.ipxe
                                 ;;
-        * )            echo
-                       echo "Nie podałeś parametru -c [ zbychuk | internet ]"
-                       echo
+        * )            echo "
+Nie podałeś parametru -c [ zbychuk | internet ]
+"
                        exit 0
     esac
-
     mkdir -p ~/ipxe-image/$net
     cd ~/ipxe/src
     make clean
-    make bin/ipxe.iso EMBED=embeded.ipxe
-    make bin/ipxe.usb EMBED=embeded.ipxe
-    cp bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.iso ~/ipxe-image/$net
+    make all EMBED=embeded.ipxe
+    cp bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.iso bin/ipxe.dsk bin/ipxe.pxe ~/ipxe-image/$net
     cp ~/ipxe/src/config/general.h ~/ipxe-image/$net/
     cp embeded.ipxe ~/ipxe-image/$net/
     cp $0 ~/ipxe-image/$net/

@@ -40,13 +40,13 @@
 
 		<section class="body">
 			<hr>
-<h2 id="użycie-ipxe-do-instalacji-systemu-debian-10-buster">Użycie iPXE do instalacji systemu Debian 10 &ldquo;Buster&rdquo;.</h2>
 <p>W tym miejscu opiszę jak można ustawić proste (lub też bardzo rozbudowane) środowisko do startowania systemu operacyjnego lub jego instalatora bez pobierania z Internetu dużego pliku nośnika startowego typu CD-Rom lub Pendrive.</p>
 <p>Przedstawię jak skompilować własną wersję <strong>iPXE</strong>.</p>
 <hr>
 <p>Najpierw przygotuję system <strong>Debian</strong>, gdzie będę przeprowadzał całą procedurę.</p>
 <p>Zrobiłem to pod <strong>VirtualBox</strong> dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze <strong>Docker</strong>-a). System host&rsquo;a to <strong>ArchLinux</strong>, który działa dobrze, ale prościej mi się pod <strong>Debian</strong>&lsquo;em to ustawia i łatwiej jest wyłapać błędy na prawie gołym systemie.</p>
 <hr>
+<h2 id="użycie-ipxe-do-instalacji-systemu-debian-10-buster">Użycie iPXE do instalacji systemu Debian 10 &ldquo;Buster&rdquo;.</h2>
 <p>Instalację systemu można proprowadzić z normalnego obrazu, lub też można użyć niewielkiego pliku (&lt;1MB) <a href="/ipxe/ipxe.iso">ipxe.iso</a>, który udostępniłem. Jest to obraz bootloadera <strong>iPXE</strong> z osadzonym w nim skrypem ładującym <em>menu</em> z różnymi opcjami do wyboru.</p>
 <p>Maszynę wirtualną ustawiłem tak:</p>
 <ul>
@@ -71,7 +71,7 @@
 <pre><code>sudo apt update
 sudo apt install openssh-server mc rsync aptitude curl zstd p7zip-full growisofs \
   genisoimage build-essential libncurses5-dev zlib1g-dev gawk git gettext \
-  libssl-dev xsltproc wget unzip python liblzma-dev dnsutils
+  libssl-dev xsltproc wget unzip python liblzma-dev
 sudo apt clean
 </code></pre>
 <p>Będziesz mógł wtedy kompilować <strong>iPXE</strong> oraz budować obrazy systemu <strong>OpenWRT</strong> przy użyciu <strong>OpenWRT Image Builder</strong>.</p>

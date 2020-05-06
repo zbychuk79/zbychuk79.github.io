@@ -74,7 +74,7 @@ Pierwotnie serwerem był:
       <pubDate>Wed, 22 Apr 2020 14:35:28 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
-      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 10 “Buster”. Jego zadaniem jest generowanie obrazu systemu dla moich punktów WiFi AP.
+      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 10 “Buster”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
 W moim przypadku działa on pod maszyną wirtualną z systemem Debian 10 “Buster” lub w kontenerze Docker-a z tym systemem.
 Skrypt ten zapisałem jako ~/bin/wrt. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu i po rozpakowaniu archiwum umieściłem je w katalogu ~/wrt-config/. Są one automatycznie pobierane przez mój skrypt.</description>
     </item>
@@ -97,10 +97,10 @@ git clone https://github.com/zbychuk79/docker-wrt.git  W katalogu docker-wrt mam
       <pubDate>Tue, 21 Apr 2020 17:56:50 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/ipxe/</guid>
-      <description>Użycie iPXE do instalacji systemu Debian 10 &amp;ldquo;Buster&amp;rdquo;. W tym miejscu opiszę jak można ustawić proste (lub też bardzo rozbudowane) środowisko do startowania systemu operacyjnego lub jego instalatora bez pobierania z Internetu dużego pliku nośnika startowego typu CD-Rom lub Pendrive.
+      <description>W tym miejscu opiszę jak można ustawić proste (lub też bardzo rozbudowane) środowisko do startowania systemu operacyjnego lub jego instalatora bez pobierania z Internetu dużego pliku nośnika startowego typu CD-Rom lub Pendrive.
 Przedstawię jak skompilować własną wersję iPXE.
  Najpierw przygotuję system Debian, gdzie będę przeprowadzał całą procedurę.
-Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze Docker-a).</description>
+Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze Docker-a). System host&amp;rsquo;a to ArchLinux, który działa dobrze, ale prościej mi się pod Debian&amp;lsquo;em to ustawia i łatwiej jest wyłapać błędy na prawie gołym systemie.</description>
     </item>
     
     <item>

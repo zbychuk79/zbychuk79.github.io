@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#serwer="https://zbychuk79.github.io"
-
 # Wersja RPi dla generowanego obrazu.
 #
 rpi="bcm2708"

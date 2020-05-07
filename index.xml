@@ -6,10 +6,21 @@
     <description>Recent content on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 01 May 2020 16:01:49 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2020 18:55:43 +0200</lastBuildDate>
     
 	<atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Domoticz</title>
+      <link>https://zbychuk79.github.io/posts/domoticz/</link>
+      <pubDate>Thu, 07 May 2020 18:55:43 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/domoticz/</guid>
+      <description>Od około września 2018 roku mam na jednym z moich Raspberry Pi uruchomiony system automatyki domowej Domoticz. Mam w planie mieć go uruchomionego pod Docker-em na moim serwerze &amp;ldquo;omv1&amp;rdquo; (Odroid HC1).
+Na samym początku miałem tylko podłączone 6 czujników temeratury DS18B20 na jednym długim kablu wielożyłowym. Teraz na tym kablu mam ich 5 sztuk:
+ korytarz w piwnicy pokój gościnny na parterze pokój na piętrze, gdzie sypiam poddasze na dworze pod dachem od północnej strony  Jeszcze zanim zainstalowałem Domoticz-a, to miałem ustawione monitorowanie tych czujników przy pomocy skryptu, który generował wykresy czasowe przy pomocy programu rrdtool.</description>
+    </item>
     
     <item>
       <title>Skaner książek</title>

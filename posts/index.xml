@@ -89,7 +89,7 @@ Pierwotnie serwerem był:
 W moim przypadku działa on pod VM (lub w kontenerze Docker-a) z systemem Debian 10 “Buster”.
 Skrypt ten zapisałem jako wrt. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
  Przydatne linki na powyższy temat:
- lede-project.org dc502wrt.org  </description>
+ lede-project.org dc502wrt.org - Firmware, jaki mam w moim routerze  </description>
     </item>
     
     <item>

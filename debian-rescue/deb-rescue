@@ -45,7 +45,7 @@ debian_chroot()
 
 stick()
 {
-    czas=`date +%Y%m%d-%H%M`
+    czas=`date +%Y%m%d`
     echo "
     $czas
     "

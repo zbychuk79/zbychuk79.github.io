@@ -1,8 +1,3 @@
-pub   rsa4096/0x54F86ECA114CF93D 2014-01-02 [SCA] [revoked: 2019-09-26]
-      Key fingerprint = E369 2B4F 481A 5108 65C7  5CE6 54F8 6ECA 114C F93D
-uid                   [ revoked] Zbigniew Kurzyca <zbychuk@gmail.com>
-sub   rsa4096/0xC06954522BDBA30F 2014-01-02 [E] [revoked: 2019-09-26]
-
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBFLFVpwBEACtVJ+frWHd4lKdwUqZ9oQ7LX/NoAvFYe5C1FKsIVX5dV4TiILv

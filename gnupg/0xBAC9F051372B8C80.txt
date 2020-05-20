@@ -1,10 +1,3 @@
-pub   rsa4096/0xBAC9F051372B8C80 2019-09-25 [C] [expires: 2021-09-24]
-      Key fingerprint = 13B5 F853 A919 AEDE A017  65AA BAC9 F051 372B 8C80
-uid                   [ultimate] Zbigniew Kurzyca <zbychuk@gmail.com>
-sub   rsa4096/0x3DD2F7AF484E363E 2019-09-25 [E] [expires: 2020-09-24]
-sub   rsa4096/0x3E1C0B41C2A2F124 2019-09-25 [S] [expires: 2020-09-24]
-sub   rsa4096/0x6F040757532FD7B4 2019-09-25 [A] [expires: 2020-09-24]
-
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBF2K4ygBEAD16wXWDwUqxArBSVgOEqGpK7UY43Rskv16vxlsULQi6L/gCAST

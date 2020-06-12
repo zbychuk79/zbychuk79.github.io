@@ -41,7 +41,7 @@
 		<section class="body">
 			<hr>
 <p>2020.06.12.</p>
-<p>Udało mi się dzisiaj uruchomić <strong>WireGuard VPN</strong> pod <strong>Docker</strong>-em na <strong>Raspberry Pi 4</strong>.</p>
+<p>Udało mi się dzisiaj uruchomić serwer VPN <a href="https://www.wireguard.com/">WireGuard</a> pod <strong>Docker</strong>-em na <strong>Raspberry Pi 4</strong>.</p>
 <p>Mam na tym urządzeniu zainstalowany system <strong>OpenMediaVault 5</strong> na 32-bitowym <strong>RaspiOS Lite</strong>. Do tego jeszcze mam tam zainstalowany kontener <strong>Portainer</strong> do zarządzania <strong>Docker</strong>-em.</p>
 <hr>
 <p>Posłużyłem się dokumentacją na stronie <a href="https://hub.docker.com/r/linuxserver/wireguard">linuxserver/wireguard</a>.</p>
@@ -66,7 +66,8 @@
 </code></pre></div><p>Zapisałem go w <em>/srv/dev-disk-by-label-disk/docker-data/wireguard/docker-wireguard.sh</em>.</p>
 <p>Uruchamiam go tylko w celu utworzenia kontenera z moją konfiguracją poleceniem:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">$ sudo sh ./docker-wireguard.sh
-</code></pre></div><p><em><strong>zbychuk.sly.io</strong></em> to domena z IP aktualizowanym przez dynamiczny DNS na moim routerze.</p>
+</code></pre></div><p>Potem należy uruchomić sam kontener. Ja to robię przez <em><strong>Portainer</strong></em>.</p>
+<p><em><strong>zbychuk.sly.io</strong></em> to domena z IP aktualizowanym przez dynamiczny DNS na moim routerze.</p>
 <p><em><strong>192.168.77.1</strong></em> to adres IP serwera DNS w mojej sieci domowej (router), który z kolei używa jako DNS-a kolejnego kontenera <strong>Docker</strong>-a z działającym w nim <strong>Pi-Hole</strong>. Kontener <strong>PiHole</strong> z kolei jako DNS-a używa <em><strong>OpenDNS</strong></em>. Powoduje to, że w mojej sieci domowej blokowane są reklamy na wszystkich do niej podłączonych urządzeniach. Również tych podpiętych przez <strong>VPN WireGuard</strong>.</p>
 <p>Początkowo <strong>WireGuard</strong> nie chciał mi działać, ale pomogły następujące czynności:</p>
 <ul>
@@ -82,7 +83,6 @@
 <li>Ponowne utworzenie i uruchomienie kontenera</li>
 </ul>
 <p>Po wykonaniu tych czynności, zainstalowaniu <strong>WireGuard</strong> na moim telefonie z Android-em i zeskanowaniu QR-Kodu z certyfikatem udało mi się połączyć do serwera VPN na utworzonym kontenerze (trzeba oczywiści przekierować port 51820 na routerze do urządzenia z serwerem VPN).</p>
-<hr>
 
 		</section>
 

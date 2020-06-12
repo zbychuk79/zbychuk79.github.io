@@ -18,7 +18,7 @@
       
       <guid>https://zbychuk79.github.io/posts/wireguard/</guid>
       <description>2020.06.12.
-Udało mi się dzisiaj uruchomić WireGuard VPN pod Docker-em na Raspberry Pi 4.
+Udało mi się dzisiaj uruchomić serwer VPN WireGuard pod Docker-em na Raspberry Pi 4.
 Mam na tym urządzeniu zainstalowany system OpenMediaVault 5 na 32-bitowym RaspiOS Lite. Do tego jeszcze mam tam zainstalowany kontener Portainer do zarządzania Docker-em.
  Posłużyłem się dokumentacją na stronie linuxserver/wireguard.
 Poniżej jest mój skrypt, który tworzy kontener na podstawie powyższego Image:

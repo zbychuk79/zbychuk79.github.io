@@ -96,12 +96,6 @@ while [ "$1" != "" ]; do
     shift
 done
 
-if [ "$clean" = "yes" ]; then
-    echo "Kasowanie środowiska chroot ..."
-    sudo rm -rf $dir/$subdir
-    exit 0
-fi
-
 if [ "$debstrap" = "yes" ]; then
     echo "Generowanie środowiska chroot ..."
     dbstrap
@@ -120,4 +114,10 @@ fi
 if [ "$stick" = "yes" ]; then
     echo "Generuję uruchamialny obraz systemu przez debootstick ..."
     stick
+fi
+
+if [ "$clean" = "yes" ]; then
+    echo "Kasowanie środowiska chroot ..."
+    sudo rm -rf $dir/$subdir
+    exit 0
 fi

@@ -4,7 +4,7 @@
 #
 rpi="bcm2708"
 wersja="18.06.8"
-#wersja="19.07.2"
+#wersja="19.07.3"
 link="https://downloads.openwrt.org/releases"
 
 usage()

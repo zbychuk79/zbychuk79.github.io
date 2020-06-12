@@ -46,7 +46,7 @@
 <p>Najpierw przygotuję system <strong>Debian</strong>, gdzie będę przeprowadzał całą procedurę.</p>
 <p>Zrobiłem to pod <strong>VirtualBox</strong> dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze <strong>Docker</strong>-a). System host&rsquo;a to <strong>ArchLinux</strong>, który działa dobrze, ale prościej mi się pod <strong>Debian</strong>&lsquo;em to ustawia i łatwiej jest wyłapać błędy na prawie gołym systemie.</p>
 <hr>
-<h2 id="użycie-ipxe-do-instalacji-systemu-debian-10-buster">Użycie iPXE do instalacji systemu Debian 10 &ldquo;Buster&rdquo;.</h2>
+<h2 id="instalacja-systemu-debian-10-buster">Instalacja systemu Debian 10 &ldquo;Buster&rdquo;.</h2>
 <p>Instalację systemu można proprowadzić z normalnego obrazu, lub też można użyć niewielkiego pliku (&lt;1MB) <a href="/ipxe/ipxe.iso">ipxe.iso</a>, który udostępniłem. Jest to obraz bootloadera <strong>iPXE</strong> z osadzonym w nim skrypem ładującym <em>menu</em> z różnymi opcjami do wyboru.</p>
 <p>Maszynę wirtualną ustawiłem tak:</p>
 <ul>
@@ -58,9 +58,9 @@
 <li>usunąłem kontroler IDE</li>
 <li>w kontrolerze SATA ustawiłem buforowanie I/O</li>
 <li>dysk ustawiłem na 20GB</li>
-<li>dodałem napęd optyczny z wspomnianym wyżej obrazem ISO</li>
+<li>dodałem napęd optyczny do podpięcia obrazu ISO</li>
 </ul>
-<p>Potem ustawiłem uruchamianie VM z obrazu ISO, który udostępniłem i startujemy system pod <strong>VirtualBox</strong>-em. Maszyna VM powinna wystartować i wyświetli się kilka możliwości do wyboru.</p>
+<p>Jeśli ustawimy uruchamianie VM z obrazu ISO, który udostępniłem i startujemy system pod <strong>VirtualBox</strong>-em. Maszyna VM powinna wystartować i wyświetli się kilka możliwości do wyboru.</p>
 <p>Pliki <a href="/ipxe/preseed-10-base.txt">preseed-10-base.txt</a> <a href="/ipxe/preseed-10-wrt.txt">preseed-10-wrt.txt</a>
 <a href="/ipxe/preseed-10-desktop-mate.txt">preseed-10-desktop-mate.txt</a> zawierają odpowiedzi dla instalatora systemu <strong>Debian</strong>.</p>
 <p>Do systemu jest dodane repozytorium &ldquo;buster-backports&rdquo;.</p>

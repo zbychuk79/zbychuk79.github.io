@@ -22,7 +22,7 @@ Udało mi się dzisiaj uruchomić serwer VPN WireGuard pod Docker-em na Raspberr
 Mam na tym urządzeniu zainstalowany system OpenMediaVault 5 na 32-bitowym RaspiOS Lite. Do tego jeszcze mam tam zainstalowany kontener Portainer do zarządzania Docker-em.
  Posłużyłem się dokumentacją na stronie kontenera linuxserver/wireguard.
 Poniżej jest mój skrypt, który tworzy kontener na podstawie powyższego Image:
-docker create \ --name=wireguard \ --cap-add=NET_ADMIN \ --cap-add=SYS_MODULE \ -e PUID=1000 \ -e PGID=100 \ -e TZ=Europe/Warsaw \ -e SERVERURL=zbychuk.</description>
+docker create \ --name=wireguard \ --cap-add=NET_ADMIN \ --cap-add=SYS_MODULE \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Europe/Warsaw \ -e SERVERURL=zbychuk.</description>
     </item>
     
     <item>

@@ -6,10 +6,24 @@
     <description>Recent content in Posts on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Thu, 07 May 2020 18:55:43 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 12:24:21 +0200</lastBuildDate>
     
 	<atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wireguard</title>
+      <link>https://zbychuk79.github.io/posts/wireguard/</link>
+      <pubDate>Fri, 12 Jun 2020 12:24:21 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/wireguard/</guid>
+      <description>2020.06.12.
+Udało mi się dzisiaj uruchomić WireGuard VPN pod Docker-em na Raspberry Pi 4.
+Mam na tym urządzeniu zainstalowany system OpenMediaVault 5 na 32-bitowym RaspiOS Lite. Do tego jeszcze mam tam zainstalowany kontener Portainer do zarządzania Docker-em.
+ Posłużyłem się dokumentacją na stronie linuxserver/wireguard.
+Poniżej jest mój skrypt, który tworzy kontener na podstawie powyższego Image:
+docker create \ --name=wireguard \ --cap-add=NET_ADMIN \ --cap-add=SYS_MODULE \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Europe/Warsaw \ -e SERVERURL=zbychuk.</description>
+    </item>
     
     <item>
       <title>Domoticz</title>

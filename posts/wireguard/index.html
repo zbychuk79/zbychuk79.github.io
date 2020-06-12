@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Wireguard - zbychuk79.github.io HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Wireguard" />
+<meta property="og:description" content="Ustawienie serwera VPN WireGuard pod Docker-em" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zbychuk79.github.io/posts/wireguard/" />
+<meta property="article:published_time" content="2020-06-12T12:24:21+02:00" />
+<meta property="article:modified_time" content="2020-06-12T12:24:21+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wireguard"/>
+<meta name="twitter:description" content="Ustawienie serwera VPN WireGuard pod Docker-em"/>
+
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://zbychuk79.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://zbychuk79.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+</head>
+<body>
+	<div class="content">
+		<div class="content">
+<header>
+<div class="main">
+	<a href="https://zbychuk79.github.io/">zbychuk79.github.io HomePage</a>
+</div>
+<nav>
+			
+</nav>
+</header>
+<main>
+<article>
+		<div class="title">
+			<h1 class="title">Wireguard</h1>
+			<div class="meta"> </div>
+		</div>
+		<div>
+			
+		</div>
+
+		<section class="body">
+			<hr>
+<p>2020.06.12.</p>
+<p>Udało mi się dzisiaj uruchomić <strong>WireGuard VPN</strong> pod <strong>Docker</strong>-em na <strong>Raspberry Pi 4</strong>.</p>
+<p>Mam na tym urządzeniu zainstalowany system <strong>OpenMediaVault 5</strong> na 32-bitowym <strong>RaspiOS Lite</strong>. Do tego jeszcze mam tam zainstalowany kontener <strong>Portainer</strong> do zarządzania <strong>Docker</strong>-em.</p>
+<hr>
+<p>Posłużyłem się dokumentacją na stronie <a href="https://hub.docker.com/r/linuxserver/wireguard">linuxserver/wireguard</a>.</p>
+<p>Poniżej jest mój skrypt, który tworzy kontener na podstawie powyższego <em>Image</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">docker create \
+  --name=wireguard \
+  --cap-add=NET_ADMIN \
+  --cap-add=SYS_MODULE \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/Warsaw \
+  -e SERVERURL=zbychuk.sly.io \
+  -e SERVERPORT=51820 \
+  -e PEERDNS=192.168.77.1 \
+  -e PEERS=1 \
+  -e INTERNAL_SUBNET=10.13.13.0 \
+  -p 51820:51820/udp \
+  -v /srv/dev-disk-by-label-disk/docker-data/wireguard/config:/config \
+  -v /lib/modules:/lib/modules \
+  --restart unless-stopped \
+  linuxserver/wireguard
+</code></pre></div><p>Zapisałem go w <em>/srv/dev-disk-by-label-disk/docker-data/wireguard/docker-wireguard.sh</em>.</p>
+<p>Uruchamiam go tylko w celu utworzenia kontenera z moją konfiguracją poleceniem:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">$ sudo sh ./docker-wireguard.sh
+</code></pre></div><p><em><strong>zbychuk.sly.io</strong></em> to domena z IP aktualizowanym przez dynamiczny DNS na moim routerze.</p>
+<p><em><strong>192.168.77.1</strong></em> to adres IP serwera DNS w mojej sieci domowej (router), który z kolei używa jako DNS-a kolejnego kontenera <strong>Docker</strong>-a z działającym w nim <strong>Pi-Hole</strong>. Kontener <strong>PiHole</strong> z kolei jako DNS-a używa <em><strong>OpenDNS</strong></em>. Powoduje to, że w mojej sieci domowej blokowane są reklamy na wszystkich do niej podłączonych urządzeniach. Również tych podpiętych przez <strong>VPN WireGuard</strong>.</p>
+<p>Początkowo <strong>WireGuard</strong> nie chciał mi działać, ale pomogły następujące czynności:</p>
+<ul>
+<li>Instalacja poniższych pakietów w <strong>Raspbian</strong>-ie:
+<ul>
+<li>raspberrypi-kernel-headers</li>
+<li>wireguard</li>
+<li>wireguard-dkms</li>
+<li>wireguard-tools</li>
+</ul>
+</li>
+<li>Restart całego urządzenia, na którym działa kontener <strong>Docker</strong>-a z <strong>WireGuard</strong></li>
+<li>Ponowne utworzenie i uruchomienie kontenera</li>
+</ul>
+<p>Po wykonaniu tych czynności, zainstalowaniu <strong>WireGuard</strong> na moim telefonie z Android-em i zeskanowaniu QR-Kodu z certyfikatem udało mi się połączyć do serwera VPN na utworzonym kontenerze (trzeba oczywiści przekierować port 51820 na routerze do urządzenia z serwerem VPN).</p>
+<hr>
+
+		</section>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		
+	
+	<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Temat Archie</a> | Wybudowane przez <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+<script>
+      feather.replace()
+</script>
+
+	</div>
+</body>
+</html>

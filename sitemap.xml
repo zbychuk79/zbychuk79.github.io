@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zbychuk79.github.io/posts/domoticz/</loc>
-    <lastmod>2020-05-07T18:55:43+02:00</lastmod>
+    <loc>https://zbychuk79.github.io/posts/</loc>
+    <lastmod>2020-06-12T12:24:21+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zbychuk79.github.io/posts/</loc>
-    <lastmod>2020-05-07T18:55:43+02:00</lastmod>
+    <loc>https://zbychuk79.github.io/posts/wireguard/</loc>
+    <lastmod>2020-06-12T12:24:21+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://zbychuk79.github.io/</loc>
+    <lastmod>2020-06-12T12:24:21+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zbychuk79.github.io/posts/domoticz/</loc>
     <lastmod>2020-05-07T18:55:43+02:00</lastmod>
   </url>
   

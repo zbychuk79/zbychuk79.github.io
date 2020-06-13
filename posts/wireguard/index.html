@@ -46,23 +46,24 @@
 <hr>
 <p>Posłużyłem się dokumentacją na stronie kontenera <a href="https://hub.docker.com/r/linuxserver/wireguard">linuxserver/wireguard</a>.</p>
 <p>Poniżej jest mój skrypt, który tworzy kontener na podstawie powyższego <em>Image</em>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">docker create \
-  --name=wireguard \
-  --cap-add=NET_ADMIN \
-  --cap-add=SYS_MODULE \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Europe/Warsaw \
-  -e SERVERURL=zbychuk.sly.io \
-  -e SERVERPORT=51820 \
-  -e PEERDNS=192.168.77.1 \
-  -e PEERS=1 \
-  -e INTERNAL_SUBNET=10.13.13.0 \
-  -p 51820:51820/udp \
-  -v /srv/dev-disk-by-label-disk/docker-data/wireguard/config:/config \
-  -v /lib/modules:/lib/modules \
-  --restart unless-stopped \
-  linuxserver/wireguard
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>docker create <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name<span style="color:#f92672">=</span>wireguard <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>NET_ADMIN <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>SYS_MODULE <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e PUID<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e PGID<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e TZ<span style="color:#f92672">=</span>Europe/Warsaw <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e SERVERURL<span style="color:#f92672">=</span>zbychuk.sly.io <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e SERVERPORT<span style="color:#f92672">=</span><span style="color:#ae81ff">51820</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e PEERDNS<span style="color:#f92672">=</span>192.168.77.1 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e PEERS<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e INTERNAL_SUBNET<span style="color:#f92672">=</span>10.13.13.0 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -p 51820:51820/udp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /srv/dev-disk-by-label-disk/docker-data/wireguard/config:/config <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /lib/modules:/lib/modules <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --restart unless-stopped <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  linuxserver/wireguard
 </code></pre></div><p>Zapisałem go w <em>/srv/dev-disk-by-label-disk/docker-data/wireguard/docker-wireguard.sh</em>.</p>
 <p>Uruchamiam go tylko w celu utworzenia kontenera z moją konfiguracją poleceniem:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">$ sudo sh ./docker-wireguard.sh

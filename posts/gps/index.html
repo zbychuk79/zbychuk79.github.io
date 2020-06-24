@@ -63,7 +63,7 @@
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">blacklist garmin_gps
 </code></pre></div><ul>
-<li>Przyznać odpowiednie prawa dostępnu dla urządzenia, aby można go było używać jako zwykły użytkownik systemu. W pliku <em>/etc/udev/rules.d/51-garmin.rules</em> dopisać:</li>
+<li>Przyznać odpowiednie prawa dostępu dla urządzenia, aby można go było używać jako zwykły użytkownik systemu. W pliku <em>/etc/udev/rules.d/51-garmin.rules</em> dopisać:</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">ATTRS{idVendor}==&#34;091e&#34;, ATTRS{idProduct}==&#34;0003&#34;, MODE=&#34;0666&#34;, GROUP=&#34;users&#34;
 </code></pre></div><ul>

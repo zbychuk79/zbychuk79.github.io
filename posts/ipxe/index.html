@@ -47,7 +47,7 @@
 <p>Zrobiłem to pod <strong>VirtualBox</strong> dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze <strong>Docker</strong>-a). System host&rsquo;a to <strong>ArchLinux</strong>, który działa dobrze, ale prościej mi się pod <strong>Debian</strong>&lsquo;em to ustawia i łatwiej jest wyłapać błędy na prawie gołym systemie.</p>
 <hr>
 <h2 id="instalacja-systemu-debian-10-buster">Instalacja systemu Debian 10 &ldquo;Buster&rdquo;.</h2>
-<p>Instalację systemu można proprowadzić z normalnego obrazu, lub też można użyć niewielkiego pliku (&lt;1MB) <a href="/ipxe/ipxe.iso">ipxe.iso</a>, który udostępniłem. Jest to obraz bootloadera <strong>iPXE</strong> z osadzonym w nim skrypem ładującym <em>menu</em> z różnymi opcjami do wyboru.</p>
+<p>Instalację systemu można przeprowadzić z normalnego obrazu, lub też można użyć niewielkiego pliku (&lt;1MB) <a href="/ipxe/ipxe.iso">ipxe.iso</a>, który udostępniłem. Jest to obraz bootloadera <strong>iPXE</strong> z osadzonym w nim skrypem ładującym <em>menu</em> z różnymi opcjami do wyboru.</p>
 <p>Maszynę wirtualną ustawiłem tak:</p>
 <ul>
 <li>CPU (dwa rdzenie)</li>
@@ -148,7 +148,7 @@ cpuid --ext 29 &amp;&amp; set arch amd64 || set arch i386
 
 menu ${os} &#34;${ver}&#34; dla ${arch} - wybierz rodzaj instalacji
 item --key a preseed-10-base [a] (preseed) Base System
-item --key b preseed-10-wrt [b] (preseed) Base System for OpenWRT amd iPXE Compiling
+item --key b preseed-10-wrt [b] (preseed) Base System for OpenWRT and iPXE Compiling
 item --key c preseed-10-desktop-mate [c] (preseed) Desktop Mate
 choose selected &amp;&amp; goto ${selected} || goto menu-install
 

@@ -86,8 +86,6 @@
 </ul>
 <p>Po wykonaniu tych czynności, zainstalowaniu <strong>WireGuard</strong> na moim telefonie z Android-em i zeskanowaniu QR-Kodu z certyfikatem udało mi się połączyć do serwera VPN na utworzonym kontenerze (trzeba oczywiście przekierować port 51820 na routerze do kontenera z serwerem VPN).</p>
 <hr>
-<p>Na systemie z obrazu <em>Armbian_20.05.2_Odroidxu4_buster_current_5.4.41_minimal.img.xz</em> dla <strong>Odroid HC1</strong> musiałem doinstalować pakiet <em>linux-headers-current-odroidxu4</em> zamiast <em>raspberrypi-kernel-headers</em>, aby na systemie hosta z <strong>Docker</strong>-em skompilować moduł <em>wireguard</em>.</p>
-<hr>
 <p>Na moim serwerze klucze dla klientów znajdują się w katalogu <em>/srv/dev-disk-by-label-disk/docker-data/wireguard/config</em>.</p>
 <p>W podkatalogu <em>peer1</em> znajdują się klucze, których użyję na moim telefonie. W podkatalogu <em>peer2</em> są klucze, których użyję na moim laptopie.</p>
 <p>Przeniosłem cały podkatalog <em>peer2</em> na mój laptop.</p>

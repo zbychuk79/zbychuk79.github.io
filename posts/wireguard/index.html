@@ -87,7 +87,19 @@
 <p>Po wykonaniu tych czynności, zainstalowaniu <strong>WireGuard</strong> na moim telefonie z Android-em i zeskanowaniu QR-Kodu z certyfikatem udało mi się połączyć do serwera VPN na utworzonym kontenerze (trzeba oczywiście przekierować port 51820 na routerze do kontenera z serwerem VPN).</p>
 <hr>
 <p>Na systemie z obrazu <em>Armbian_20.05.2_Odroidxu4_buster_current_5.4.41_minimal.img.xz</em> dla <strong>Odroid HC1</strong> musiałem doinstalować pakiet <em>linux-headers-current-odroidxu4</em> zamiast <em>raspberrypi-kernel-headers</em>, aby na systemie hosta z <strong>Docker</strong>-em skompilować moduł <em>wireguard</em>.</p>
-
+<hr>
+<p>Na moim serwerze klucze dla klientów znajdują się w katalogu <em>/srv/dev-disk-by-label-disk/docker-data/wireguard/config</em>.</p>
+<p>W podkatalogu <em>peer1</em> znajdują się klucze, których użyję na moim telefonie. W podkatalogu <em>peer2</em> są klucze, których użyję na moim laptopie.</p>
+<p>Przeniosłem cały podkatalog <em>peer2</em> na mój laptop.</p>
+<p>Teraz, żeby można się połączyć z serwerem <strong>WireGuard</strong> trzeba doinstalować program <em>resolvconf</em> (nie miałem go w systemie). Jest on potrzebny programowi <strong>NetworkManager</strong> do zarządzania wpisami serwerów DNS.</p>
+<p>Następnie, aby połączyć się z serwerem wykonuję następujące polecenie (w katalogu, gdzie umieściłem cały podkatalog <em>peer2</em> skopiowany z serwera):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo wg-quick up ./peer2/peer2.conf
+</code></pre></div><p>Aby sprawdzić stan interfejsu <em><strong>WireGuard</strong></em>, można wykonać polecenie:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo wg
+</code></pre></div><p>Wyświetli to statystykę interfejsu sieciowego sieci VPN.</p>
+<p>Aby odłączyć się od serwera VPN wykonujemy następujące polecenie:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo wg-quick down ./peer2/peer2.conf
+</code></pre></div>
 		</section>
 
 		<div class="post-tags">

@@ -50,7 +50,7 @@ stick()
     $czas
     "
     cd $dir
-    img="debian-rescue-$czas.img"
+    img="deb-rescue-$czas.img"
     sudo debootstick rescue $img
     sudo xz -z -9 -T 0 -v $img
     echo "Wygenerowano obraz $img.xz ..."
@@ -61,16 +61,18 @@ stick()
 skrypty_chroot()
 {
 hdir="$HOME"
+mkdir -p ~/tmp
 cd ~/tmp
 cp $0 .
 chmod +x deb-rescue
-cp deb-rescue $dir/$subdir/usr/local/bin
+sudo mv deb-rescue $dir/$subdir/usr/local/bin
 
 git clone https://github.com/zbychuk79/debian-rescue.git
 cd debian-rescue
-mv czytaj.txt $dir/$subdir
-mv install_script.sh $dir/$subdir
-
+sudo mv czytaj.txt $dir/$subdir
+sudo mv install_script.sh $dir/$subdir
+cd ..
+rm -rf debian-rescue
 }
 
 if [ "$#" = 0 ]; then

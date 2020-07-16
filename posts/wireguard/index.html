@@ -73,7 +73,7 @@
 <p><em><strong>192.168.77.1</strong></em> to adres IP serwera DNS w mojej sieci domowej (router), który z kolei używa jako DNS-a kolejnego kontenera <strong>Docker</strong>-a z działającym w nim <strong>Pi-Hole</strong>. Kontener <strong>PiHole</strong> z kolei jako DNS-a używa <em><strong>OpenDNS</strong></em>. Powoduje to, że w mojej sieci domowej blokowane są reklamy na wszystkich do niej podłączonych urządzeniach. Również tych podpiętych przez <strong>VPN WireGuard</strong>.</p>
 <p>Początkowo <strong>WireGuard</strong> nie chciał mi działać, ale pomogły następujące czynności:</p>
 <ul>
-<li>Instalacja poniższych pakietów w <strong>Raspbian</strong>-ie:
+<li>Instalacja poniższych pakietów w <strong>RaspiOS</strong>:
 <ul>
 <li>raspberrypi-kernel-headers</li>
 <li>wireguard</li>
@@ -89,7 +89,7 @@
 <p>Na moim serwerze klucze dla klientów znajdują się w katalogu <em>/srv/dev-disk-by-label-disk/docker-data/wireguard/config</em>.</p>
 <p>W podkatalogu <em>peer1</em> znajdują się klucze, których użyję na moim telefonie. W podkatalogu <em>peer2</em> są klucze, których użyję na moim laptopie.</p>
 <p>Przeniosłem cały podkatalog <em>peer2</em> na mój laptop.</p>
-<p>Abym mógł się połączyć z serwerem <strong>WireGuard</strong> musiałem doinstalować program <em><strong>resolvconf</strong></em> (nie miałem go w systemie). Jest on potrzebny programowi <strong>NetworkManager</strong> do zarządzania wpisami serwerów DNS.</p>
+<p>Abym mógł się połączyć z serwerem <strong>WireGuard</strong> musiałem doinstalować program <em><strong>resolvconf</strong></em> (nie miałem go w systemie, używam Arch Linux). Jest on potrzebny programowi <strong>NetworkManager</strong> do zarządzania wpisami serwerów DNS.</p>
 <p>Następnie, aby połączyć się z serwerem wykonuję następujące polecenie (w katalogu, gdzie umieściłem cały podkatalog <em>peer2</em> skopiowany z serwera):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo wg-quick up ./peer2/peer2.conf
 </code></pre></div><p>Aby sprawdzić stan interfejsu <em><strong>WireGuard</strong></em>, można wykonać polecenie:</p>

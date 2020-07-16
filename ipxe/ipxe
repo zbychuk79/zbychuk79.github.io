@@ -7,8 +7,9 @@ Jak używać: ipxe [ -d ] [ -c ... ] | [ -h ]
 
  -d ściągnij źródła
  -c kompiluj - jaki iPXE budować
-     zbychuk: buduję go dla mojej domowej sieci LAN (autor).
-    internet: iPXE dla konfiguracji z poza sieci -zbychuk-.
+          o1: buduję go dla mojej domowej sieci LAN (serwer o1).
+        omv1: buduję go dla mojej domowej sieci LAN (serwer omv1).
+    internet: iPXE dla konfiguracji z poza sieci -z-.
 
  -h wyświetlenie tej instrukcji
 "
@@ -48,14 +49,16 @@ if [ "$download" = "yes" ]; then
 fi
 
 if [ "$compile" = "yes" ]; then
-                       cp ~/ipxe-custom/ipxe-config/general.h ~/ipxe/src/config/general.h
+                       cp ~/ipxe-custom/general.h ~/ipxe/src/config/general.h
     case $net in
-        zbychuk )      cp ~/ipxe-custom/$net/embeded.ipxe ~/ipxe/src/embeded.ipxe
+        o1 )           cp ~/ipxe-custom/$net.ipxe ~/ipxe/src/embeded.ipxe
                                 ;;
-        internet )     cp ~/ipxe-custom/$net/embeded.ipxe ~/ipxe/src/embeded.ipxe
+        omv1 )         cp ~/ipxe-custom/$net.ipxe ~/ipxe/src/embeded.ipxe
+                                ;;
+        internet )     cp ~/ipxe-custom/$net.ipxe ~/ipxe/src/embeded.ipxe
                                 ;;
         * )            echo "
-Nie podałeś parametru -c [ zbychuk | internet ]
+Nie podałeś parametru -c [ o1 | omv1 | internet ]
 "
                        exit 0
     esac

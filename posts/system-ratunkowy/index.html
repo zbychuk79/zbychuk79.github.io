@@ -42,7 +42,7 @@
 			<hr>
 <p>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu LiveUSB.</p>
 <p>Czynności będę przeprowadzał na pełnym systemie <strong>Debian</strong> (pod <strong>VirtualBox</strong>-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod <strong>Docker</strong>-em.</p>
-<p>Napisałem prosty skrypt o nazwie <a href="/debian-rescue/deb-rescue">deb-rescue</a></p>
+<p>Napisałem prosty skrypt o nazwie <a href="/debian-rescue/rescue">rescue</a></p>
 <p>Wymaga on do działania zainstalowanych paczek:</p>
 <ul>
 <li>git</li>
@@ -53,7 +53,7 @@
 <p>Po wejściu do wygenerowanego katalogu <em>chroot</em>, trzeba wykonać skrypt <em>/install_script.sh</em>, który zainstaluje w <em>chroot</em> wymagane programy.</p>
 <!-- raw HTML omitted -->
 <p>Oto opis opcji mojego skryptu:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Jak używać: deb-rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ]
  -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian
  -s tworzy skrypty do wykonania w chroot z Debianem
  -r wejdź do chroot z Debianem

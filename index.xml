@@ -56,7 +56,7 @@ Na samym początku miałem tylko podłączone 6 czujników temperatury DS18B20 n
       <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
       <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu LiveUSB.
 Czynności będę przeprowadzał na pełnym systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
-Napisałem prosty skrypt o nazwie deb-rescue
+Napisałem prosty skrypt o nazwie rescue
 Wymaga on do działania zainstalowanych paczek:
  git debootstrap debootstick ew. programu telegram-send z repozytoriów python3-pip  Po wejściu do wygenerowanego katalogu chroot, trzeba wykonać skrypt /install_script.</description>
     </item>
@@ -76,8 +76,7 @@ Wymaga on do działania zainstalowanych paczek:
       <pubDate>Sun, 26 Apr 2020 09:24:34 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/gps/</guid>
-      <description>Za jakiś czas przebuduję ten artykuł. Teraz mam to ustawione inaczej i na innym serwerze.
- Posiadam odbiornik GPSMap 76CSx firmy Garmin z dodatkowym uchwytem na rower. Wraz z odbiornikiem zakupiłem GPMapa 2007, ale dodatkowych aktualizacji już nie kupowałem.
+      <description>Posiadam odbiornik GPSMap 76CSx firmy Garmin z dodatkowym uchwytem na rower. Wraz z odbiornikiem zakupiłem GPMapa 2007, ale dodatkowych aktualizacji już nie kupowałem.
 Darmowe mapy do Garmin GPSMap 76CSx. Miałem załadowaną do niego mapę UMP-PL TOPO. Mapa ta nadawała się doskonale do jazdy na rowerze, po wcześniejszym załadowaniu trasy. Powodem tego jest to, że posiada zaznaczone dużo obiektów i szlaków, których próżno szukać na innych mapach oraz to, że uaktualniana jest prawie codziennie.</description>
     </item>
     

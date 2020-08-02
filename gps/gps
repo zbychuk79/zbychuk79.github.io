@@ -1,0 +1,183 @@
+#!/bin/bash
+#
+# Skrypt ten sprawdza, czy na lokalnym serwerze w sieci LAN są nowe dane dla programu QMapShack.
+# Jeśli tak jest, to z tych danych generuje on mapę dla mojego odbiornika GPS Garmin GPMap 76CSX,
+# oraz bazę danych Routino dla routera offline w programie QMapShack.
+#
+skrypt=`printf '%s\n' "${0##*/}"`
+start_time=`date +%H:%M:%S`
+
+# Sprawdzenie mapy dla Garmina i danych routingu
+
+# http://download.geofabrik.de/europe/poland-latest.osm.pbf
+
+# http://download.geofabrik.de/europe/poland/malopolskie-latest.osm.pbf \
+#    http://download.geofabrik.de/europe/poland/opolskie-latest.osm.pbf \
+#    http://download.geofabrik.de/europe/poland/slaskie-latest.osm.pbf \
+#    http://download.geofabrik.de/europe/poland/swietokrzyskie-latest.osm.pbf \
+#    http://download.geofabrik.de/europe/poland/podkarpackie-latest.osm.pbf \
+#    http://download.geofabrik.de/europe/poland/dolnoslaskie-latest.osm.pbf
+
+pbf="http://download.geofabrik.de/europe/poland-latest.osm.pbf"
+
+# http://ftp5.gwdg.de/pub/misc/openstreetmap/openmtbmap/odbl/mtbpoland.exe
+
+mtb="http://ftp5.gwdg.de/pub/misc/openstreetmap/openmtbmap/odbl/mtbpoland.exe"
+
+dir=/srv/dev-disk-by-label-disk/download/gps
+
+dirr=$dir/routing
+dirm=$dir/mtb
+
+mkdir -p $dir
+cd $dir
+
+touch lock
+
+# Dla każdego linka w zmiennej mtb
+for i in $mtb ; do
+    url=$i
+    exe=`echo "${url##*/}"`
+    img=`basename $exe .exe`.img
+    img=`echo ${img/mtb/openmtbmap_}`
+    out=$dir/garmin
+    mkdir -p $out
+    mkdir -p $dirm
+    echo
+    echo $url
+    echo $exe ">" $img
+    echo
+
+    # Download Map
+    if test -e "$dirm/$exe"
+        then zflag="-z $dirm/$exe"
+        else zflag=
+    fi
+    curl -o "$dirm/$exe" $zflag "$url"
+    exeage=`stat -c%Y $dirm/$exe`
+
+    # Test if IMG exists
+    if [ ! -f garmin/$img ]; then
+        echo
+        echo "Generowanie mapy dla odbiornika Garmin 76CSx."
+        echo
+        create_omtb_garmin_img.sh -o $out $dirm/$exe thin
+    fi
+    imgage=`stat -c%Y garmin/$img`
+
+    if [ "$exeage" -gt "$imgage" ]
+    then
+        echo
+        echo "Generowanie odnowionej mapy dla odbiornika Garmin 76CSx."
+        echo
+        create_omtb_garmin_img.sh -o $out $dirm/$exe thin
+    fi
+done
+
+############
+# routing
+#
+
+cd $dir
+mkdir -p $dir/pbf
+
+for i in $pbf ; do
+    url=$i
+    pbff=`echo "${url##*/}"`
+    echo "
+$pbff
+"
+    # Download Map
+    if test -e "pbf/$pbff"
+        then zflag="-z pbf/$pbff"
+        else zflag=
+    fi
+    curl -o "pbf/$pbff" $zflag "$url"
+    exeage=`stat -c%Y pbf/$pbff`
+done
+
+mkdir -p $dir/routing
+
+#cd pbf
+#dane_routing=$(ls -t *.pbf | head -1)
+#
+#baza_routingu=routing/*nodes.mem
+#
+#if [ -f $dane_routing ]; then
+#    dane_routing_wiek=`stat -c%Y $dane_routing`
+#    dane_routing_gotowe=$(ls -t ../routing/ | head -1)
+#    dane_routing_gotowe_wiek=`stat -c%Y ../routing/$dane_routing_gotowe`
+#
+#    if [ -f $baza_routingu ]; then
+#        echo "Masz jakąś gotową bazę routingu dla QMapShack."
+#        routing=0
+#    else
+#        echo "Nie masz żadnej bazy routingu w QMapShack."
+#        routing=1
+#    fi
+#
+#    if [ $dane_routing_wiek -gt $dane_routing_gotowe_wiek ]
+#     then
+#        echo "Masz starą bazę routingu dla QMapShack."
+#        routing=1
+#    fi
+#
+#    if [ $dane_routing_wiek -lt $dane_routing_gotowe_wiek ]
+#     then
+#        echo "Masz już nową bazę danych routingu dla QMapShack."
+#        routing=0
+#    fi
+#else
+#    echo "Nie ma plików z danymi routingu (*.pbf)."
+#    routing=2
+#fi
+
+routing=1
+
+if [ $routing = "1" ]
+then
+    cd $dir
+    nazwa=`date --rfc-3339 date`
+    echo $nazwa
+    rm -r $dirr/
+    mkdir -p $dirr
+
+    l=0
+
+    echo "Generowanie nowej bazy danych Routino."
+    echo
+    cd pbf
+    for i in $pbf; do
+    url=$i
+    pbff=`echo "${url##*/}"`
+    echo $pbff
+    echo
+        if (( $l == 0 )); then
+            echo
+            echo "planetsplitter --dir=$dirr --prefix=$nazwa --tagging=/usr/share/routino/tagging.xml --parse-only $pbff"
+            echo
+            planetsplitter --dir=$dirr --prefix=$nazwa --tagging=/usr/share/routino/tagging.xml --parse-only $pbff
+        fi
+        if (( $l > 0 )); then
+            echo
+            echo "planetsplitter --dir=$dirr --prefix=$nazwa --tagging=/usr/share/routino/tagging.xml --parse-only --append $pbff"
+            echo
+            planetsplitter --dir=$dirr --prefix=$nazwa --tagging=/usr/share/routino/tagging.xml --parse-only --append $pbff
+        fi
+        let "l++"
+    done
+    echo
+    echo "planetsplitter --dir=$dirr --prefix=$nazwa --tagging=/usr/share/routino/tagging.xml --process-only"
+    echo
+    planetsplitter --dir=$dirr --prefix=$nazwa --tagging=/usr/share/routino/tagging.xml --process-only
+fi
+
+cd $dir
+rm lock
+
+echo
+echo "Gotowe."
+echo
+
+end_time=`date +%H:%M:%S`
+telegram "`hostname` > $skrypt -- $start_time - $end_time."

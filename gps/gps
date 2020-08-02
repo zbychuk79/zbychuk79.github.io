@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Skrypt ten sprawdza, czy na lokalnym serwerze w sieci LAN są nowe dane dla programu QMapShack.
+# Skrypt ten sprawdza, czy na dysku są aktualne dane dla programu QMapShack. Jeśli nie to je ściąga z Internetu.
 # Jeśli tak jest, to z tych danych generuje on mapę dla mojego odbiornika GPS Garmin GPMap 76CSX,
 # oraz bazę danych Routino dla routera offline w programie QMapShack.
 #
@@ -12,11 +12,11 @@ start_time=`date +%H:%M:%S`
 # http://download.geofabrik.de/europe/poland-latest.osm.pbf
 
 # http://download.geofabrik.de/europe/poland/malopolskie-latest.osm.pbf \
-#    http://download.geofabrik.de/europe/poland/opolskie-latest.osm.pbf \
-#    http://download.geofabrik.de/europe/poland/slaskie-latest.osm.pbf \
-#    http://download.geofabrik.de/europe/poland/swietokrzyskie-latest.osm.pbf \
-#    http://download.geofabrik.de/europe/poland/podkarpackie-latest.osm.pbf \
-#    http://download.geofabrik.de/europe/poland/dolnoslaskie-latest.osm.pbf
+# http://download.geofabrik.de/europe/poland/opolskie-latest.osm.pbf \
+# http://download.geofabrik.de/europe/poland/slaskie-latest.osm.pbf \
+# http://download.geofabrik.de/europe/poland/swietokrzyskie-latest.osm.pbf \
+# http://download.geofabrik.de/europe/poland/podkarpackie-latest.osm.pbf \
+# http://download.geofabrik.de/europe/poland/dolnoslaskie-latest.osm.pbf
 
 pbf="http://download.geofabrik.de/europe/poland-latest.osm.pbf"
 
@@ -24,6 +24,7 @@ pbf="http://download.geofabrik.de/europe/poland-latest.osm.pbf"
 
 mtb="http://ftp5.gwdg.de/pub/misc/openstreetmap/openmtbmap/odbl/mtbpoland.exe"
 
+# Postawowy katalog roboczy
 dir=/srv/dev-disk-by-label-disk/download/gps
 
 dirr=$dir/routing

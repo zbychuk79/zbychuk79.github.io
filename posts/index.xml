@@ -55,10 +55,10 @@ Na samym początku miałem tylko podłączone 6 czujników temperatury DS18B20 n
       
       <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
       <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu LiveUSB.
-Czynności będę przeprowadzał na pełnym systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
+Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
 Napisałem prosty skrypt o nazwie rescue
 Wymaga on do działania zainstalowanych paczek:
- git debootstrap debootstick ew. programu telegram-send z repozytoriów python3-pip  Po wejściu do wygenerowanego katalogu chroot, trzeba wykonać skrypt /install_script.</description>
+ git debootstrap debootstick ew. programu telegram-send z repozytoriów python3-pip  Po wejściu do wygenerowanego katalogu chroot (uruchamiając skrypt rescue z opcją -r), trzeba uruchomić skrypt /install_script.</description>
     </item>
     
     <item>

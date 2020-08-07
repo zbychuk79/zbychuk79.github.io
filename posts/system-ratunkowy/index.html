@@ -41,7 +41,7 @@
 		<section class="body">
 			<hr>
 <p>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu LiveUSB.</p>
-<p>Czynności będę przeprowadzał na pełnym systemie <strong>Debian</strong> (pod <strong>VirtualBox</strong>-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod <strong>Docker</strong>-em.</p>
+<p>Czynności będę wykonywał w systemie <strong>Debian</strong> (pod <strong>VirtualBox</strong>-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod <strong>Docker</strong>-em.</p>
 <p>Napisałem prosty skrypt o nazwie <a href="/debian-rescue/rescue">rescue</a></p>
 <p>Wymaga on do działania zainstalowanych paczek:</p>
 <ul>
@@ -50,7 +50,7 @@
 <li>debootstick</li>
 <li>ew. programu telegram-send z repozytoriów python3-pip</li>
 </ul>
-<p>Po wejściu do wygenerowanego katalogu <em>chroot</em>, trzeba wykonać skrypt <em>/install_script.sh</em>, który zainstaluje w <em>chroot</em> wymagane programy.</p>
+<p>Po wejściu do wygenerowanego katalogu <em>chroot</em> (uruchamiając skrypt <a href="/debian-rescue/rescue">rescue</a> z opcją -r), trzeba uruchomić skrypt <em>/install_script.sh</em>, który zainstaluje w <em>chroot</em> wymagane programy.</p>
 <!-- raw HTML omitted -->
 <p>Oto opis opcji mojego skryptu:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ]
@@ -59,7 +59,8 @@
  -r wejdź do chroot z Debianem
  -i generuje uruchamialny obraz systemu przez debootstick
  -c kasuje z dysku środowisko chroot z Debianem
-</code></pre></div><p>Po uruchomieniu skryptu z opcją &ldquo;-i&rdquo; zostanie wygenerowany obraz <em>/home/chroot_debian</em>.</p>
+</code></pre></div><p>W celu wygenerowania obrazu systemu należy uruchomić omawiany skrypt kilka razy z kolejnymi opcjami (jak pokazano w opisie).</p>
+<p>Po uruchomieniu skryptu z opcją &ldquo;-i&rdquo; zostanie wygenerowany obraz <em>/home/chroot_debian</em>.</p>
 <p>Należy teraz zapisać go na Pendrive używając do tego programu <strong>Etcher</strong>.</p>
 <p>Po uruchomieniu z niego komputera, partycja systemowa na Pendrive zostanie powiększona na jego pełną objętość. Po zalogowaniu się jako &ldquo;root&rdquo; z hasłem &ldquo;root&rdquo; można używać systemu.</p>
 <p>W systemie są już zainstalowane:</p>

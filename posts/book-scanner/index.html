@@ -192,7 +192,9 @@
 <hr>
 <p>29 sierpnia 2020.</p>
 <p>Okazuje się, że w jednym z moich <strong>Raspberry Pi 3B</strong> coś piszczy i strasznie mnie to wkurza. Chyba wymienię je oba na <strong>Raspberry Pi 2B</strong>, bo mam takie w domu. Dodatkowo nie będą emitować żadnego sygnału WiFi.</p>
-<p>Udało mi się uruchomić równoległe obrabianie zeskanowanych stron na komputerze, gdzie obrabiam tworzone skany. Widać ogromne przyspieszenie przetwarzania plików (24 wątki na <strong>Ryzen 9 3900X</strong>) przed ich obróbką w <strong>ScanTailor</strong>. Pierwsze moje skrypty przetwarzające zarejestrowane dane działały tylko na jednym rdzeniu (mój laptop z <strong>Intel Core M-5Y71</strong>).</p>
+<p>Po małym teście okazało się, że wadliwy był zasilacz podpięty do tego piszczącego <strong>Raspberry Pi</strong>. Wymieniłem go i wszystko jest w porządku.</p>
+<p>Udało mi się uruchomić równoległe przetwarzanie zeskanowanych stron na komputerze, gdzie obrabiam tworzone skany. Widać ogromne przyspieszenie  (24 wątki na <strong>Ryzen 9 3900X</strong>) w obliczeniach przed obróbką zdjęć w <strong>ScanTailor</strong>. Pierwsze moje skrypty przetwarzające zarejestrowane dane działały tylko na jednym rdzeniu (mój laptop z <strong>Intel Core M-5Y71</strong>).</p>
+<p>Różnica w szybkości obu komputerów jest bardzo duża. Zrobiłem test na 24 zdjęciach. Na laptopie trwało to 5m12s (4 wątki równoległe) a na komputerze stacjonarnym zajęło to tylko 28s (24 wątki równoległe).</p>
 <p>Moje skrypty można pobrać z <a href="https://github.com/zbychuk79/book-scanner">repozytorium</a>  na <strong>GitHub</strong>.</p>
 <hr>
 <p>1 września 2020.</p>

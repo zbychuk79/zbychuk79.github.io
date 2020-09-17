@@ -5,10 +5,6 @@
     <link>https://zbychuk79.github.io/categories/</link>
     <description>Recent content in Categories on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pl-PL</language>
-    
-	<atom:link href="https://zbychuk79.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>pl-PL</language><atom:link href="https://zbychuk79.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

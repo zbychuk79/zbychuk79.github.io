@@ -47,7 +47,7 @@
 <p>Zrobiłem to pod <strong>VirtualBox</strong> dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze <strong>Docker</strong>-a). System host&rsquo;a to <strong>ArchLinux</strong>, który działa dobrze, ale prościej mi się pod <strong>Debian</strong>&lsquo;em to ustawia i łatwiej jest wyłapać błędy na prawie gołym systemie.</p>
 <hr>
 <h2 id="instalacja-systemu-debian-10-buster">Instalacja systemu Debian 10 &ldquo;Buster&rdquo;.</h2>
-<p>Instalację systemu można przeprowadzić z normalnego obrazu, lub też można użyć niewielkiego pliku (&lt;1MB) <a href="/ipxe/ipxe.iso">ipxe.iso</a>, który udostępniłem. Jest to obraz bootloadera <strong>iPXE</strong> z osadzonym w nim skrypem ładującym <em>menu</em> z różnymi opcjami do wyboru.</p>
+<p>Instalację systemu można przeprowadzić z normalnego obrazu, lub też można użyć niewielkiego pliku (&lt;1MB) <a href="https://github.com/zbychuk79/ipxe-custom/raw/master/ipxe-internet.iso">ipxe.iso</a>, który udostępniłem. Jest to obraz bootloadera <strong>iPXE</strong> z osadzonym w nim skrypem ładującym <em>menu</em> z różnymi opcjami do wyboru.</p>
 <p>Maszynę wirtualną ustawiłem tak:</p>
 <ul>
 <li>CPU (dwa rdzenie)</li>
@@ -118,7 +118,7 @@ label ipxe
 <h2 id="konfiguracja-bootloadera-ipxe">Konfiguracja bootloader&rsquo;a iPXE.</h2>
 <p>Mam skrypt, który zapisałem w <em>~/.bin/ipxe</em> (oczywiście dodałem ten katalog do zmiennej PATH) i służy on do kompilacji <strong>iPXE</strong> oraz obsadzenia w nim skryptu ładującego Menu z opcjami do wyboru.</p>
 <ul>
-<li>skrypt <a href="/ipxe/ipxe">ipxe</a></li>
+<li>skrypt <a href="https://raw.githubusercontent.com/zbychuk79/ipxe-custom/master/ipxe">ipxe</a></li>
 </ul>
 <p>Tu jest skrypt osadzony w binarce <strong>iPXE</strong>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">#!ipxe

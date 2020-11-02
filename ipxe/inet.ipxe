@@ -1,5 +1,0 @@
-#!ipxe
-set serwer zbychuk79.github.io
-
-dhcp
-chain --replace --autofree https://${serwer}/ipxe/menu.ipxe

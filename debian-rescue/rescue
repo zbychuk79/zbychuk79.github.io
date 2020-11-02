@@ -6,13 +6,12 @@
 # Potem można wygenerować image systemu do nagrania na pendrive.
 #
 # Do działania wymagane są programy: debootstrap, debootstick
-# i ew. telegram-send
-#
+# zainstalowane na systemie Debian lub pochodnym.
 
 skrypt=`printf '%s\n' "${0##*/}"`
 dir="/home/chroot_debian"
 subdir="rescue"
-#mirror="http://omv1:88/debian/"		# Mój lokalny mirror.
+#mirror="http://omv1:88/debian/"		# Lokalny mirror (sieć LAN).
 mirror="http://deb.debian.org/debian/"
 
 usage()
@@ -54,8 +53,6 @@ stick()
     sudo debootstick rescue $img
     sudo xz -z -9 -T 0 -v $img
     echo "Wygenerowano obraz $img.xz ..."
-    #scp $img.xz omv1:/sharedfolders/sysimages/Debian/
-    #telegram-send "Wygenerowano obraz $img.xz ..."
 }
 
 skrypty_chroot()
@@ -63,9 +60,6 @@ skrypty_chroot()
 hdir="$HOME"
 mkdir -p ~/tmp
 cd ~/tmp
-cp $0 .
-chmod +x deb-rescue
-sudo mv deb-rescue $dir/$subdir/usr/local/bin
 
 git clone https://github.com/zbychuk79/debian-rescue.git
 cd debian-rescue

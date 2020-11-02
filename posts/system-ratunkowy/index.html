@@ -48,10 +48,7 @@
 <li>git</li>
 <li>debootstrap</li>
 <li>debootstick</li>
-<li>ew. programu telegram-send z repozytoriów python3-pip</li>
 </ul>
-<p>Po wejściu do wygenerowanego katalogu <em>chroot</em> (uruchamiając skrypt <a href="https://raw.githubusercontent.com/zbychuk79/debian-rescue/master/scripts/rescue">rescue</a> z opcją -r), trzeba uruchomić skrypt <em>/install_script.sh</em>, który zainstaluje w <em>chroot</em> wymagane programy.</p>
-<!-- raw HTML omitted -->
 <p>Oto opis opcji mojego skryptu:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ]
  -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian
@@ -63,8 +60,10 @@
 <p>Po uruchomieniu skryptu z opcją &ldquo;-i&rdquo; zostanie wygenerowany obraz w katalogu <em>/home/chroot_debian</em>.</p>
 <p>Należy teraz zapisać go na Pendrive używając do tego programu <strong>Etcher</strong>.</p>
 <p>Po uruchomieniu z niego komputera, partycja systemowa na Pendrive zostanie powiększona na jego pełną objętość. Po zalogowaniu się jako &ldquo;root&rdquo; z hasłem &ldquo;root&rdquo; można używać systemu.</p>
-<p>W systemie są już zainstalowane:</p>
+<p>Po pierwszym załadowania systemu, trzeba uruchomić skrypt <em>/install_script.sh</em>, aby zainstalować wymagane programy.</p>
+<p>W systemie zostaną zainstalowane między innymi:</p>
 <ul>
+<li>mc</li>
 <li>rsync</li>
 <li>restic</li>
 <li>fsarchiver</li>
@@ -73,11 +72,6 @@
 <hr>
 <p>Wygenerowałem obraz systemu do nagrania  na Pendrive, który udostępniam w sieci <strong>BitTorrent</strong>:</p>
 <ul>
-<li><a href="/debian-rescue/rescue-20201031-amd64.torrent">rescue-20201031-amd64</a>
-<ul>
-<li>rescue-20201031-amd64.img.xz &gt; <strong>SHA256</strong>: acd34417c2db6fe0a303d807ac448b352d3c02764f9e4ba1d1bab3ec1c40b9cd</li>
-</ul>
-</li>
 <li><a href="/debian-rescue/rescue-20201102-amd64.torrent">rescue-20201102-amd64</a>
 <ul>
 <li>rescue-20201102-amd64.img.xz &gt; <strong>SHA256</strong>: c4b958b83776a46f837792f3766165c5e30b16b04d880ad7e8b0f899b3051b51</li>
@@ -85,8 +79,6 @@
 </li>
 </ul>
 <p>Po uruchomieniu komputera z PenDrive logujesz się jako <strong>root</strong> z hasłem <em>root</em> i możesz używać systemu do ratowania swojego dysku (na przykład).</p>
-<hr>
-<p>c.d.n.</p>
 
 		</section>
 

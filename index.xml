@@ -54,7 +54,8 @@ Na samym początku miałem tylko podłączone 6 czujników temperatury DS18B20 n
 Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
 Napisałem prosty skrypt o nazwie rescue
 Wymaga on do działania zainstalowanych paczek:
- git debootstrap debootstick ew. programu telegram-send z repozytoriów python3-pip  Po wejściu do wygenerowanego katalogu chroot (uruchamiając skrypt rescue z opcją -r), trzeba uruchomić skrypt /install_script.</description>
+ git debootstrap debootstick  Oto opis opcji mojego skryptu:
+Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem W celu wygenerowania obrazu systemu należy uruchomić omawiany skrypt kilka razy (za każdym razem z kolejnym parametem, jak pokazano w opisie).</description>
     </item>
     
     <item>

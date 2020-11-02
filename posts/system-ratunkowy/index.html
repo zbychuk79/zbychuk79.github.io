@@ -42,7 +42,7 @@
 			<hr>
 <p>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu LiveUSB.</p>
 <p>Czynności będę wykonywał w systemie <strong>Debian</strong> (pod <strong>VirtualBox</strong>-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod <strong>Docker</strong>-em.</p>
-<p>Napisałem prosty skrypt o nazwie <a href="/debian-rescue/rescue">rescue</a></p>
+<p>Napisałem prosty skrypt o nazwie <a href="https://raw.githubusercontent.com/zbychuk79/debian-rescue/master/scripts/rescue">rescue</a></p>
 <p>Wymaga on do działania zainstalowanych paczek:</p>
 <ul>
 <li>git</li>
@@ -50,7 +50,7 @@
 <li>debootstick</li>
 <li>ew. programu telegram-send z repozytoriów python3-pip</li>
 </ul>
-<p>Po wejściu do wygenerowanego katalogu <em>chroot</em> (uruchamiając skrypt <a href="/debian-rescue/rescue">rescue</a> z opcją -r), trzeba uruchomić skrypt <em>/install_script.sh</em>, który zainstaluje w <em>chroot</em> wymagane programy.</p>
+<p>Po wejściu do wygenerowanego katalogu <em>chroot</em> (uruchamiając skrypt <a href="https://raw.githubusercontent.com/zbychuk79/debian-rescue/master/scripts/rescue">rescue</a> z opcją -r), trzeba uruchomić skrypt <em>/install_script.sh</em>, który zainstaluje w <em>chroot</em> wymagane programy.</p>
 <!-- raw HTML omitted -->
 <p>Oto opis opcji mojego skryptu:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ]
@@ -76,6 +76,11 @@
 <li><a href="/debian-rescue/rescue-20201031-amd64.torrent">rescue-20201031-amd64</a>
 <ul>
 <li>rescue-20201031-amd64.img.xz &gt; <strong>SHA256</strong>: acd34417c2db6fe0a303d807ac448b352d3c02764f9e4ba1d1bab3ec1c40b9cd</li>
+</ul>
+</li>
+<li><a href="/debian-rescue/rescue-20201102-amd64.torrent">rescue-20201102-amd64</a>
+<ul>
+<li>rescue-20201102-amd64.img.xz &gt; <strong>SHA256</strong>: c4b958b83776a46f837792f3766165c5e30b16b04d880ad7e8b0f899b3051b51</li>
 </ul>
 </li>
 </ul>

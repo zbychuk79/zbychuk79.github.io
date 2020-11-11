@@ -42,7 +42,7 @@
 			<hr>
 <p>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.</p>
 <p>Czynności będę wykonywał w systemie <strong>Debian</strong> (pod <strong>VirtualBox</strong>-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod <strong>Docker</strong>-em.</p>
-<p>Napisałem prosty skrypt o nazwie <a href="https://raw.githubusercontent.com/zbychuk79/debian-rescue/master/scripts/rescue">rescue</a></p>
+<p>Napisałem prosty skrypt o nazwie <a href="https://raw.githubusercontent.com/zbychuk79/debian-rescue/master/scripts/rescue">rescue</a>.</p>
 <p>Wymaga on do działania zainstalowanych paczek:</p>
 <ul>
 <li>git</li>
@@ -56,7 +56,8 @@
  -r wejdź do chroot z Debianem
  -i generuje uruchamialny obraz systemu przez debootstick
  -c kasuje z dysku środowisko chroot z Debianem
-</code></pre></div><p>Po uruchomieniu skryptu z opcją &ldquo;-r&rdquo; trzeba załadować skrypt <em>setup.sh</em> z głównego katalogu:</p>
+</code></pre></div><p>Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</p>
+<p>Po uruchomieniu skryptu z opcją &ldquo;-r&rdquo; trzeba załadować skrypt <em>setup.sh</em> z głównego katalogu:</p>
 <p># /setup.sh</p>
 <p>Pozwoli on ustawić hasło administratora, ściągnie odpowiedni skrypt i krótki plik z opisem systemu.</p>
 <p>Potem wychodzimy z <strong>chroot</strong> poleceniem:</p>
@@ -64,7 +65,7 @@
 <p>Po uruchomieniu skryptu z opcją &ldquo;-i&rdquo; zostanie wygenerowany obraz w katalogu <em>/home/chroot_debian</em>.</p>
 <p>Należy teraz zapisać go na Pendrive używając do tego programu <strong>Etcher</strong>.</p>
 <p>Po uruchomieniu z niego komputera, partycja systemowa na Pendrive zostanie powiększona na jego pełną objętość. Po zalogowaniu się jako &ldquo;root&rdquo; z hasłem &ldquo;root&rdquo; można używać systemu.</p>
-<p>Po pierwszym załadowania systemu, trzeba uruchomić skrypt, który jest w głównym katalogu , aby zainstalować dodatkowe programy.</p>
+<p>Po pierwszym załadowania systemu, trzeba uruchomić skrypt, który jest w katalogu <em>/root</em>, aby zainstalować dodatkowe programy.</p>
 <p># <em>/root/install.sh</em></p>
 <p>Trzeba teraz ustawić strefę czasową, a w systemie zostaną zainstalowane między innymi:</p>
 <ul>
@@ -74,6 +75,7 @@
 <li>fsarchiver</li>
 <li>dar</li>
 </ul>
+<p>Krótki opis systemu na Pendrive jest w pliku <em>/czytaj.txt</em>.</p>
 <hr>
 <p>Wygenerowałem obraz systemu do nagrania  na Pendrive, który udostępniam w sieci <strong>BitTorrent</strong>:</p>
 <ul>

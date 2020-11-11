@@ -52,10 +52,10 @@ Na samym początku miałem tylko podłączone 6 czujników temperatury DS18B20 n
       <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
       <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.
 Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
-Napisałem prosty skrypt o nazwie rescue
+Napisałem prosty skrypt o nazwie rescue.
 Wymaga on do działania zainstalowanych paczek:
  git debootstrap debootstick  Oto opcje mojego skryptu:
-Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem Po uruchomieniu skryptu z opcją &amp;ldquo;-r&amp;rdquo; trzeba załadować skrypt setup.</description>
+Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</description>
     </item>
     
     <item>

@@ -113,9 +113,17 @@
 <p>W późniejszym terminie może dokupię jeszcze kartę HBA IBM 1015 na 8 portów SAS, które obsłużą moje dyski SATA. Wtedy porty na płycie głównej będą mogły być wykorzystane dla SSD w roli ZIL/L2ARC, itp.</p>
 </blockquote>
 <hr>
-<p>16 grudnia 2020.</p>
-<p>Z racji tego, że komputer gdzie będą te dyski ma 32 GB RAM, chyba zbuduję macierz z sześciu dysków. W konfiguracji RaidZ2 da mi to 35.1979 TiB (38.7005 TB) przestrzeni na dane. Będzie to dość dobrze współgrało z wymaganiami <strong>OpenZFS 2.0</strong> na pamięć RAM (1 GB RAM na 1 TB przestrzeni dyskowej).</p>
+<p>16-20 grudnia 2020.</p>
+<p>Z racji tego, że komputer gdzie będą te dyski ma 32 GB RAM, chyba zbuduję macierz z sześciu dysków. W konfiguracji RaidZ2 (Raid6) da mi to 35.1979 TiB (38.7005 TB) przestrzeni na dane. Będzie to dość dobrze współgrało z wymaganiami <strong>OpenZFS 2.0</strong> na pamięć RAM (1 GB RAM na 1 TB przestrzeni dyskowej).</p>
 <p>Od wczoraj od godziny 12:30 testuję pierwszy dysk <strong>WD Gold 10 TB</strong>. Mam go podpiętego do <strong>Odroid HC2</strong>.</p>
+<p>Dysk był testowany ponad 120h.</p>
+<hr>
+<p>24-28 grudnia 2020.</p>
+<p>Mam w domu kolejne 6 dysków <strong>WD Gold 10 TB</strong>. Uruchomiłem ich testowanie programem <em><strong>badblocks</strong></em> pod systemem <strong>Debian 10</strong> uruchomionym w Pendrive.</p>
+<p>Okazało się, że komputer (CPU i7 3770k + MB: MSI Z77A-GD80) w momencie uruchomienia równocześnie testu na sześciu portach SATA może dać maksymalny transfer 1250 MB/s odczytu lub zapisu. Transfer mieszany jest trochę wyższy (np. 784MB/s odczyt z 4 dysków i 500MB/s zapis na 2 dyski). Czyli dużej różnicy nie ma.</p>
+<p>Nowszy komputer na pewno nie miał by takiego ograniczenia w przepustowości, ale niestety nowszego nie mam oprócz mojego Ryzen&rsquo;a 3900X, a jego akurat nie będę używać jako serwera.</p>
+<p>W tym momencie jeszcze nie wiem ostatecznie czy zainstaluję jako system operacyjny <strong>FreeNAS 11.3-U5</strong>, czy też może <strong>TrueNAS 12-U1</strong>. <strong>TrueNAS</strong> ma problemy z instalacją i działaniem na nośniku Pendrive USB 3.0 (wymagany jest SSD).</p>
+<p>Na pewno dołożę do tej obudowy jeszcze minimum 2 wentulatory 140mm do wzmocnienia przepływu powietrza w celu chłodzenia dysków twardych. Teraz mam w wentylatory wciągające i 1 wydmuchujący powietrze.</p>
 <hr>
 <p>c.d.n.</p>
 

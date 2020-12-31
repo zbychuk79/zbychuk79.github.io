@@ -107,7 +107,7 @@
 <p>Zdecydowałem się na aktualizację mojej macierzy dyskowej. Będzie się ona składać z ośmiu dysków <strong>WD Gold 10 TB</strong>. Da mi to dostępną pojemność 49,944 TiB (54,91 TB) w konfiguracji RaidZ2.</p>
 <p>Dyski będę kupował pojedyńczo i od razu testował programem <em><strong>badblocks</strong></em>. Testowanie jednego dysku tej pojemności trwa dość długo. Kuzyn testuje akurat dysk <strong>Seagate IronWolf Pro 10TB</strong> i po 40h testu miał dopiero 15% drugiego przebiegu (w sumie program wykonuje 4 przebiegi testu).</p>
 <p>Ostatecznie test dysku u kuzyna trwał 100h. Program testujący najpierw zapisuje wzorzec danych na dysk a potem go porównuje. Robi to na 4 różnych wzorcach (jak już wspomniałem).</p>
-<p>Mam zamiar jako system zainstalować <strong>TrueNAS Core</strong> w wersji 12. Zmienię go na <strong>TrueNAS SCALE</strong>, gdy system będzie już dopracowany (teraz jest on w wersji Alpha lub Beta).</p>
+<p>Mam zamiar jako system zainstalować <strong>TrueNAS Core</strong> w wersji 12.0. Zmienię go na <strong>TrueNAS SCALE</strong>, gdy system będzie już dopracowany (teraz jest on w wersji Alpha lub Beta).</p>
 <p>Aktualna macierz dyskowa będzie zamontowana w starszym komputerze, który będzie służyć jako dodatkowy backup danych.</p>
 <blockquote>
 <p>W późniejszym terminie może dokupię jeszcze kartę HBA IBM 1015 na 8 portów SAS, które obsłużą moje dyski SATA. Wtedy porty na płycie głównej będą mogły być wykorzystane dla SSD w roli ZIL/L2ARC, itp.</p>
@@ -122,8 +122,15 @@
 <p>Mam w domu kolejne 6 dysków <strong>WD Gold 10 TB</strong>. Uruchomiłem ich testowanie programem <em><strong>badblocks</strong></em> pod systemem <strong>Debian 10</strong> uruchomionym z Pendrive.</p>
 <p>Okazało się, że komputer (CPU i7 3770k + MB: MSI Z77A-GD80) w momencie uruchomienia równocześnie testu na sześciu portach SATA może dać maksymalny transfer 1250 MB/s odczytu lub zapisu. Transfer mieszany jest trochę wyższy (np. 784MB/s odczyt z 4 dysków i 500MB/s zapis na 2 dyski). Czyli dużej różnicy nie ma.</p>
 <p>Nowszy komputer na pewno nie miałby takiego ograniczenia w przepustowości, ale niestety nowszego nie mam oprócz mojego Ryzen&rsquo;a 3900X, a jego akurat nie będę używać jako serwera.</p>
-<p>W tym momencie jeszcze nie wiem ostatecznie czy zainstaluję jako system operacyjny <strong>FreeNAS 11.3-U5</strong>, czy też może <strong>TrueNAS 12-U1</strong>. <strong>TrueNAS</strong> ma problemy z instalacją i działaniem na nośniku Pendrive USB 3.0 (wymagany jest SSD).</p>
+<p>W tym momencie jeszcze nie wiem ostatecznie czy zainstaluję jako system operacyjny <strong>FreeNAS 11.3-U5</strong>, czy też może <strong>TrueNAS 12.0-U1</strong>. <strong>TrueNAS</strong> ma problemy z instalacją i działaniem na nośniku Pendrive USB 3.0 (wymagany jest SSD).</p>
 <p>Na pewno dołożę do tej obudowy jeszcze minimum 2 wentulatory 140mm do wzmocnienia przepływu powietrza w celu chłodzenia dysków twardych. Teraz mam 2 wentylatory wciągające i 1 wydmuchujący powietrze.</p>
+<hr>
+<p>29-31 grudnia 2020.</p>
+<p>Moją nową macierz dyskową zbudowałem 29 grudnia. System <strong>TrueNAS 12.0-U1</strong> zainstalowałem na dwóch nośnikach Pendrive USB 2.0 o pojemności 16 GB każda (Raid1). Na razie nie ma z nimi problemów.</p>
+<p>Po zakończeniu replikacji aktualnie przesyłanego Dataset-u ze starej macierzy (stary komputer: Core 2 Quad Q6600, 8 GB RAM DDR2, HDD 6x 2 TB), na mojej nowej macierzy będę miał zajęte około 8 TiB przestrzeni (22,8% z całkowitej pojemności 35 TiB).</p>
+<p>Nowa macierz składa się z 6-ciu dysków <strong>WD Gold 10 TB</strong> w konfiguracji RaidZ2. Podłączona jest ona do mojego poprzedniego komputera stanjonarnego (CPU i7 3770k, 32 GB RAM DDR3).</p>
+<p>Na ten moment nie mam w domu sieci komputerowej o prędkości 10 GBit. Chciałbym przynajmniej część mojej domowej sieci mieć w tej technologii.</p>
+<p>Jeśli bym mógł to podłączyłbym do sieci 10 GBit moje dwa serwery i najnowszy komputer stacjonarny.</p>
 <hr>
 <p>c.d.n.</p>
 

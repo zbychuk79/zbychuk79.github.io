@@ -111,7 +111,7 @@ Skrypt ten zapisałem jako wrt. Dodatkowe pliki konfiguracyjne dla moich urządz
       <description>Przedstawię teraz jak utworzyć środowisko przydatne do generowania obrazów firmware OpenWRT dla moich punktów WiFi działających na SBC Raspberry Pi. Pozwala ono również na kompilowanie własnej wersji iPXE.
 Najpierw pobieramy potrzebne nam pliki:
 git clone https://github.com/zbychuk79/docker-wrt.git  W katalogu docker-wrt mamy następujące pliki:
- Dockerfile - plik sterujący dla Docker&amp;lsquo;a wrt_script - uruchamiany podczas tworzenia obrazu docker-build-wrt-image - generowanie obrazu Debian&amp;lsquo;a z potrzebnymi programami i ustawieniami docker-wrt-container - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu docker-wrt-bash - uruchomienie bash w naszym nowym kontenerze  Po uruchomieniu ostatnich trzech skryptów, można wykonywać polecenia w naszym nowym kontenerze.</description>
+ Dockerfile - plik sterujący dla Docker&amp;lsquo;a wrt_script - uruchamiany podczas tworzenia obrazu docker-image - generowanie obrazu Debian&amp;lsquo;a z potrzebnymi programami i ustawieniami docker-container - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu docker-bash - uruchomienie bash w naszym nowym kontenerze  Po uruchomieniu ostatnich trzech skryptów, można wykonywać polecenia w naszym nowym kontenerze.</description>
     </item>
     
     <item>

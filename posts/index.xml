@@ -6,7 +6,18 @@
     <description>Recent content in Posts on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sun, 21 Mar 2021 07:12:30 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 11:26:14 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
+      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
+      <pubDate>Sun, 28 Mar 2021 11:26:14 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
+      <description>22 marca 2021 kupiłem drukarkę 3D. Dość długo się zastanawiałem jaką wybrać.
+Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).
+Przez pewien czas myślałem nad Original Prusa MINI (test drukarki), ale w końcu zdecydowałem się na Original Prusa i3 MK3S+ - zestaw do samodzielnego montażu (mimo 2 razy wyższej ceny).</description>
+    </item>
+    
     <item>
       <title>Skaner książek</title>
       <link>https://zbychuk79.github.io/posts/book-scanner/</link>
@@ -155,10 +166,9 @@ Jeśli chcesz wysłać mi wiadomość, to poniżej są informacje na temat moich
       
       <guid>https://zbychuk79.github.io/posts/omnie/</guid>
       <description>Moje zainteresowania to:
- IT  Komputery Sieci komputerowe Informatyka Automatyka domowa   Fotografia cyfrowa Jazda na rowerze Wędrówki po polskich lasach i górach Trening siłowy  Ta strona jest miejscem, gdzie rozpisuję się na różne tematy, które mnie interesują.
+ IT  Komputery Sieci komputerowe Informatyka Automatyka domowa Druk 3D   Fotografia cyfrowa Jazda na rowerze Wędrówki po polskich lasach i górach Trening siłowy  Ta strona jest miejscem, gdzie rozpisuję się na różne tematy, które mnie interesują.
  Większość mniejszych plików umieszczam na moim koncie na github.com/zbychuk79.
-Większe pliki będą udostępniane na specjalnie do tego przeznaczonym publicznym kanale w sieci Telegram.
-Dyskusja na temat tej strony internetowej możliwa jest na odpowiednim forum w sieci Telegram.</description>
+Większe pliki będą udostępniane na specjalnie do tego przeznaczonym publicznym kanale w sieci Telegram lub w sieci Bittorrent.</description>
     </item>
     
   </channel>

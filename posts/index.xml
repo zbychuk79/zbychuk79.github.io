@@ -6,7 +6,33 @@
     <description>Recent content in Posts on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Mon, 31 May 2021 03:45:18 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jul 2021 02:30:22 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serwer NAS</title>
+      <link>https://zbychuk79.github.io/posts/freenas/</link>
+      <pubDate>Tue, 20 Jul 2021 02:30:22 +0100</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/freenas/</guid>
+      <description>Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
+Pierwotnie serwerem był:
+ MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
+ MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na dyski o pojemności 2 TB  Macierz dyskowa w tym momencie składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
+    </item>
+    
+    <item>
+      <title>System ratunkowy Debian</title>
+      <link>https://zbychuk79.github.io/posts/system-ratunkowy/</link>
+      <pubDate>Mon, 05 Jul 2021 11:29:03 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
+      <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.
+Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
+Napisałem prosty skrypt o nazwie rescue.
+Wymaga on do działania zainstalowanych paczek:
+ git debootstrap debootstick  Oto opcje mojego skryptu:
+Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -51,32 +77,6 @@ Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem 
 Najpierw pobieramy potrzebne nam pliki:
 git clone https://github.com/zbychuk79/docker-wrt.git  W katalogu docker-wrt mamy następujące pliki:
  Dockerfile - plik sterujący dla Docker&amp;lsquo;a wrt_script - uruchamiany podczas tworzenia obrazu docker-image - generowanie obrazu Debian&amp;lsquo;a z potrzebnymi programami i ustawieniami docker-container - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu docker-bash - uruchomienie bash w naszym nowym kontenerze  Po uruchomieniu ostatnich trzech skryptów, można wykonywać polecenia w naszym nowym kontenerze.</description>
-    </item>
-    
-    <item>
-      <title>Serwer NAS</title>
-      <link>https://zbychuk79.github.io/posts/freenas/</link>
-      <pubDate>Sat, 20 Feb 2021 02:30:22 +0100</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/freenas/</guid>
-      <description>Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
-Pierwotnie serwerem był:
- MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
- MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na dyski o pojemności 2 TB  Macierz dyskowa w tym momencie składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
-    </item>
-    
-    <item>
-      <title>System ratunkowy Debian</title>
-      <link>https://zbychuk79.github.io/posts/system-ratunkowy/</link>
-      <pubDate>Sun, 20 Dec 2020 11:29:03 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
-      <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.
-Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
-Napisałem prosty skrypt o nazwie rescue.
-Wymaga on do działania zainstalowanych paczek:
- git debootstrap debootstick  Oto opcje mojego skryptu:
-Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</description>
     </item>
     
     <item>

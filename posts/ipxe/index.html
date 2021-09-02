@@ -90,7 +90,7 @@ sudo apt clean
 <li>wimboot</li>
 </ul>
 <p>Jest tam też plik <em>/pxelinux.cfg/default</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">DEFAULT ipxe
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">DEFAULT ipxe
 PROMPT 0
 DELAY 0
 
@@ -123,7 +123,7 @@ label ipxe
 <li>skrypt <a href="https://raw.githubusercontent.com/zbychuk79/ipxe-custom/master/ipxe">ipxe</a></li>
 </ul>
 <p>Tu jest skrypt osadzony w binarce <strong>iPXE</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">#!ipxe
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">#!ipxe
 set serwer zbychuk79.github.io
 
 dhcp
@@ -132,7 +132,7 @@ chain --replace --autofree https://${serwer}/ipxe/menu.ipxe
 <ul>
 <li><a href="/ipxe/menu.ipxe">menu.ipxe</a></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">#!ipxe
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">#!ipxe
 # serwer set already
 
 :start

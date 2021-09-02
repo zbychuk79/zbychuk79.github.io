@@ -61,15 +61,15 @@
 <ul>
 <li>Zablokować ładowanie modułu garmin_gps. W <em>/etc/modprobe.d/garmindev.conf</em> dopisać:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">blacklist garmin_gps
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">blacklist garmin_gps
 </code></pre></div><ul>
 <li>Przyznać odpowiednie prawa dostępu dla urządzenia, aby można go było używać jako zwykły użytkownik systemu. W pliku <em>/etc/udev/rules.d/51-garmin.rules</em> dopisać:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">ATTRS{idVendor}==&#34;091e&#34;, ATTRS{idProduct}==&#34;0003&#34;, MODE=&#34;0666&#34;, GROUP=&#34;users&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">ATTRS{idVendor}==&#34;091e&#34;, ATTRS{idProduct}==&#34;0003&#34;, MODE=&#34;0666&#34;, GROUP=&#34;users&#34;
 </code></pre></div><ul>
 <li>Wyłączyć zarządzanie energią urządzeń USB dla naszego odbiornika. Zakładając, że używamy pakietu tlp, w pliku <em>/etc/default/tlp</em> dopisujemy:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">USB_BLACKLIST=&#34;091e:0003&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">USB_BLACKLIST=&#34;091e:0003&#34;
 </code></pre></div><ul>
 <li>Restartujemy komputer.</li>
 </ul>
@@ -91,7 +91,7 @@
 <p>Następnie musimy jeszcze ustawić uruchamianie tego skryptu przez <strong>cron</strong>:</p>
 <pre><code>$ crontab -e
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">40 4 * * *      /home/pi/.bin/gps
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">40 4 * * *      /home/pi/.bin/gps
 </code></pre></div><p>Wystarczy teraz udostępnić katalog z wygenerowanymi plikami przez protokół NFS lub SAMBA i można po jego zamontowaniu na komputerze z Linuksem skopiować na nasz system i wskazać je w programie <strong>QMapshack</strong>.</p>
 <hr>
 <p>Znalazłem też darmowe oprogramowanie <strong>OpenGTS</strong> do śledzenia aktualnej pozycji przez GPS, ale jeszcze nie próbowałem go ustawiać.</p>

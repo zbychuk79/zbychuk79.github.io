@@ -6,7 +6,21 @@
     <description>Recent content on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sun, 26 Sep 2021 02:30:22 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 05:41:03 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System ratunkowy Debian</title>
+      <link>https://zbychuk79.github.io/posts/system-ratunkowy/</link>
+      <pubDate>Sun, 26 Sep 2021 05:41:03 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
+      <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.
+Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
+Napisałem prosty skrypt o nazwie rescue.
+Wymaga on do działania zainstalowanych paczek:
+ git debootstrap debootstick  Oto opcje mojego skryptu:
+Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</description>
+    </item>
+    
     <item>
       <title>Serwer NAS</title>
       <link>https://zbychuk79.github.io/posts/freenas/</link>
@@ -40,20 +54,6 @@ Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, ż
 W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
 Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
 Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
-    </item>
-    
-    <item>
-      <title>System ratunkowy Debian</title>
-      <link>https://zbychuk79.github.io/posts/system-ratunkowy/</link>
-      <pubDate>Mon, 05 Jul 2021 11:29:03 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
-      <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.
-Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
-Napisałem prosty skrypt o nazwie rescue.
-Wymaga on do działania zainstalowanych paczek:
- git debootstrap debootstick  Oto opcje mojego skryptu:
-Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</description>
     </item>
     
     <item>

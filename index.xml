@@ -6,7 +6,19 @@
     <description>Recent content on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Thu, 30 Sep 2021 04:50:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Oct 2021 18:30:22 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serwer NAS</title>
+      <link>https://zbychuk79.github.io/posts/freenas/</link>
+      <pubDate>Sat, 09 Oct 2021 18:30:22 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/freenas/</guid>
+      <description>Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
+Pierwotnie serwerem był:
+ MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
+ MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na dyski o pojemności 2 TB  Macierz dyskowa w tym momencie składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
+    </item>
+    
     <item>
       <title>Skaner książek</title>
       <link>https://zbychuk79.github.io/posts/book-scanner/</link>
@@ -31,18 +43,6 @@ Napisałem prosty skrypt o nazwie rescue.
 Wymaga on do działania zainstalowanych paczek:
  git debootstrap debootstick  Oto opcje mojego skryptu:
 Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</description>
-    </item>
-    
-    <item>
-      <title>Serwer NAS</title>
-      <link>https://zbychuk79.github.io/posts/freenas/</link>
-      <pubDate>Sun, 26 Sep 2021 02:30:22 +0100</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/freenas/</guid>
-      <description>Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
-Pierwotnie serwerem był:
- MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
- MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na dyski o pojemności 2 TB  Macierz dyskowa w tym momencie składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
     </item>
     
     <item>

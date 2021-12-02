@@ -6,11 +6,25 @@
     <description>Recent content in Posts on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Tue, 09 Nov 2021 20:25:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Dec 2021 05:41:03 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System ratunkowy Debian</title>
+      <link>https://zbychuk79.github.io/posts/system-ratunkowy/</link>
+      <pubDate>Wed, 01 Dec 2021 05:41:03 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
+      <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.
+Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
+Napisałem prosty skrypt o nazwie rescue.
+Wymaga on do działania zainstalowanych paczek:
+ git debootstrap debootstick  Oto opcje mojego skryptu:
+Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</description>
+    </item>
+    
     <item>
       <title>Skaner książek</title>
       <link>https://zbychuk79.github.io/posts/book-scanner/</link>
-      <pubDate>Tue, 09 Nov 2021 20:25:00 +0200</pubDate>
+      <pubDate>Sat, 20 Nov 2021 20:25:00 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
       <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
@@ -29,20 +43,6 @@ Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem 
 Pierwotnie serwerem był:
  MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
  MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na dyski o pojemności 2 TB  Macierz dyskowa w tym momencie składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
-    </item>
-    
-    <item>
-      <title>System ratunkowy Debian</title>
-      <link>https://zbychuk79.github.io/posts/system-ratunkowy/</link>
-      <pubDate>Sun, 26 Sep 2021 05:41:03 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
-      <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.
-Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
-Napisałem prosty skrypt o nazwie rescue.
-Wymaga on do działania zainstalowanych paczek:
- git debootstrap debootstick  Oto opcje mojego skryptu:
-Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian -s tworzy skrypty do wykonania w chroot z Debianem -r wejdź do chroot z Debianem -i generuje uruchamialny obraz systemu przez debootstick -c kasuje z dysku środowisko chroot z Debianem Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</description>
     </item>
     
     <item>

@@ -6,7 +6,18 @@
     <description>Recent content on zbychuk79.github.io HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Thu, 09 Dec 2021 17:01:22 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 13:27:35 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moje klucze publiczne GnuPG</title>
+      <link>https://zbychuk79.github.io/posts/gnupg/</link>
+      <pubDate>Fri, 31 Dec 2021 13:27:35 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
+      <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
+ OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide   Podpisywanie kluczy Key Signing Party   Serwer kluczy keys.openpgp.org  No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
+Jeśli chcesz wysłać mi wiadomość, to poniżej są informacje na temat moich kluczy publicznych dla programu GnuPG.</description>
+    </item>
+    
     <item>
       <title>Serwer NAS</title>
       <link>https://zbychuk79.github.io/posts/freenas/</link>
@@ -146,17 +157,6 @@ Skrypt ten zapisałem jako wrt. Dodatkowe pliki konfiguracyjne dla moich urządz
 Przedstawię jak skompilować własną wersję iPXE.
  Najpierw przygotuję system Debian, gdzie będę przeprowadzał całą procedurę.
 Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze Docker-a). System host&amp;rsquo;a to ArchLinux, który działa dobrze, ale prościej mi się pod Debian&amp;lsquo;em to ustawia i łatwiej jest wyłapać błędy na prawie gołym systemie.</description>
-    </item>
-    
-    <item>
-      <title>Moje klucze publiczne GnuPG</title>
-      <link>https://zbychuk79.github.io/posts/gnupg/</link>
-      <pubDate>Tue, 21 Apr 2020 16:49:35 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
-      <description>Ostatnio (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
- OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide   Podpisywanie kluczy Key Signing Party   Serwer kluczy keys.openpgp.org  No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
-Jeśli chcesz wysłać mi wiadomość, to poniżej są informacje na temat moich kluczy publicznych dla programu GnuPG.</description>
     </item>
     
     <item>

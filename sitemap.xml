@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zbychuk79.github.io/posts/</loc>
-    <lastmod>2021-12-09T17:01:22+02:00</lastmod>
+    <loc>https://zbychuk79.github.io/posts/gnupg/</loc>
+    <lastmod>2021-12-31T13:27:35+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/freenas/</loc>
-    <lastmod>2021-12-09T17:01:22+02:00</lastmod>
+    <loc>https://zbychuk79.github.io/posts/</loc>
+    <lastmod>2021-12-31T13:27:35+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/</loc>
+    <lastmod>2021-12-31T13:27:35+02:00</lastmod>
+  </url><url>
+    <loc>https://zbychuk79.github.io/posts/freenas/</loc>
     <lastmod>2021-12-09T17:01:22+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/posts/system-ratunkowy/</loc>
@@ -43,9 +46,6 @@
   </url><url>
     <loc>https://zbychuk79.github.io/posts/ipxe/</loc>
     <lastmod>2020-04-21T17:56:50+02:00</lastmod>
-  </url><url>
-    <loc>https://zbychuk79.github.io/posts/gnupg/</loc>
-    <lastmod>2020-04-21T16:49:35+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/posts/omnie/</loc>
     <lastmod>2020-04-21T16:49:35+02:00</lastmod>

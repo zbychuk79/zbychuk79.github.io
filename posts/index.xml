@@ -15,7 +15,7 @@
       <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
       <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
  OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide   Podpisywanie kluczy Key Signing Party   Serwer kluczy keys.openpgp.org  No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
- Jeśli chcesz wysłać mi wiadomość, to poniżej są informacje na temat moich kluczy publicznych dla programu GnuPG.</description>
+ Jeśli chcesz wysłać mi wiadomość, to poniżej są moje klucze publiczne dla programu GnuPG.</description>
     </item>
     
     <item>

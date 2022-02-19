@@ -1,40 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on zbychuk79.github.io HomePage</title>
-    <link>https://zbychuk79.github.io/posts/</link>
-    <description>Recent content in Posts on zbychuk79.github.io HomePage</description>
+    <title>Posts on Zbychuk&#39;s HomePage</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Tue, 01 Feb 2022 13:19:18 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 19:23:00 +0200</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
-      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
-      <pubDate>Tue, 01 Feb 2022 13:19:18 +0200</pubDate>
+      <title>IPFS w mojej sieci LAN</title>
+      <link>/posts/ipfs/</link>
+      <pubDate>Sat, 19 Feb 2022 19:23:00 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
-      <description>22 marca 2021.
-W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
-Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
-    </item>
-    
-    <item>
-      <title>Moje klucze publiczne GnuPG</title>
-      <link>https://zbychuk79.github.io/posts/gnupg/</link>
-      <pubDate>Sat, 22 Jan 2022 15:02:00 +0100</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
-      <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
- OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide   Podpisywanie kluczy Key Signing Party   Serwer kluczy keys.openpgp.org  No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
- Pomocne informacje:</description>
+      <guid>/posts/ipfs/</guid>
+      <description> Informacje na temat IPFS:
+ ipfs.io - Główna strona projektu  To jest tylko mały indeks z linkami stron, które umieściłem w sieci IPFS.
+ Galeria zdjęć Kilka moich plików DJVU  </description>
     </item>
     
     <item>
       <title>Serwer NAS</title>
-      <link>https://zbychuk79.github.io/posts/freenas/</link>
-      <pubDate>Thu, 09 Dec 2021 17:01:22 +0200</pubDate>
+      <link>/posts/freenas/</link>
+      <pubDate>Wed, 09 Feb 2022 17:01:22 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/freenas/</guid>
+      <guid>/posts/freenas/</guid>
       <description>Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
 Pierwotnie serwerem był:
  MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane  Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
@@ -42,11 +31,33 @@ Pierwotnie serwerem był:
     </item>
     
     <item>
+      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
+      <link>/posts/drukarka3d/</link>
+      <pubDate>Tue, 01 Feb 2022 13:19:18 +0200</pubDate>
+      
+      <guid>/posts/drukarka3d/</guid>
+      <description>22 marca 2021.
+W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
+Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
+    </item>
+    
+    <item>
+      <title>Moje klucze publiczne GnuPG</title>
+      <link>/posts/gnupg/</link>
+      <pubDate>Sat, 22 Jan 2022 15:02:00 +0100</pubDate>
+      
+      <guid>/posts/gnupg/</guid>
+      <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
+ OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide   Podpisywanie kluczy Key Signing Party   Serwer kluczy keys.openpgp.org  No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
+ Pomocne informacje:</description>
+    </item>
+    
+    <item>
       <title>System ratunkowy Debian</title>
-      <link>https://zbychuk79.github.io/posts/system-ratunkowy/</link>
+      <link>/posts/system-ratunkowy/</link>
       <pubDate>Wed, 01 Dec 2021 05:41:03 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
+      <guid>/posts/system-ratunkowy/</guid>
       <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.
 Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
 Napisałem prosty skrypt o nazwie rescue.
@@ -57,10 +68,10 @@ Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ] -d tworzy na dysku środ
     
     <item>
       <title>Skaner książek</title>
-      <link>https://zbychuk79.github.io/posts/book-scanner/</link>
+      <link>/posts/book-scanner/</link>
       <pubDate>Sat, 20 Nov 2021 20:25:00 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
+      <guid>/posts/book-scanner/</guid>
       <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
 W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
 Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
@@ -69,10 +80,10 @@ Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem 
     
     <item>
       <title>Asciinema</title>
-      <link>https://zbychuk79.github.io/posts/asciinema/</link>
+      <link>/posts/asciinema/</link>
       <pubDate>Sun, 21 Feb 2021 04:35:28 +0100</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/asciinema/</guid>
+      <guid>/posts/asciinema/</guid>
       <description> Asciinema to bardzo przydatny program do nagrywania sesji terminalowej.
    Linki:
  How asciinema works Embedding asciinema cast in your hugo site  </description>
@@ -80,10 +91,10 @@ Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem 
     
     <item>
       <title>Docker - debian-wrt image</title>
-      <link>https://zbychuk79.github.io/posts/docker-wrt/</link>
+      <link>/posts/docker-wrt/</link>
       <pubDate>Sat, 20 Feb 2021 13:00:00 +0100</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/docker-wrt/</guid>
+      <guid>/posts/docker-wrt/</guid>
       <description>Przedstawię teraz jak utworzyć środowisko przydatne do generowania obrazów firmware OpenWRT dla moich punktów WiFi działających na SBC Raspberry Pi. Pozwala ono również na kompilowanie własnej wersji iPXE.
 Najpierw pobieramy potrzebne nam pliki:
 git clone https://github.com/zbychuk79/docker-wrt.git  W katalogu docker-wrt mamy następujące pliki:
@@ -92,10 +103,10 @@ git clone https://github.com/zbychuk79/docker-wrt.git  W katalogu docker-wrt mam
     
     <item>
       <title>Wireguard</title>
-      <link>https://zbychuk79.github.io/posts/wireguard/</link>
+      <link>/posts/wireguard/</link>
       <pubDate>Fri, 12 Jun 2020 12:24:21 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/wireguard/</guid>
+      <guid>/posts/wireguard/</guid>
       <description>2020.06.12.
 Udało mi się dzisiaj uruchomić serwer VPN WireGuard pod Docker-em na Raspberry Pi 4.
 Mam na tym urządzeniu zainstalowany OpenMediaVault 5 na 32-bitowym systemie RaspiOS Lite. Do tego jeszcze mam tam zainstalowany kontener Portainer do zarządzania Docker-em.
@@ -106,10 +117,10 @@ Poniżej jest mój skrypt, który tworzy kontener na podstawie powyższego Image
     
     <item>
       <title>Domoticz</title>
-      <link>https://zbychuk79.github.io/posts/domoticz/</link>
+      <link>/posts/domoticz/</link>
       <pubDate>Thu, 07 May 2020 18:55:43 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/domoticz/</guid>
+      <guid>/posts/domoticz/</guid>
       <description>Od około września 2018 roku mam na jednym z moich Raspberry Pi uruchomiony system automatyki domowej Domoticz. Mam w planie mieć go uruchomionego pod Docker-em na moim serwerze &amp;ldquo;omv1&amp;rdquo; (Odroid HC1).
 Na samym początku miałem tylko podłączone 6 czujników temperatury DS18B20 na jednym długim kablu wielożyłowym. Teraz na tym kablu mam ich 5 sztuk:
  korytarz w piwnicy pokój gościnny na parterze pokój na piętrze, gdzie śpię poddasze na dworze pod dachem od północnej strony  Jeszcze zanim zainstalowałem Domoticz-a, to miałem ustawione monitorowanie tych czujników przy pomocy skryptu, który generował wykresy czasowe przy pomocy programu rrdtool.</description>
@@ -117,29 +128,29 @@ Na samym początku miałem tylko podłączone 6 czujników temperatury DS18B20 n
     
     <item>
       <title>Qmapshack</title>
-      <link>https://zbychuk79.github.io/posts/qmapshack/</link>
+      <link>/posts/qmapshack/</link>
       <pubDate>Mon, 27 Apr 2020 12:32:23 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/qmapshack/</guid>
+      <guid>/posts/qmapshack/</guid>
       <description> Kurs wideo na temat programu QmapShack:  część 1     część 2     część 3     część 4    </description>
     </item>
     
     <item>
       <title>Garmin GPS</title>
-      <link>https://zbychuk79.github.io/posts/gps/</link>
+      <link>/posts/gps/</link>
       <pubDate>Sun, 26 Apr 2020 09:24:34 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/gps/</guid>
+      <guid>/posts/gps/</guid>
       <description>Posiadam odbiornik GPSMap 76CSx firmy Garmin z dodatkowym uchwytem na rower. Wraz z odbiornikiem zakupiłem GPMapa 2007, ale dodatkowych aktualizacji już nie kupowałem.
 Darmowe mapy do Garmin GPSMap 76CSx. Miałem załadowaną do niego mapę UMP-PL TOPO. Mapa ta nadawała się doskonale do jazdy na rowerze, po wcześniejszym załadowaniu trasy. Powodem tego jest to, że posiada zaznaczone dużo obiektów i szlaków, których próżno szukać na innych mapach oraz to, że uaktualniana jest prawie codziennie.</description>
     </item>
     
     <item>
       <title>OpenWRT Image Builder</title>
-      <link>https://zbychuk79.github.io/posts/openwrt/</link>
+      <link>/posts/openwrt/</link>
       <pubDate>Wed, 22 Apr 2020 14:35:28 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
+      <guid>/posts/openwrt/</guid>
       <description> Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 10 “Buster”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
 W moim przypadku działa on pod VM (lub w kontenerze Docker-a) z systemem Debian 10 “Buster”.
 Skrypt ten zapisałem jako wrt. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
@@ -149,10 +160,10 @@ Skrypt ten zapisałem jako wrt. Dodatkowe pliki konfiguracyjne dla moich urządz
     
     <item>
       <title>iPXE w mojej sieci LAN</title>
-      <link>https://zbychuk79.github.io/posts/ipxe/</link>
+      <link>/posts/ipxe/</link>
       <pubDate>Tue, 21 Apr 2020 17:56:50 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/ipxe/</guid>
+      <guid>/posts/ipxe/</guid>
       <description>W tym miejscu opiszę jak można ustawić proste (lub też bardzo rozbudowane) środowisko do startowania systemu operacyjnego lub jego instalatora bez pobierania z Internetu dużego pliku nośnika startowego typu CD-Rom lub Pendrive.
 Przedstawię jak skompilować własną wersję iPXE.
  Najpierw przygotuję system Debian, gdzie będę przeprowadzał całą procedurę.
@@ -161,12 +172,12 @@ Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej (czynnoś
     
     <item>
       <title>O mnie</title>
-      <link>https://zbychuk79.github.io/posts/omnie/</link>
+      <link>/posts/omnie/</link>
       <pubDate>Tue, 21 Apr 2020 16:49:35 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/omnie/</guid>
+      <guid>/posts/omnie/</guid>
       <description>Moje zainteresowania to:
- IT  Komputery Sieci komputerowe Informatyka Automatyka domowa Druk 3D   Fotografia cyfrowa Jazda na rowerze Wędrówki po polskich lasach i górach Trening siłowy  Ta strona jest miejscem, gdzie rozpisuję się na różne tematy, które mnie interesują.
+ IT  Komputery Sieci komputerowe Automatyka domowa Druk 3D   Fotografia cyfrowa Jazda na rowerze Wędrówki po polskich lasach i górach Trening siłowy  Ta strona jest miejscem, gdzie rozpisuję się na różne tematy, które mnie interesują.
  Większość mniejszych plików umieszczam na moim koncie na github.com/zbychuk79.
 Większe pliki będą udostępniane na specjalnie do tego przeznaczonym publicznym kanale w sieci Telegram lub w sieci Bittorrent.</description>
     </item>

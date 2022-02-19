@@ -2,56 +2,59 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zbychuk79.github.io/posts/drukarka3d/</loc>
+    <loc>/posts/ipfs/</loc>
+    <lastmod>2022-02-19T19:23:00+02:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2022-02-19T19:23:00+02:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-02-19T19:23:00+02:00</lastmod>
+  </url><url>
+    <loc>/posts/freenas/</loc>
+    <lastmod>2022-02-09T17:01:22+02:00</lastmod>
+  </url><url>
+    <loc>/posts/drukarka3d/</loc>
     <lastmod>2022-02-01T13:19:18+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/</loc>
-    <lastmod>2022-02-01T13:19:18+02:00</lastmod>
-  </url><url>
-    <loc>https://zbychuk79.github.io/</loc>
-    <lastmod>2022-02-01T13:19:18+02:00</lastmod>
-  </url><url>
-    <loc>https://zbychuk79.github.io/posts/gnupg/</loc>
+    <loc>/posts/gnupg/</loc>
     <lastmod>2022-01-22T15:02:00+01:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/freenas/</loc>
-    <lastmod>2021-12-09T17:01:22+02:00</lastmod>
-  </url><url>
-    <loc>https://zbychuk79.github.io/posts/system-ratunkowy/</loc>
+    <loc>/posts/system-ratunkowy/</loc>
     <lastmod>2021-12-01T05:41:03+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/book-scanner/</loc>
+    <loc>/posts/book-scanner/</loc>
     <lastmod>2021-11-20T20:25:00+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/asciinema/</loc>
+    <loc>/posts/asciinema/</loc>
     <lastmod>2021-02-21T04:35:28+01:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/docker-wrt/</loc>
+    <loc>/posts/docker-wrt/</loc>
     <lastmod>2021-02-20T13:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/wireguard/</loc>
+    <loc>/posts/wireguard/</loc>
     <lastmod>2020-06-12T12:24:21+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/domoticz/</loc>
+    <loc>/posts/domoticz/</loc>
     <lastmod>2020-05-07T18:55:43+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/qmapshack/</loc>
+    <loc>/posts/qmapshack/</loc>
     <lastmod>2020-04-27T12:32:23+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/gps/</loc>
+    <loc>/posts/gps/</loc>
     <lastmod>2020-04-26T09:24:34+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/openwrt/</loc>
+    <loc>/posts/openwrt/</loc>
     <lastmod>2020-04-22T14:35:28+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/ipxe/</loc>
+    <loc>/posts/ipxe/</loc>
     <lastmod>2020-04-21T17:56:50+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/omnie/</loc>
+    <loc>/posts/omnie/</loc>
     <lastmod>2020-04-21T16:49:35+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/categories/</loc>
+    <loc>/categories/</loc>
   </url><url>
-    <loc>https://zbychuk79.github.io/tags/</loc>
+    <loc>/tags/</loc>
   </url>
 </urlset>

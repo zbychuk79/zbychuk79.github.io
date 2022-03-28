@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Monero daemon w mojej sieci LAN - Zbychuk&#39;s HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Monero daemon w mojej sieci LAN" />
+<meta property="og:description" content="Informacje na temat blockchain Monero i jak ustawiłem jego daemon w mojej sieci LAN." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="zbychuk79.github.io/posts/monero/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-22T21:32:00+02:00" />
+<meta property="article:modified_time" content="2022-02-22T21:32:00+02:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Monero daemon w mojej sieci LAN"/>
+<meta name="twitter:description" content="Informacje na temat blockchain Monero i jak ustawiłem jego daemon w mojej sieci LAN."/>
+
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="zbychuk79.github.iocss/main.css" />
+
+
+</head>
+<body>
+	<div class="content">
+		<div class="content">
+<header>
+<div class="main">
+	<a href="zbychuk79.github.io">Zbychuk&#39;s HomePage</a>
+</div>
+<nav>
+			
+
+</nav>
+</header>
+<main>
+<article>
+		<div class="title">
+			<h1 class="title">Monero daemon w mojej sieci LAN</h1>
+			<div class="meta"> </div>
+		</div>
+		<div>
+			
+		</div>
+
+		<section class="body">
+			<hr>
+<p>Informacje na temat kryptowaluty <strong>Monero</strong>:</p>
+<ul>
+<li><a href="https://www.getmonero.org/">Monero Means Money</a> - Główna strona projektu</li>
+</ul>
+<hr>
+<p>W pierwszej kolejności uruchomiłem wersję z interfejsem graficznym na moim głównym komputerze.</p>
+<p>Pobrałem <em><strong>monero-gui-v0.17.3.1</strong></em> i uruchomiłem <em>monero-wallet-gui</em>.</p>
+<p>Ustawiłem go aby działał w trybie expert. Spowoduje to pobranie całego łańcucha blockchain (trwało to dość długo). Teraz zajmuje on na dysku 133GB. Został on zapisany w katalogu <em>~/.bitmonero</em>, który po zamknięciu programu skopiuję na mój serwer <strong>Raspberry Pi</strong>.</p>
+<p>Chcę zapisać ten blockchain na moim <strong>Raspberry Pi</strong>, aby mieć do niego dostęp na moim laptopie i nie zajmować większości dostępnej przestrzeni na dysku.</p>
+<hr>
+<h2 id="oto-czynności-które-wykonałem-aby-uruchomić-węzeł-monero-w-sieci-lan-na-moim-raspberry-pi">Oto czynności, które wykonałem aby uruchomić węzeł <strong>Monero</strong> w sieci LAN na moim <strong>Raspberry Pi</strong>.</h2>
+<p>Binarkę <em><strong>monerod</strong></em> i inne pliki przeznaczone dla <strong>Raspberry Pi</strong> zapisałem do katalogu <em>/usr/local/binz/monero-arm-linux-gnueabihf-v0.17.3.0</em>.</p>
+<p>Utworzyłem link:</p>
+<p><em><strong>/usr/local/binz/monero &ndash;&gt; /usr/local/binz/monero-arm-linux-gnueabihf-v0.17.3.0/monerod</strong></em></p>
+<p>Plik <em>/home/pi/.bitmonero/bitmonero.conf</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>no-igd=1
+</span></span><span style="display:flex;"><span>restricted-rpc=1
+</span></span><span style="display:flex;"><span>rpc-login=user:passwd
+</span></span><span style="display:flex;"><span>#rpc-bind-ip=192.168.77.8
+</span></span><span style="display:flex;"><span>rpc-bind-port=18081
+</span></span></code></pre></div><p>Oczywiście zamiast &ldquo;user:passwd&rdquo; wpisujemy własne dane jakie nam odpowiadają.</p>
+<p>Plik z konfiguracją usługi <strong>systemd</strong> dla daemona <strong>Monero</strong> zapisałem w <em>/etc/systemd/system/monerod.service</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-service" data-lang="service"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Monero Full Node</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">pi</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Group=monero</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#WorkingDirectory=~</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#StateDirectory=monero</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#LogsDirectory=monero</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clearnet config</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">simple</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/binz/monerod --config-file /home/pi/.bitmonero/bitmonero.conf --non-interactive</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">StandardOutput</span><span style="color:#f92672">=</span><span style="color:#e6db74">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">StandardError</span><span style="color:#f92672">=</span><span style="color:#e6db74">null</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tor config</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## We have to use simple, not forking, because we cannot pass --detach</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## because stderr/stdout is not available when detached, but torsocks</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## attempts to write to it, and fails with &#39;invalid argument&#39;, causing</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## monerod to fail.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Type=simple</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Environment=DNS_PUBLIC=tcp</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## The following is needed only when accessing wallet from a different</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## host in the LAN, VPN, etc, the RPC must bind to 0.0.0.0, but</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## by default torsocks only allows binding to localhost.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Environment=TORSOCKS_ALLOW_INBOUND=1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ExecStart=/usr/bin/torsocks /usr/bin/monerod --config-file /etc/monerod.conf \</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    --non-interactive</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Restart</span><span style="color:#f92672">=</span><span style="color:#e6db74">always</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>Teraz ustawiam uruchamianie <em><strong>monerod</strong></em> przy starcie systemu:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo systemctl enable monerod
+</span></span></code></pre></div><p>Uruchamiam <em><strong>monerod</strong></em>, żemy sprawdzić, czy będzie działać:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo systemctl start monerod
+</span></span></code></pre></div><p>Polecenie:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo systemctl status monerod
+</span></span></code></pre></div><p>powinno pokazać coś podobnego do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>● monerod.service - Monero Full Node
+</span></span><span style="display:flex;"><span>   Loaded: loaded (/etc/systemd/system/monerod.service; enabled; vendor preset: enabled)
+</span></span><span style="display:flex;"><span>   Active: active (running) since Tue 2022-02-22 21:01:53 CET; 21min ago
+</span></span><span style="display:flex;"><span> Main PID: 29084 (monerod)
+</span></span><span style="display:flex;"><span>    Tasks: 22 (limit: 4915)
+</span></span><span style="display:flex;"><span>   CGroup: /system.slice/monerod.service
+</span></span><span style="display:flex;"><span>           └─29084 /usr/local/binz/monerod --config-file /home/pi/.bitmonero/bitmonero.conf --
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Feb 22 21:01:53 q systemd[1]: Started Monero Full Node.
+</span></span></code></pre></div><p>Uruchomienie <em><strong>monerod</strong></em> przez daemon <em><strong>systemd</strong></em> spowoduje, że będzie on nadzorowany i w przypadku zabicia procesu zostanie automatycznie zrestartowany.</p>
+<hr>
+<p>Mając działającego <em><strong>monerod</strong></em> na własnym serwerze <strong>Raspberry Pi</strong>, mogę teraz na moim laptopie uruchomić <em><strong>monero-wallet-gui</strong></em> bez potrzeby ściągania na mój mały SSD  całego blockchain-a <strong>Monero</strong>.</p>
+<p>Trzeba tylko ustawić go tak, by używał tzw. &ldquo;remote node&rdquo;. W powyżej przedstawionej konfiguracji trzeba uruchomić tunel SSH do hosta z działającym <em><strong>monerod</strong></em>, aby <strong><strong>monero-wallet-gui</strong></strong> mógł się z nim połączyć przed jego uruchomieniem.</p>
+<p>Polecenie uruchamiające tunel SSH zapisałem w skrypcie o nazwie <em><strong>ssh-monero</strong></em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ssh -L 18081:localhost:18081 192.168.77.8
+</span></span></code></pre></div><p>Aders IP na końcu wskazuje mój serwer z działającym <em><strong>monerod</strong></em>.</p>
+<p>Po uruchomieniu tunelu SSH można teraz uruchomić <em><strong>monero-wallet-gui</strong></em> na normalnym komputerze i połączyć się nim do lokalnego węzła <strong>Monero</strong> na naszym serwerze. Trzeba tylko w konfiguracji zdalnego węzła podać odpowiednie dane:</p>
+<ul>
+<li>Adress: 127.0.0.1</li>
+<li>Port: 18081</li>
+<li>Daemon username: user</li>
+<li>Daemon password: passwd</li>
+<li>Mark as Trusted Daemon</li>
+</ul>
+<p>Tak ustawiony program po krótkiej chwili powiniem połączyć się do blockchain-a <strong>Monero</strong>.</p>
+<p><img src="../../monero/monero-wallet-gui.png" alt="monero-wallet-gui.png"></p>
+
+		</section>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		
+	
+	<footer>
+<hr>⚡️
+	2022  <a href="https://github.com/athul/archie">Temat Archie</a> | Wybudowane przez <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+
+<script>
+      feather.replace()
+</script>
+
+	</div>
+</body>
+</html>

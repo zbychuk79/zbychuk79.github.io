@@ -2,11 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>iPXE w mojej sieci LAN - zbychuk79.github.io HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>iPXE w mojej sieci LAN - Zbychuk&#39;s HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="iPXE w mojej sieci LAN" />
 <meta property="og:description" content="Jak ustawić uruchamianie komputerów z sieci lokalnej przez iPXE." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zbychuk79.github.io/posts/ipxe/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="zbychuk79.github.io/posts/ipxe/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-21T17:56:50+02:00" />
 <meta property="article:modified_time" content="2020-04-21T17:56:50+02:00" />
 
@@ -16,14 +16,16 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" media="screen" href="https://zbychuk79.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://zbychuk79.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+	<link rel="stylesheet" type="text/css" media="screen" href="zbychuk79.github.iocss/main.css" />
+
+
 </head>
 <body>
 	<div class="content">
 		<div class="content">
 <header>
 <div class="main">
-	<a href="https://zbychuk79.github.io/">zbychuk79.github.io HomePage</a>
+	<a href="zbychuk79.github.io">Zbychuk&#39;s HomePage</a>
 </div>
 <nav>
 			
@@ -46,7 +48,7 @@
 <p>Przedstawię jak skompilować własną wersję <strong>iPXE</strong>.</p>
 <hr>
 <p>Najpierw przygotuję system <strong>Debian</strong>, gdzie będę przeprowadzał całą procedurę.</p>
-<p>Zrobiłem to pod <strong>VirtualBox</strong> dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze <strong>Docker</strong>-a). System host&rsquo;a to <strong>ArchLinux</strong>, który działa dobrze, ale prościej mi się pod <strong>Debian</strong>&lsquo;em to ustawia i łatwiej jest wyłapać błędy na prawie gołym systemie.</p>
+<p>Zrobiłem to pod <strong>VirtualBox</strong> dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze <strong>Docker</strong>-a). System host&rsquo;a to <strong>ArchLinux</strong>, który działa dobrze, ale prościej mi się pod <strong>Debian</strong>&rsquo;em to ustawia i łatwiej jest wyłapać błędy na prawie gołym systemie.</p>
 <hr>
 <h2 id="instalacja-systemu-debian-10-buster">Instalacja systemu Debian 10 &ldquo;Buster&rdquo;.</h2>
 <p>Instalację systemu można przeprowadzić z normalnego obrazu, lub też można użyć niewielkiego pliku (&lt;1MB) <a href="https://github.com/zbychuk79/ipxe-custom/raw/master/ipxe-internet.iso">ipxe.iso</a>, który udostępniłem. Jest to obraz bootloadera <strong>iPXE</strong> z osadzonym w nim skrypem ładującym <em>menu</em> z różnymi opcjami do wyboru.</p>
@@ -90,17 +92,17 @@ sudo apt clean
 <li>wimboot</li>
 </ul>
 <p>Jest tam też plik <em>/pxelinux.cfg/default</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">DEFAULT ipxe
-PROMPT 0
-DELAY 0
-
-label ipxe
-        MENU LABEL iPXE
-        KERNEL http://omv1:82/ipxe/ipxe.lkrn
-        TEXT HELP
-                iPXE - open source boot firmware
-        ENDTEXT
-</code></pre></div><p>Plik <em>http://omv1:82/ipxe/ipxe.lkrn</em> to wersja <strong>iPXE</strong> dla mojej sieci LAN wygenerowana przez niżej wspomniany skrypt. Ładuje on Menu, które mam ustawione dla mojej domowej sieci LAN.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>DEFAULT ipxe
+</span></span><span style="display:flex;"><span>PROMPT 0
+</span></span><span style="display:flex;"><span>DELAY 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>label ipxe
+</span></span><span style="display:flex;"><span>        MENU LABEL iPXE
+</span></span><span style="display:flex;"><span>        KERNEL http://omv1:82/ipxe/ipxe.lkrn
+</span></span><span style="display:flex;"><span>        TEXT HELP
+</span></span><span style="display:flex;"><span>                iPXE - open source boot firmware
+</span></span><span style="display:flex;"><span>        ENDTEXT
+</span></span></code></pre></div><p>Plik <em>http://omv1:82/ipxe/ipxe.lkrn</em> to wersja <strong>iPXE</strong> dla mojej sieci LAN wygenerowana przez niżej wspomniany skrypt. Ładuje on Menu, które mam ustawione dla mojej domowej sieci LAN.</p>
 <p>Katalog udostępniany przez <strong>TFTP</strong> jest też udostępniony w mojej sieci LAN pod adresem <em>http://omv1:82/</em> przez serwer WWW <strong>Nginx</strong>.</p>
 <hr>
 <p>Start komputera w mojej sieci LAN wygląda tak, że:</p>
@@ -122,62 +124,136 @@ label ipxe
 <ul>
 <li>skrypt <a href="https://raw.githubusercontent.com/zbychuk79/ipxe-custom/master/ipxe">ipxe</a></li>
 </ul>
-<p>Tu jest skrypt osadzony w binarce <strong>iPXE</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">#!ipxe
-set serwer zbychuk79.github.io
-
-dhcp
-chain --replace --autofree https://${serwer}/ipxe/menu.ipxe
-</code></pre></div><p>Tu jest skrypt menu ładowany przez <strong>iPXE</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>usage<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Jak używać: ipxe [ -d ] [ -c ... ] | [ -h ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -d ściągnij źródła
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -c kompiluj - jaki iPXE budować
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">           q: buduję go dla mojej domowej sieci LAN (serwer q).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        omv1: buduję go dla mojej domowej sieci LAN (serwer omv1).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    internet: iPXE dla konfiguracji z poza sieci -z-.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -h wyświetlenie tej instrukcji
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    usage
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> $1 in
+</span></span><span style="display:flex;"><span>        -d <span style="color:#f92672">)</span>          download<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        -c <span style="color:#f92672">)</span>          shift
+</span></span><span style="display:flex;"><span>                      net<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span>                      compile<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        -h | --help <span style="color:#f92672">)</span>           usage
+</span></span><span style="display:flex;"><span>                                exit
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        * <span style="color:#f92672">)</span>                     usage
+</span></span><span style="display:flex;"><span>                                exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>    shift
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd
+</span></span><span style="display:flex;"><span>mkdir -p ipxe
+</span></span><span style="display:flex;"><span>mkdir -p ipxe-image
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$download<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    rm -rf ipxe
+</span></span><span style="display:flex;"><span>    git clone git://git.ipxe.org/ipxe.git
+</span></span><span style="display:flex;"><span>    rm -rf ipxe-custom
+</span></span><span style="display:flex;"><span>    git clone https://github.com/zbychuk79/ipxe-custom.git
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$compile<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>                       <span style="color:#75715e">#cp ~/ipxe-custom/general.h ~/ipxe/src/config/general.h</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> $net in
+</span></span><span style="display:flex;"><span>        q <span style="color:#f92672">)</span>            cp ~/ipxe-custom/$net.ipxe ~/ipxe/src/embeded.ipxe
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        omv1 <span style="color:#f92672">)</span>         cp ~/ipxe-custom/$net.ipxe ~/ipxe/src/embeded.ipxe
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        internet <span style="color:#f92672">)</span>     cp ~/ipxe-custom/$net.ipxe ~/ipxe/src/embeded.ipxe
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        * <span style="color:#f92672">)</span>            echo <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Nie podałeś parametru -c [ q | o1 | omv1 | internet ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>                       exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>    mkdir -p ~/ipxe-image/$net
+</span></span><span style="display:flex;"><span>    cd ~/ipxe/src
+</span></span><span style="display:flex;"><span>    make clean
+</span></span><span style="display:flex;"><span>    make all EMBED<span style="color:#f92672">=</span>embeded.ipxe
+</span></span><span style="display:flex;"><span>    make bin-x86_64-efi/ipxe.efi EMBED<span style="color:#f92672">=</span>embeded.ipxe
+</span></span><span style="display:flex;"><span>    cp bin/ipxe.lkrn bin/ipxe.usb bin/ipxe.iso bin/ipxe.dsk bin/ipxe.pxe bin-x86_64-efi/ipxe.efi ~/ipxe-image/$net
+</span></span><span style="display:flex;"><span>    cp ~/ipxe/src/config/general.h ~/ipxe-image/$net/
+</span></span><span style="display:flex;"><span>    cp embeded.ipxe ~/ipxe-image/$net/
+</span></span><span style="display:flex;"><span>    cp $0 ~/ipxe-image/$net/
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>Tu jest skrypt osadzony w binarce <strong>iPXE</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>#!ipxe
+</span></span><span style="display:flex;"><span>set serwer zbychuk79.github.io
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dhcp
+</span></span><span style="display:flex;"><span>chain --replace --autofree https://${serwer}/ipxe/menu.ipxe
+</span></span></code></pre></div><p>Tu jest skrypt menu ładowany przez <strong>iPXE</strong>:</p>
 <ul>
 <li><a href="../../ipxe/menu.ipxe">menu.ipxe</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">#!ipxe
-# serwer set already
-
-:start
-############################ INSTALLER MENU #########################
-:menu-install
-menu Installers
-item --key a debian-10-install [a] Install Debian 10 &#34;Buster&#34; GNU/Linux
-choose selected &amp;&amp; goto ${selected} || goto start
-
-########### Debian
-
-:debian-10-install
-set os Debian
-set ver buster
-cpuid --ext 29 &amp;&amp; set arch amd64 || set arch i386
-
-menu ${os} &#34;${ver}&#34; dla ${arch} - wybierz rodzaj instalacji
-item --key a preseed-10-base [a] (preseed) Base System
-item --key b preseed-10-wrt [b] (preseed) Base System for OpenWRT and iPXE Compiling
-item --key c preseed-10-desktop-mate [c] (preseed) Desktop Mate
-choose selected &amp;&amp; goto ${selected} || goto menu-install
-
-:preseed-10-base
-set pre preseed-10-base.txt
-goto deb-10-install
-
-:preseed-10-wrt
-set pre preseed-10-wrt.txt
-goto deb-10-install
-
-:preseed-10-desktop-mate
-set pre preseed-10-desktop-mate.txt
-goto deb-10-install
-
-:deb-10-install
-set pre ${serwer}/ipxe/${pre}
-set ver buster
-set url http://ftp.pl.debian.org
-set dir ${url}/debian/dists/${ver}/main/installer-${arch}/current/images/netboot
-set debinstaller /debian-installer/${arch}
-kernel ${dir}${debinstaller}/linux
-initrd ${dir}${debinstaller}/initrd.gz
-imgargs linux priority=high vga=788 keymap=pl language=pl country=PL locale=pl_PL.UTF-8 auto url=${pre} --
-boot
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>#!ipxe
+</span></span><span style="display:flex;"><span># serwer set already
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>:start
+</span></span><span style="display:flex;"><span>############################ INSTALLER MENU #########################
+</span></span><span style="display:flex;"><span>:menu-install
+</span></span><span style="display:flex;"><span>menu Installers
+</span></span><span style="display:flex;"><span>item --key a debian-10-install [a] Install Debian 10 &#34;Buster&#34; GNU/Linux
+</span></span><span style="display:flex;"><span>choose selected &amp;&amp; goto ${selected} || goto start
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>########### Debian
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>:debian-10-install
+</span></span><span style="display:flex;"><span>set os Debian
+</span></span><span style="display:flex;"><span>set ver buster
+</span></span><span style="display:flex;"><span>cpuid --ext 29 &amp;&amp; set arch amd64 || set arch i386
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>menu ${os} &#34;${ver}&#34; dla ${arch} - wybierz rodzaj instalacji
+</span></span><span style="display:flex;"><span>item --key a preseed-10-base [a] (preseed) Base System
+</span></span><span style="display:flex;"><span>item --key b preseed-10-wrt [b] (preseed) Base System for OpenWRT and iPXE Compiling
+</span></span><span style="display:flex;"><span>item --key c preseed-10-desktop-mate [c] (preseed) Desktop Mate
+</span></span><span style="display:flex;"><span>choose selected &amp;&amp; goto ${selected} || goto menu-install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>:preseed-10-base
+</span></span><span style="display:flex;"><span>set pre preseed-10-base.txt
+</span></span><span style="display:flex;"><span>goto deb-10-install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>:preseed-10-wrt
+</span></span><span style="display:flex;"><span>set pre preseed-10-wrt.txt
+</span></span><span style="display:flex;"><span>goto deb-10-install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>:preseed-10-desktop-mate
+</span></span><span style="display:flex;"><span>set pre preseed-10-desktop-mate.txt
+</span></span><span style="display:flex;"><span>goto deb-10-install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>:deb-10-install
+</span></span><span style="display:flex;"><span>set pre ${serwer}/ipxe/${pre}
+</span></span><span style="display:flex;"><span>set ver buster
+</span></span><span style="display:flex;"><span>set url http://ftp.pl.debian.org
+</span></span><span style="display:flex;"><span>set dir ${url}/debian/dists/${ver}/main/installer-${arch}/current/images/netboot
+</span></span><span style="display:flex;"><span>set debinstaller /debian-installer/${arch}
+</span></span><span style="display:flex;"><span>kernel ${dir}${debinstaller}/linux
+</span></span><span style="display:flex;"><span>initrd ${dir}${debinstaller}/initrd.gz
+</span></span><span style="display:flex;"><span>imgargs linux priority=high vga=788 keymap=pl language=pl country=PL locale=pl_PL.UTF-8 auto url=${pre} --
+</span></span><span style="display:flex;"><span>boot
+</span></span></code></pre></div><hr>
 <p>Przydatne linki:</p>
 <p><a href="http://ipxe.org/">http://ipxe.org/</a></p>
 <p><a href="https://www.pcsuggest.com/how-to-setup-an-openwrt-pxe-boot-server/">https://www.pcsuggest.com/how-to-setup-an-openwrt-pxe-boot-server/</a></p>

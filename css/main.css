@@ -226,3 +226,9 @@ svg{
     margin-left: 6px;
     background-color: #f9f2f4;
 }
+code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+}

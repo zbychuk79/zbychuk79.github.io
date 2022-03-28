@@ -2,11 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>OpenWRT Image Builder - zbychuk79.github.io HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>OpenWRT Image Builder - Zbychuk&#39;s HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="OpenWRT Image Builder" />
 <meta property="og:description" content="Jak generować obrazy systemu do punktów WiFi AP opartych na Raspberry Pi Zero W." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zbychuk79.github.io/posts/openwrt/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="zbychuk79.github.io/posts/openwrt/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-22T14:35:28+02:00" />
 <meta property="article:modified_time" content="2020-04-22T14:35:28+02:00" />
 
@@ -16,14 +16,16 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" media="screen" href="https://zbychuk79.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://zbychuk79.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+	<link rel="stylesheet" type="text/css" media="screen" href="zbychuk79.github.iocss/main.css" />
+
+
 </head>
 <body>
 	<div class="content">
 		<div class="content">
 <header>
 <div class="main">
-	<a href="https://zbychuk79.github.io/">zbychuk79.github.io HomePage</a>
+	<a href="zbychuk79.github.io">Zbychuk&#39;s HomePage</a>
 </div>
 <nav>
 			
@@ -46,11 +48,101 @@
 <p>Napisałem skrypt, który uruchamiam pod systemem <strong>Debian 10 “Buster”</strong>. Jego zadaniem jest generowanie obrazu <em>firmware</em> dla moich punktów WiFi AP.</p>
 <p>W moim przypadku działa on pod VM (lub w kontenerze <strong>Docker</strong>-a) z systemem <strong>Debian 10 “Buster”</strong>.</p>
 <p>Skrypt ten zapisałem jako <em><a href="https://raw.githubusercontent.com/zbychuk79/wrt-config/master/wrt">wrt</a></em>. Dodatkowe pliki konfiguracyjne dla moich urządzeń są <a href="https://github.com/zbychuk79/wrt-config.git">tu</a>. Są one automatycznie pobierane przez mój skrypt.</p>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Wersja RPi dla generowanego obrazu.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>rpi<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bcm2708&#34;</span>
+</span></span><span style="display:flex;"><span>wersja<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;21.02.2&#34;</span>
+</span></span><span style="display:flex;"><span>link<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://downloads.openwrt.org/releases&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>czas<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +%Y.%m.%d-%H.%M.%S<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>usage<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -w wersja OpenWRT do budowy (domyślne: </span>$wersja<span style="color:#e6db74">)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -c czyści swoje pliki z systemu
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -h wyświetlenie tej instrukcji
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    usage
+</span></span><span style="display:flex;"><span>    echo
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> $1 in
+</span></span><span style="display:flex;"><span>        -w | --wersja <span style="color:#f92672">)</span>         shift
+</span></span><span style="display:flex;"><span>                                wersja<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        -c | --clean <span style="color:#f92672">)</span>          clean<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        -h | --help <span style="color:#f92672">)</span>           usage
+</span></span><span style="display:flex;"><span>                                exit
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        * <span style="color:#f92672">)</span>                     usage
+</span></span><span style="display:flex;"><span>                                exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>    shift
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$clean<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Czyszczę ...&#34;</span>
+</span></span><span style="display:flex;"><span>    rm -rf $HOME/wrt-config
+</span></span><span style="display:flex;"><span>    rm -rf $HOME/wrt-$wersja
+</span></span><span style="display:flex;"><span>    rm -rf $HOME/openwrt-$wersja-images-*
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d wrt-config <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Nie ma na dysku konfiguracji dla OpenWRT ( katalog wrt-config ).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    git clone https://github.com/zbychuk79/wrt-config.git
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d $HOME/wrt-$wersja/openwrt-imagebuilder-$wersja-bcm27xx-$rpi.Linux-x86_64 <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Pobieram ...&#34;</span>
+</span></span><span style="display:flex;"><span>    mkdir -p $HOME/wrt-$wersja
+</span></span><span style="display:flex;"><span>    cd $HOME/wrt-$wersja
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;</span>$link<span style="color:#e6db74">/</span>$wersja<span style="color:#e6db74">/targets/bcm27xx/</span>$rpi<span style="color:#e6db74">/openwrt-imagebuilder-</span>$wersja<span style="color:#e6db74">-bcm27xx-</span>$rpi<span style="color:#e6db74">.Linux-x86_64.tar.xz&#34;</span>
+</span></span><span style="display:flex;"><span>    wget -c $link/$wersja/targets/bcm27xx/$rpi/openwrt-imagebuilder-$wersja-bcm27xx-$rpi.Linux-x86_64.tar.xz
+</span></span><span style="display:flex;"><span>    tar xvfJ openwrt-imagebuilder-$wersja-bcm27xx-$rpi.Linux-x86_64.tar.xz
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Generuję obrazy ...&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ap in ap1; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># RPi 1 B + ath9k WiFi USB card</span>
+</span></span><span style="display:flex;"><span>    cd $HOME/wrt-$wersja/openwrt-imagebuilder-$wersja-bcm27xx-$rpi.Linux-x86_64
+</span></span><span style="display:flex;"><span>    make image PACKAGES<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    mc curl nano kmod-ath9k-htc&#34;</span> FILES<span style="color:#f92672">=</span>../../wrt-config/$ap/
+</span></span><span style="display:flex;"><span>    mkdir -p $HOME/openwrt-$wersja-images-$czas/$ap
+</span></span><span style="display:flex;"><span>    mv bin/targets/bcm27xx/$rpi/* $HOME/openwrt-$wersja-images-$czas/$ap
+</span></span><span style="display:flex;"><span>    cd
+</span></span><span style="display:flex;"><span>    tar cvfJ $HOME/openwrt-$wersja-images-$czas/$ap/$ap-config.tar.xz wrt-config/$ap
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ap in ap2 ap3; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># RPi Zero W + rtl8152 USB Ethernet</span>
+</span></span><span style="display:flex;"><span>    cd $HOME/wrt-$wersja/openwrt-imagebuilder-$wersja-bcm27xx-$rpi.Linux-x86_64
+</span></span><span style="display:flex;"><span>    make image PACKAGES<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    mc curl nano kmod-usb-net-rtl8152&#34;</span> FILES<span style="color:#f92672">=</span>../../wrt-config/$ap/
+</span></span><span style="display:flex;"><span>    mkdir -p $HOME/openwrt-$wersja-images-$czas/$ap
+</span></span><span style="display:flex;"><span>    mv bin/targets/bcm27xx/$rpi/* $HOME/openwrt-$wersja-images-$czas/$ap
+</span></span><span style="display:flex;"><span>    cd
+</span></span><span style="display:flex;"><span>    tar cvfJ $HOME/openwrt-$wersja-images-$czas/$ap/$ap-config.tar.xz wrt-config/$ap
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>cp $0 $HOME/openwrt-$wersja-images-$czas/
+</span></span></code></pre></div><hr>
 <p>Przydatne linki na powyższy temat:</p>
 <ul>
 <li><a href="https://lede-project.org/">lede-project.org</a></li>
-<li><a href="https://dc502wrt.org/">dc502wrt.org</a> - Firmware, jaki mam w moim routerze</li>
+<li><a href="https://divested.dev/unofficial-openwrt-builds/mvebu-linksys/">Divested-WRT</a> - Firmware, jaki mam w moim routerze</li>
 </ul>
 
 		</section>

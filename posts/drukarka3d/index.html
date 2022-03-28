@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Drukarka 3D - Original Prusa i3 MK3S&#43; - zbychuk79.github.io HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Drukarka 3D - Original Prusa i3 MK3S&#43; - Zbychuk&#39;s HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Drukarka 3D - Original Prusa i3 MK3S&#43;" />
 <meta property="og:description" content="Przebieg montażu mojej nowej drukarki 3D." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zbychuk79.github.io/posts/drukarka3d/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-02-01T13:19:18+02:00" />
-<meta property="article:modified_time" content="2022-02-01T13:19:18+02:00" />
+<meta property="og:url" content="zbychuk79.github.io/posts/drukarka3d/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-23T14:12:18+02:00" />
+<meta property="article:modified_time" content="2022-03-23T14:12:18+02:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Drukarka 3D - Original Prusa i3 MK3S&#43;"/>
@@ -16,14 +16,16 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" media="screen" href="https://zbychuk79.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://zbychuk79.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+	<link rel="stylesheet" type="text/css" media="screen" href="zbychuk79.github.iocss/main.css" />
+
+
 </head>
 <body>
 	<div class="content">
 		<div class="content">
 <header>
 <div class="main">
-	<a href="https://zbychuk79.github.io/">zbychuk79.github.io HomePage</a>
+	<a href="zbychuk79.github.io">Zbychuk&#39;s HomePage</a>
 </div>
 <nav>
 			
@@ -186,6 +188,170 @@
   <iframe src="https://www.youtube.com/embed/GAp23w_dnNc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
+<hr>
+<p><em><strong>20 luty 2022.</strong></em></p>
+<p><a href="https://all3dp.com/2/prusa-i3-mk3s-build-volume-how-big-is-it-actually/">Prusa i3 MK3S/MK3S+ Build Volume: How Big Is It Really?</a></p>
+<hr>
+<p><em><strong>26 luty 2022.</strong></em></p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/RvTTQqqWIWA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<hr>
+<p><em><strong>5 marca 2022.</strong></em></p>
+<p>Zrobiłem czyszczenie dyszy przy pomocy specjalnego filamentu czyszczącego. Dwukrotnie. Wygląda na to, że pomogło to na przeskakiwanie ekstrudera.</p>
+<p>Oto przydztne linki na ten temat:</p>
+<ul>
+<li><a href="https://projects.ttlexceeded.com/3dprinting_mk3_cold_pull.html">Hotend and nozzle maintenance using cold pulls</a></li>
+<li><a href="https://help.prusa3d.com/pl/article/zatkana-dysza-hotend-mk3s-mk2-5s_2008">Zatkana dysza/hotend (MK3S, MK2.5S)</a></li>
+</ul>
+<hr>
+<p><em><strong>8 marca 2022.</strong></em></p>
+<p>Zaktualizowałem firmware mojej drukarki do wersji 3.10.1. Trochę długo z tym czekałem, ale doczekała się drukarka aktualizacji. Oto zapis przebiegu tego działania:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>avrdude-slic3r -v -p atmega2560 -c wiring -P /dev/ttyACM0 -b 115200 -D -U flash:w:0:/a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex:i
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: Version 6.3-20160220-prusa3d, compiled on Dec 21 2021 at 16:23:20
+</span></span><span style="display:flex;"><span>                Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
+</span></span><span style="display:flex;"><span>                Copyright (c) 2007-2014 Joerg Wunsch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                Using Port                    : /dev/ttyACM0
+</span></span><span style="display:flex;"><span>                Using Programmer              : wiring
+</span></span><span style="display:flex;"><span>                Overriding Baud Rate          : 115200
+</span></span><span style="display:flex;"><span>                AVR Part                      : ATmega2560
+</span></span><span style="display:flex;"><span>                Chip Erase delay              : 9000 us
+</span></span><span style="display:flex;"><span>                PAGEL                         : PD7
+</span></span><span style="display:flex;"><span>                BS2                           : PA0
+</span></span><span style="display:flex;"><span>                RESET disposition             : dedicated
+</span></span><span style="display:flex;"><span>                RETRY pulse                   : SCK
+</span></span><span style="display:flex;"><span>                serial program mode           : yes
+</span></span><span style="display:flex;"><span>                parallel program mode         : yes
+</span></span><span style="display:flex;"><span>                Timeout                       : 200
+</span></span><span style="display:flex;"><span>                StabDelay                     : 100
+</span></span><span style="display:flex;"><span>                CmdexeDelay                   : 25
+</span></span><span style="display:flex;"><span>                SyncLoops                     : 32
+</span></span><span style="display:flex;"><span>                ByteDelay                     : 0
+</span></span><span style="display:flex;"><span>                PollIndex                     : 3
+</span></span><span style="display:flex;"><span>                PollValue                     : 0x53
+</span></span><span style="display:flex;"><span>                Memory Detail                 :
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                                         Block Poll               Page                       Polled
+</span></span><span style="display:flex;"><span>                  Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+</span></span><span style="display:flex;"><span>                  ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+</span></span><span style="display:flex;"><span>                  eeprom        65    10     8    0 no       4096    8      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  flash         65    10   256    0 yes    262144  256   1024  4500  4500 0x00 0x00
+</span></span><span style="display:flex;"><span>                  lfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  hfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  efuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  lock           0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  calibration    0     0     0    0 no          1    0      0     0     0 0x00 0x00
+</span></span><span style="display:flex;"><span>                  signature      0     0     0    0 no          3    0      0     0     0 0x00 0x00
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                Programmer Type : Wiring
+</span></span><span style="display:flex;"><span>                Description     : Wiring
+</span></span><span style="display:flex;"><span>                Programmer Model: AVRISP
+</span></span><span style="display:flex;"><span>                Hardware Version: 15
+</span></span><span style="display:flex;"><span>                Firmware Version Master : 2.10
+</span></span><span style="display:flex;"><span>                Vtarget         : 0.0 V
+</span></span><span style="display:flex;"><span>                SCK period      : 0.1 us
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: AVR device initialized and ready to accept instructions
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Reading | ################################################## | 100% 0.01s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: Device signature = 0x1e9801 (probably m2560)
+</span></span><span style="display:flex;"><span>avrdude-slic3r: reading input file &#34;/a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex&#34;
+</span></span><span style="display:flex;"><span>avrdude-slic3r: writing flash (251278 bytes):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Writing | ################################################## | 100% 44.93s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: 251278 bytes of flash written
+</span></span><span style="display:flex;"><span>avrdude-slic3r: verifying flash memory against /a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex:
+</span></span><span style="display:flex;"><span>avrdude-slic3r: load data flash data from input file /a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex:
+</span></span><span style="display:flex;"><span>avrdude-slic3r: input file /a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex contains 251278 bytes
+</span></span><span style="display:flex;"><span>avrdude-slic3r: reading on-chip flash data:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Reading | ################################################## | 100% 32.19s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: verifying ...
+</span></span><span style="display:flex;"><span>avrdude-slic3r: 251278 bytes of flash verified
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r done.  Thank you.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r -v -p atmega2560 -c arduino -P /dev/ttyACM0 -b 115200 -D -u -U flash:w:1:/a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex:i
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: Version 6.3-20160220-prusa3d, compiled on Dec 21 2021 at 16:23:20
+</span></span><span style="display:flex;"><span>                Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
+</span></span><span style="display:flex;"><span>                Copyright (c) 2007-2014 Joerg Wunsch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                Using Port                    : /dev/ttyACM0
+</span></span><span style="display:flex;"><span>                Using Programmer              : arduino
+</span></span><span style="display:flex;"><span>                Overriding Baud Rate          : 115200
+</span></span><span style="display:flex;"><span>                AVR Part                      : ATmega2560
+</span></span><span style="display:flex;"><span>                Chip Erase delay              : 9000 us
+</span></span><span style="display:flex;"><span>                PAGEL                         : PD7
+</span></span><span style="display:flex;"><span>                BS2                           : PA0
+</span></span><span style="display:flex;"><span>                RESET disposition             : dedicated
+</span></span><span style="display:flex;"><span>                RETRY pulse                   : SCK
+</span></span><span style="display:flex;"><span>                serial program mode           : yes
+</span></span><span style="display:flex;"><span>                parallel program mode         : yes
+</span></span><span style="display:flex;"><span>                Timeout                       : 200
+</span></span><span style="display:flex;"><span>                StabDelay                     : 100
+</span></span><span style="display:flex;"><span>                CmdexeDelay                   : 25
+</span></span><span style="display:flex;"><span>                SyncLoops                     : 32
+</span></span><span style="display:flex;"><span>                ByteDelay                     : 0
+</span></span><span style="display:flex;"><span>                PollIndex                     : 3
+</span></span><span style="display:flex;"><span>                PollValue                     : 0x53
+</span></span><span style="display:flex;"><span>                Memory Detail                 :
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                                         Block Poll               Page                       Polled
+</span></span><span style="display:flex;"><span>                  Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+</span></span><span style="display:flex;"><span>                  ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+</span></span><span style="display:flex;"><span>                  eeprom        65    10     8    0 no       4096    8      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  flash         65    10   256    0 yes    262144  256   1024  4500  4500 0x00 0x00
+</span></span><span style="display:flex;"><span>                  lfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  hfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  efuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  lock           0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+</span></span><span style="display:flex;"><span>                  calibration    0     0     0    0 no          1    0      0     0     0 0x00 0x00
+</span></span><span style="display:flex;"><span>                  signature      0     0     0    0 no          3    0      0     0     0 0x00 0x00
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                Programmer Type : Arduino
+</span></span><span style="display:flex;"><span>                Description     : Arduino
+</span></span><span style="display:flex;"><span>                Hardware Version: 3
+</span></span><span style="display:flex;"><span>                Firmware Version: 6.2
+</span></span><span style="display:flex;"><span>                Vtarget         : 0.3 V
+</span></span><span style="display:flex;"><span>                Varef           : 0.3 V
+</span></span><span style="display:flex;"><span>                Oscillator      : 28.800 kHz
+</span></span><span style="display:flex;"><span>                SCK period      : 3.3 us
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: AVR device initialized and ready to accept instructions
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Reading | ################################################## | 100% 0.00s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: Device signature = 0x1e9801 (probably m2560)
+</span></span><span style="display:flex;"><span>avrdude-slic3r: reading input file &#34;/a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex&#34;
+</span></span><span style="display:flex;"><span>avrdude-slic3r: writing flash (74648 bytes):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Writing | ################################################## | 100% 9.03s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: 74648 bytes of flash written
+</span></span><span style="display:flex;"><span>avrdude-slic3r: verifying flash memory against /a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex:
+</span></span><span style="display:flex;"><span>avrdude-slic3r: load data flash data from input file /a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex:
+</span></span><span style="display:flex;"><span>avrdude-slic3r: input file /a/q-download/Instalki/prusa3d/prusa3d_fw_MK3S_MK3S+_3_10_1_4697.hex contains 74648 bytes
+</span></span><span style="display:flex;"><span>avrdude-slic3r: reading on-chip flash data:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Reading | ################################################## | 100% 8.38s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r: verifying ...
+</span></span><span style="display:flex;"><span>avrdude-slic3r: 74648 bytes of flash verified
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avrdude-slic3r done.  Thank you.
+</span></span></code></pre></div><hr>
+<p><em><strong>23 marca 2022.</strong></em></p>
+<p>Ostatnio wydrukowałem sobie dwie mydelniczki. Ta druga jest w stylu minimalistycznym japońskim. Dużo lepsza od tej pierwszej.</p>
 
 		</section>
 

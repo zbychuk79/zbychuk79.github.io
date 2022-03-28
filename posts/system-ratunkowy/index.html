@@ -2,11 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>System ratunkowy Debian - zbychuk79.github.io HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>System ratunkowy Debian - Zbychuk&#39;s HomePage</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="System ratunkowy Debian" />
 <meta property="og:description" content="Jak wygenerować obraz systemu ratunkowego do nagrania na Pendrive." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zbychuk79.github.io/posts/system-ratunkowy/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="zbychuk79.github.io/posts/system-ratunkowy/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-01T05:41:03+02:00" />
 <meta property="article:modified_time" content="2021-12-01T05:41:03+02:00" />
 
@@ -16,14 +16,16 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" media="screen" href="https://zbychuk79.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://zbychuk79.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+	<link rel="stylesheet" type="text/css" media="screen" href="zbychuk79.github.iocss/main.css" />
+
+
 </head>
 <body>
 	<div class="content">
 		<div class="content">
 <header>
 <div class="main">
-	<a href="https://zbychuk79.github.io/">zbychuk79.github.io HomePage</a>
+	<a href="zbychuk79.github.io">Zbychuk&#39;s HomePage</a>
 </div>
 <nav>
 			
@@ -45,20 +47,139 @@
 <p>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.</p>
 <p>Czynności będę wykonywał w systemie <strong>Debian</strong> (pod <strong>VirtualBox</strong>-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod <strong>Docker</strong>-em.</p>
 <p>Napisałem prosty skrypt o nazwie <a href="https://raw.githubusercontent.com/zbychuk79/debian-rescue/master/scripts/rescue">rescue</a>.</p>
-<p>Wymaga on do działania zainstalowanych paczek:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Skrypt generuje środowisko chroot z Debianem.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generuje skrypty do wykonania pod chroot instalujące i</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ustawiające potrzebne oprogramowanie.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Potem można wygenerować image systemu do nagrania na pendrive.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Do działania wymagane są programy: debootstrap, debootstick</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># zainstalowane na systemie Debian lub pochodnym.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>skrypt<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>printf <span style="color:#e6db74">&#39;%s\n&#39;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>0##*/<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/chroot_debian&#34;</span>
+</span></span><span style="display:flex;"><span>subdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rescue&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#mirror=&#34;http://q:88/debian/&#34;		# Lokalny mirror (sieć LAN).</span>
+</span></span><span style="display:flex;"><span>mirror<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://deb.debian.org/debian/&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>usage<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Jak używać: </span>$skrypt<span style="color:#e6db74"> [ -d ] [ -s ] [ -r ] [ -i ] [ -c ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -d tworzy na dysku środowisko chroot z Debianem w </span>$dir<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -s tworzy skrypty do wykonania w chroot z Debianem
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -r wejdź do chroot z Debianem
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -i generuje uruchamialny obraz systemu przez debootstick
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> -c kasuje z dysku środowisko chroot z Debianem
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dbstrap<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>sudo mkdir -p $dir
+</span></span><span style="display:flex;"><span>cd $dir
+</span></span><span style="display:flex;"><span>sudo debootstrap --arch<span style="color:#f92672">=</span>amd64 stable $subdir $mirror
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>debian_chroot<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    cd $dir
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#sudo mount proc $subdir/proc -t proc</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#sudo mount sysfs $subdir/sys -t sysfs</span>
+</span></span><span style="display:flex;"><span>    sudo LC_ALL<span style="color:#f92672">=</span>C chroot $dir/$subdir /bin/bash
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#sudo umount $subdir/proc $subdir/sys</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>stick<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    czas<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +%Y%m%d<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    </span>$czas<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;</span>
+</span></span><span style="display:flex;"><span>    cd $dir
+</span></span><span style="display:flex;"><span>    img<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rescue-</span>$czas<span style="color:#e6db74">-amd64.img&#34;</span>
+</span></span><span style="display:flex;"><span>    sudo debootstick rescue $img
+</span></span><span style="display:flex;"><span>    sudo xz -z -9 -T <span style="color:#ae81ff">0</span> -v $img
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Wygenerowano obraz </span>$img<span style="color:#e6db74">.xz ...&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>skrypty_chroot<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>hdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>mkdir -p ~/tmp
+</span></span><span style="display:flex;"><span>cd ~/tmp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/zbychuk79/debian-rescue.git
+</span></span><span style="display:flex;"><span>cd debian-rescue
+</span></span><span style="display:flex;"><span>sudo mv czytaj.txt $dir/$subdir
+</span></span><span style="display:flex;"><span>sudo mv setup.sh $dir/$subdir
+</span></span><span style="display:flex;"><span>cd ..
+</span></span><span style="display:flex;"><span>rm -rf debian-rescue
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    usage
+</span></span><span style="display:flex;"><span>    echo
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> $1 in
+</span></span><span style="display:flex;"><span>        -d <span style="color:#f92672">)</span>			debstrap<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        -s <span style="color:#f92672">)</span>			skrypty<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        -r <span style="color:#f92672">)</span>			chroot_debian<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        -i <span style="color:#f92672">)</span>			stick<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        -c <span style="color:#f92672">)</span>			clean<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>                                ;;
+</span></span><span style="display:flex;"><span>        * <span style="color:#f92672">)</span>			usage
+</span></span><span style="display:flex;"><span>                                exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>    shift
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$debstrap<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Generowanie środowiska chroot ...&#34;</span>
+</span></span><span style="display:flex;"><span>    dbstrap
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$skrypty<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Generowanie skryptów do wykonania w chroot ...&#34;</span>
+</span></span><span style="display:flex;"><span>    skrypty_chroot
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$chroot_debian<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Wejście do środowiska chroot ...&#34;</span>
+</span></span><span style="display:flex;"><span>    debian_chroot
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$stick<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Generuję uruchamialny obraz systemu przez debootstick ...&#34;</span>
+</span></span><span style="display:flex;"><span>    stick
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$clean<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yes&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Kasowanie środowiska chroot ...&#34;</span>
+</span></span><span style="display:flex;"><span>    sudo rm -rf $dir/$subdir
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>Wymaga on do działania zainstalowanych paczek:</p>
 <ul>
 <li>git</li>
 <li>debootstrap</li>
 <li>debootstick</li>
 </ul>
 <p>Oto opcje mojego skryptu:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ]
- -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian
- -s tworzy skrypty do wykonania w chroot z Debianem
- -r wejdź do chroot z Debianem
- -i generuje uruchamialny obraz systemu przez debootstick
- -c kasuje z dysku środowisko chroot z Debianem
-</code></pre></div><p>Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Jak używać: rescue [ -d ] [ -s ] [ -r ] [ -i ] [ -c ]
+</span></span><span style="display:flex;"><span> -d tworzy na dysku środowisko chroot z Debianem w /home/chroot_debian
+</span></span><span style="display:flex;"><span> -s tworzy skrypty do wykonania w chroot z Debianem
+</span></span><span style="display:flex;"><span> -r wejdź do chroot z Debianem
+</span></span><span style="display:flex;"><span> -i generuje uruchamialny obraz systemu przez debootstick
+</span></span><span style="display:flex;"><span> -c kasuje z dysku środowisko chroot z Debianem
+</span></span></code></pre></div><p>Należy go uruchomić (jako zwykły użytkownik) kilka razy z kolejnymi opcjami.</p>
 <p>Po uruchomieniu skryptu z opcją &ldquo;-r&rdquo; trzeba załadować skrypt <em>setup.sh</em> z głównego katalogu:</p>
 <p># /setup.sh</p>
 <p>Pozwoli on ustawić hasło administratora, ściągnie odpowiedni skrypt i krótki plik z opisem systemu.</p>

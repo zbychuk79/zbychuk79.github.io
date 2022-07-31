@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Thu, 24 Mar 2022 10:17:04 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jul 2022 23:01:22 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serwer NAS</title>
+      <link>https://zbychuk79.github.io/posts/freenas/</link>
+      <pubDate>Sat, 30 Jul 2022 23:01:22 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/freenas/</guid>
+      <description>Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
+Pierwotnie serwerem był:
+MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
+MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na dyski o pojemności 2 TB Macierz dyskowa w tym momencie składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
+    </item>
+    
     <item>
       <title>MathJax na stronie generowanej przez Hugo</title>
       <link>https://zbychuk79.github.io/posts/mathjax/</link>
@@ -72,18 +84,6 @@ Galeria zdjęć Kilka moich plików DJVU Oto czynności, które wykonałem aby u
 Plik binarny ipfs przeznaczony dla Raspberry Pi zapisałem do katalogu /usr/local/binz/.
 W pierwszej kolejności uruchomiłem ipfs ręcznie z konta użytkownika pi.
 ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na adresie 127.</description>
-    </item>
-    
-    <item>
-      <title>Serwer NAS</title>
-      <link>https://zbychuk79.github.io/posts/freenas/</link>
-      <pubDate>Wed, 09 Feb 2022 17:01:22 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/freenas/</guid>
-      <description>Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
-Pierwotnie serwerem był:
-MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
-MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na dyski o pojemności 2 TB Macierz dyskowa w tym momencie składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
     </item>
     
     <item>

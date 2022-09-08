@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zbychuk79.github.io/posts/</loc>
-    <lastmod>2022-09-08T16:16:22+02:00</lastmod>
+    <loc>https://zbychuk79.github.io/posts/drukarka3d/</loc>
+    <lastmod>2022-09-08T22:21:18+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/freenas/</loc>
-    <lastmod>2022-09-08T16:16:22+02:00</lastmod>
+    <loc>https://zbychuk79.github.io/posts/</loc>
+    <lastmod>2022-09-08T22:21:18+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/</loc>
+    <lastmod>2022-09-08T22:21:18+02:00</lastmod>
+  </url><url>
+    <loc>https://zbychuk79.github.io/posts/freenas/</loc>
     <lastmod>2022-09-08T16:16:22+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/posts/mathjax/</loc>
@@ -16,9 +19,6 @@
   </url><url>
     <loc>https://zbychuk79.github.io/posts/book-scanner/</loc>
     <lastmod>2022-03-23T14:33:00+02:00</lastmod>
-  </url><url>
-    <loc>https://zbychuk79.github.io/posts/drukarka3d/</loc>
-    <lastmod>2022-03-23T14:12:18+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/posts/monero/</loc>
     <lastmod>2022-02-22T21:32:00+02:00</lastmod>

@@ -6,7 +6,19 @@
     <description>Recent content on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sun, 11 Sep 2022 06:34:18 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 17:18:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moje klucze publiczne GnuPG</title>
+      <link>https://zbychuk79.github.io/posts/gnupg/</link>
+      <pubDate>Mon, 12 Sep 2022 17:18:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
+      <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
+OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide Podpisywanie kluczy Key Signing Party Serwer kluczy keys.openpgp.org No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
+Pomocne informacje:
+Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys With Curve Ed25519 Maintaining Your Keypair and the Web Of Trust PGP Key Signing Party How to Roll a Strong Password with 20-Sided Dice and Fandom-Inspired Wordlists GnuPG cheatsheet GnuPG FAQ Generator wizytówek GnuPG 12 września 2022.</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -84,18 +96,6 @@ Galeria zdjęć Kilka moich plików DJVU Oto czynności, które wykonałem aby u
 Plik binarny ipfs przeznaczony dla Raspberry Pi zapisałem do katalogu /usr/local/binz/.
 W pierwszej kolejności uruchomiłem ipfs ręcznie z konta użytkownika pi.
 ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na adresie 127.</description>
-    </item>
-    
-    <item>
-      <title>Moje klucze publiczne GnuPG</title>
-      <link>https://zbychuk79.github.io/posts/gnupg/</link>
-      <pubDate>Sat, 22 Jan 2022 15:02:00 +0100</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
-      <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
-OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide Podpisywanie kluczy Key Signing Party Serwer kluczy keys.openpgp.org No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
-Pomocne informacje:
-Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys With Curve Ed25519 Maintaining Your Keypair and the Web Of Trust PGP Key Signing Party How to Roll a Strong Password with 20-Sided Dice and Fandom-Inspired Wordlists GnuPG cheatsheet GnuPG FAQ Generator wizytówek GnuPG Jeśli chcesz wysłać mi wiadomość, to poniżej są moje klucze publiczne dla programu GnuPG.</description>
     </item>
     
     <item>

@@ -6,7 +6,19 @@
     <description>Recent content on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sun, 23 Oct 2022 17:28:54 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Dec 2022 22:25:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skaner książek</title>
+      <link>https://zbychuk79.github.io/posts/book-scanner/</link>
+      <pubDate>Sat, 31 Dec 2022 22:25:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
+      <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
+W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
+Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
+Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
+    </item>
+    
     <item>
       <title>Ciekawe linki ...</title>
       <link>https://zbychuk79.github.io/posts/linki/</link>
@@ -66,18 +78,6 @@ Funkcje trygonometryczne podwojonego kąta: $$sin{(2 \alpha)}=2 sin{(\alpha)}cos
 Pojemność cylindra (styl display):
 $$V = \pi r^2 h$$
 Pojemność cylindra (styl inline): $V = \pi r^2 h$</description>
-    </item>
-    
-    <item>
-      <title>Skaner książek</title>
-      <link>https://zbychuk79.github.io/posts/book-scanner/</link>
-      <pubDate>Wed, 23 Mar 2022 14:33:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
-      <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
-W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
-Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
-Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
     </item>
     
     <item>

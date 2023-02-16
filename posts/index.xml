@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sat, 31 Dec 2022 22:25:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Feb 2023 00:42:18 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
+      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
+      <pubDate>Fri, 17 Feb 2023 00:42:18 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
+      <description>22 marca 2021.
+W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
+Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
+    </item>
+    
     <item>
       <title>Skaner książek</title>
       <link>https://zbychuk79.github.io/posts/book-scanner/</link>
@@ -26,17 +37,6 @@ Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem 
       
       <guid>https://zbychuk79.github.io/posts/linki/</guid>
       <description> Tomb - następca TrueCrypt i VeraCrypt ZFS on Linux - Debian 11 ZFS-Root Top 12 Things To Do After Installing Debian 11 (Bullseye) 15 Things To Do After Installing Debian 11 Basics of ZFS Snapshot Management ZFS Snapshots How to set up ZFS ARC size on Ubuntu/Debian Linux Install Syncthing on Debian Install Rust on Debian 11 How I Fixed Buzzing Noise Coming from Speakers in Linux </description>
-    </item>
-    
-    <item>
-      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
-      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
-      <pubDate>Sat, 01 Oct 2022 19:19:18 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
-      <description>22 marca 2021.
-W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
-Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
     </item>
     
     <item>

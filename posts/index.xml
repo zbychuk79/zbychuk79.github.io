@@ -6,18 +6,20 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Thu, 09 Mar 2023 23:13:36 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Mar 2023 19:37:36 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LEDy indywidualnie adresowane RGB(W)</title>
       <link>https://zbychuk79.github.io/posts/ledrgb/</link>
-      <pubDate>Thu, 09 Mar 2023 23:13:36 +0100</pubDate>
+      <pubDate>Fri, 10 Mar 2023 19:37:36 +0100</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/ledrgb/</guid>
       <description>Stwierdziłem, że zrobię sobie oświetlenie LED RGB w pokoju, gdzie mam komputer.
 Informacje na temat samych taśm LED:
 .
 Dodawanie mocy do taśmy LED:
-Kontroler do sterowania LED-ami:
+Kontroler do sterowania LED-ami za 6 dolarów:
+Co i jak ustawić (część 1):
+Co i jak ustawić (część 2):
 c.d.n.</description>
     </item>
     

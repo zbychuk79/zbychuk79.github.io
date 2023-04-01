@@ -28,22 +28,6 @@ Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, ż
     </item>
     
     <item>
-      <title>LEDy indywidualnie adresowane RGB(W)</title>
-      <link>https://zbychuk79.github.io/posts/ledrgb/</link>
-      <pubDate>Fri, 10 Mar 2023 19:37:36 +0100</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/ledrgb/</guid>
-      <description>Stwierdziłem, że zrobię sobie oświetlenie LED RGB w pokoju, gdzie mam komputer.
-Informacje na temat samych taśm LED:
-.
-Dodawanie mocy do taśmy LED:
-Kontroler do sterowania LED-ami za 6 dolarów:
-Co i jak ustawić (część 1):
-Co i jak ustawić (część 2):
-c.d.n.</description>
-    </item>
-    
-    <item>
       <title>OpenWRT Image Builder</title>
       <link>https://zbychuk79.github.io/posts/openwrt/</link>
       <pubDate>Sun, 26 Feb 2023 05:33:28 +0200</pubDate>

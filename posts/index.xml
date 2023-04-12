@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sat, 01 Apr 2023 18:55:04 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Apr 2023 07:23:28 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenWRT Image Builder</title>
+      <link>https://zbychuk79.github.io/posts/openwrt/</link>
+      <pubDate>Wed, 12 Apr 2023 07:23:28 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
+      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 11 “Bullseye”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
+Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
+#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.4&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
+    </item>
+    
     <item>
       <title>LEDy indywidualnie adresowane RGB(W)</title>
       <link>https://zbychuk79.github.io/posts/ledrgb/</link>
@@ -42,17 +53,6 @@ c.d.n.</description>
       <description>22 marca 2021.
 W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
 Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
-    </item>
-    
-    <item>
-      <title>OpenWRT Image Builder</title>
-      <link>https://zbychuk79.github.io/posts/openwrt/</link>
-      <pubDate>Sun, 26 Feb 2023 05:33:28 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
-      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 11 “Bullseye”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
-Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
-#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.3&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
     </item>
     
     <item>
@@ -148,6 +148,18 @@ Napisałem prosty skrypt o nazwie rescue.
     </item>
     
     <item>
+      <title>Docker - debian-wrt image</title>
+      <link>https://zbychuk79.github.io/posts/docker-wrt/</link>
+      <pubDate>Mon, 12 Apr 2021 07:22:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/docker-wrt/</guid>
+      <description>Przedstawię teraz jak utworzyć środowisko przydatne do generowania obrazów firmware OpenWRT dla moich punktów WiFi działających na SBC Raspberry Pi. Pozwala ono również na kompilowanie własnej wersji iPXE.
+Najpierw pobieramy potrzebne nam pliki:
+git clone https://github.com/zbychuk79/docker-wrt.git W katalogu docker-wrt mamy następujące pliki:
+Dockerfile - plik sterujący dla Docker&amp;lsquo;a wrt_script - uruchamiany podczas tworzenia obrazu docker-image - generowanie obrazu Debian&amp;lsquo;a z potrzebnymi programami i ustawieniami docker-container - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu docker-bash - uruchomienie bash w naszym nowym kontenerze Po uruchomieniu ostatnich trzech skryptów, można wykonywać polecenia w naszym nowym kontenerze.</description>
+    </item>
+    
+    <item>
       <title>Asciinema</title>
       <link>https://zbychuk79.github.io/posts/asciinema/</link>
       <pubDate>Sun, 21 Feb 2021 04:35:28 +0100</pubDate>
@@ -156,18 +168,6 @@ Napisałem prosty skrypt o nazwie rescue.
       <description> Asciinema to bardzo przydatny program do nagrywania sesji terminalowej.
 Linki:
 How asciinema works Embedding asciinema cast in your hugo site </description>
-    </item>
-    
-    <item>
-      <title>Docker - debian-wrt image</title>
-      <link>https://zbychuk79.github.io/posts/docker-wrt/</link>
-      <pubDate>Sat, 20 Feb 2021 13:00:00 +0100</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/docker-wrt/</guid>
-      <description>Przedstawię teraz jak utworzyć środowisko przydatne do generowania obrazów firmware OpenWRT dla moich punktów WiFi działających na SBC Raspberry Pi. Pozwala ono również na kompilowanie własnej wersji iPXE.
-Najpierw pobieramy potrzebne nam pliki:
-git clone https://github.com/zbychuk79/docker-wrt.git W katalogu docker-wrt mamy następujące pliki:
-Dockerfile - plik sterujący dla Docker&amp;lsquo;a wrt_script - uruchamiany podczas tworzenia obrazu docker-image - generowanie obrazu Debian&amp;lsquo;a z potrzebnymi programami i ustawieniami docker-container - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu docker-bash - uruchomienie bash w naszym nowym kontenerze Po uruchomieniu ostatnich trzech skryptów, można wykonywać polecenia w naszym nowym kontenerze.</description>
     </item>
     
     <item>

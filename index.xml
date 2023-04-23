@@ -6,22 +6,11 @@
     <description>Recent content on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Wed, 12 Apr 2023 07:23:28 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>OpenWRT Image Builder</title>
-      <link>https://zbychuk79.github.io/posts/openwrt/</link>
-      <pubDate>Wed, 12 Apr 2023 07:23:28 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
-      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 11 “Bullseye”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
-Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
-#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.4&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
-    </item>
-    
+    <lastBuildDate>Sun, 23 Apr 2023 22:56:04 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LEDy indywidualnie adresowane RGB(W)</title>
       <link>https://zbychuk79.github.io/posts/ledrgb/</link>
-      <pubDate>Sat, 01 Apr 2023 18:55:04 +0200</pubDate>
+      <pubDate>Sun, 23 Apr 2023 22:56:04 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/ledrgb/</guid>
       <description>Stwierdziłem, że zrobię sobie oświetlenie LED RGB w pokoju, gdzie mam komputer.
@@ -32,7 +21,19 @@ Kontroler do sterowania LED-ami za 6 dolarów:
 Co i jak ustawić (część 1):
 Co i jak ustawić (część 2):
 Dużo przydatnych porad dotyczących montażu LED RGB:
-c.d.n.</description>
+3 Quick Fixes for LED Color Issues - Power Injection, Voltage Drop, Brightness Regulation and More:
+Bardzo fajna strona z mnóstwem przydatnych informacji na temat instalacji LED:</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT Image Builder</title>
+      <link>https://zbychuk79.github.io/posts/openwrt/</link>
+      <pubDate>Wed, 12 Apr 2023 07:23:28 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
+      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 11 “Bullseye”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
+Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
+#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.4&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
     </item>
     
     <item>

@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sat, 29 Apr 2023 09:33:28 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jun 2023 16:45:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
+      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
+      <pubDate>Thu, 08 Jun 2023 16:45:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
+      <description>22 marca 2021.
+W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
+Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
+    </item>
+    
     <item>
       <title>OpenWRT Image Builder</title>
       <link>https://zbychuk79.github.io/posts/openwrt/</link>
@@ -16,17 +27,6 @@
       <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 11 “Bullseye”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
 Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
 #!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.5&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
-    </item>
-    
-    <item>
-      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
-      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
-      <pubDate>Tue, 25 Apr 2023 21:53:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
-      <description>22 marca 2021.
-W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
-Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
     </item>
     
     <item>

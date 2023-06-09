@@ -6,33 +6,35 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Thu, 08 Jun 2023 16:45:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jun 2023 21:04:22 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
-      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
-      <pubDate>Thu, 08 Jun 2023 16:45:00 +0200</pubDate>
+      <title>Serwer NAS</title>
+      <link>https://zbychuk79.github.io/posts/freenas/</link>
+      <pubDate>Fri, 09 Jun 2023 21:04:22 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
-      <description>22 marca 2021.
-W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
-Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
+      <guid>https://zbychuk79.github.io/posts/freenas/</guid>
+      <description>Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
+Pierwotnie serwerem był:
+MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
+MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na dyski o pojemności 2 TB Macierz dyskowa w tym momencie składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
     </item>
     
     <item>
-      <title>OpenWRT Image Builder</title>
-      <link>https://zbychuk79.github.io/posts/openwrt/</link>
-      <pubDate>Sat, 29 Apr 2023 09:33:28 +0200</pubDate>
+      <title>Skaner książek</title>
+      <link>https://zbychuk79.github.io/posts/book-scanner/</link>
+      <pubDate>Fri, 09 Jun 2023 20:48:00 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
-      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 11 “Bullseye”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
-Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
-#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.5&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
+      <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
+      <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
+W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
+Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
+Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
     </item>
     
     <item>
       <title>LEDy indywidualnie adresowane RGB(W)</title>
       <link>https://zbychuk79.github.io/posts/ledrgb/</link>
-      <pubDate>Sun, 23 Apr 2023 22:56:04 +0200</pubDate>
+      <pubDate>Fri, 09 Jun 2023 20:46:04 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/ledrgb/</guid>
       <description>Stwierdziłem, że zrobię sobie oświetlenie LED RGB w pokoju, gdzie mam komputer.
@@ -48,24 +50,34 @@ Bardzo fajna strona z mnóstwem przydatnych informacji na temat instalacji LED:<
     </item>
     
     <item>
+      <title>OpenWRT Image Builder</title>
+      <link>https://zbychuk79.github.io/posts/openwrt/</link>
+      <pubDate>Fri, 09 Jun 2023 20:44:28 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
+      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 11 “Bullseye”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
+Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
+#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.5&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
+    </item>
+    
+    <item>
+      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
+      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
+      <pubDate>Fri, 09 Jun 2023 20:35:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
+      <description>22 marca 2021.
+W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
+Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
+    </item>
+    
+    <item>
       <title>Ciekawe linki ...</title>
       <link>https://zbychuk79.github.io/posts/linki/</link>
       <pubDate>Thu, 30 Mar 2023 02:35:54 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/linki/</guid>
       <description>Tomb - następca TrueCrypt i VeraCrypt ZFS on Linux - Debian 11 ZFS-Root Top 12 Things To Do After Installing Debian 11 (Bullseye) 15 Things To Do After Installing Debian 11 Basics of ZFS Snapshot Management ZFS Snapshots How to set up ZFS ARC size on Ubuntu/Debian Linux Install Syncthing on Debian Install Rust on Debian 11 How I Fixed Buzzing Noise Coming from Speakers in Linux Najciekawszy jest ostatni: baby monitor.</description>
-    </item>
-    
-    <item>
-      <title>Skaner książek</title>
-      <link>https://zbychuk79.github.io/posts/book-scanner/</link>
-      <pubDate>Sat, 31 Dec 2022 22:25:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
-      <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
-W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
-Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
-Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
     </item>
     
     <item>
@@ -78,18 +90,6 @@ Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem 
 OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide Podpisywanie kluczy Key Signing Party Serwer kluczy keys.openpgp.org No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
 Pomocne informacje:
 Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys With Curve Ed25519 Maintaining Your Keypair and the Web Of Trust PGP Key Signing Party How to Roll a Strong Password with 20-Sided Dice and Fandom-Inspired Wordlists GnuPG cheatsheet GnuPG FAQ Generator wizytówek GnuPG 12 września 2022.</description>
-    </item>
-    
-    <item>
-      <title>Serwer NAS</title>
-      <link>https://zbychuk79.github.io/posts/freenas/</link>
-      <pubDate>Thu, 08 Sep 2022 16:16:22 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/freenas/</guid>
-      <description>Prawie 10 lat temu (był chyba rok 2011) postanowiłem zbudować sobie serwer w celu trzymania na nim kopii zapasowych moich danych. Jego przeznaczeniem nigdy nie było działanie 24/7.
-Pierwotnie serwerem był:
-MB: ASRock A330ION CPU: 2-rdzeniowy 1.6 GHz RAM: 2x 1 GB HDD&amp;rsquo;s: 6x 640 GB, co daje 2.4631 TB lub 2.2402 TiB miejsca na dane Później (chyba rok 2013) zmieniłem serwer na mocniejszy:
-MB: Asus P5E CPU: Q6600 RAM: 4x 2 GB DDR2 HDD&amp;rsquo;s: zmieniłem na dyski o pojemności 2 TB Macierz dyskowa w tym momencie składa się z 6-ciu dysków WD Green 2 TB, co daje łącznie 8 TB lub 7.</description>
     </item>
     
     <item>

@@ -93,35 +93,6 @@ Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys
     </item>
     
     <item>
-      <title>MathJax na stronie generowanej przez Hugo</title>
-      <link>https://zbychuk79.github.io/posts/mathjax/</link>
-      <pubDate>Thu, 24 Mar 2022 10:17:04 +0100</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/mathjax/</guid>
-      <description>Używam biblioteki JavaScript o nazwie MathJax do renderowania wyrażeń matematycznych na mojej stronie internetowej.
-Linki:
-MathJax Render LaTeX math expressions in Hugo with MathJax 3 Normalne wzory matematyczne:
-Jedynka trygonometryczna: $$sin^2{α}+cos^2{α}=1$$
-Wzory na tangens i cotangens: $$tg{α}=\frac{sin{α}}{cos{α}}$$ $$ctg{α}=\frac{cos{α}}{sin{α}}$$ $$tg{α}⋅ctg{α}=1$$
-Funkcje trygonometryczne podwojonego kąta: $$sin{(2 \alpha)}=2 sin{(\alpha)}cos{(\alpha)}=2\frac{tg(\alpha)}{tg^2(\alpha)}$$ $$cos{(2\alpha)}=cos{(2\alpha)}−sin{(2\alpha)}=2cos{(2\alpha)}−1$$ $$tg{(2\alpha)}=\frac{2tg{(\alpha)}}{1−tg^2(\alpha)}=\frac{2}{ctg{(\alpha)}−tg{(\alpha)}}$$ $$ctg{(2\alpha)}=\frac{ctg^2{(\alpha)}−1}{2 ctg{(\alpha)}}=\frac{ctg{(\alpha)}−tg{(\alpha)}}{2}$$
-Pojemność cylindra (styl display):
-$$V = \pi r^2 h$$
-Pojemność cylindra (styl inline): $V = \pi r^2 h$</description>
-    </item>
-    
-    <item>
-      <title>System ratunkowy Debian</title>
-      <link>https://zbychuk79.github.io/posts/system-ratunkowy/</link>
-      <pubDate>Wed, 01 Dec 2021 05:41:03 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/system-ratunkowy/</guid>
-      <description>Przedstawię tu opis generowania obrazu systemu ratunkowego, który będzie można zapisać na Pendrive i używać jako systemu ratunkowego LiveUSB.
-Czynności będę wykonywał w systemie Debian (pod VirtualBox-em), ponieważ nie udało mi się poprawnie uruchomić programu debootstick pod Docker-em.
-Napisałem prosty skrypt o nazwie rescue.
-#!/bin/bash # Skrypt generuje środowisko chroot z Debianem. # Generuje skrypty do wykonania pod chroot instalujące i # ustawiające potrzebne oprogramowanie. # Potem można wygenerować image systemu do nagrania na pendrive.</description>
-    </item>
-    
-    <item>
       <title>Docker - debian-wrt image</title>
       <link>https://zbychuk79.github.io/posts/docker-wrt/</link>
       <pubDate>Mon, 12 Apr 2021 07:22:00 +0200</pubDate>
@@ -131,31 +102,6 @@ Napisałem prosty skrypt o nazwie rescue.
 Najpierw pobieramy potrzebne nam pliki:
 git clone https://github.com/zbychuk79/docker-wrt.git W katalogu docker-wrt mamy następujące pliki:
 Dockerfile - plik sterujący dla Docker&amp;lsquo;a wrt_script - uruchamiany podczas tworzenia obrazu docker-image - generowanie obrazu Debian&amp;lsquo;a z potrzebnymi programami i ustawieniami docker-container - utworzenie kontenera na podstawie wygenerowanego wcześniej obrazu docker-bash - uruchomienie bash w naszym nowym kontenerze Po uruchomieniu ostatnich trzech skryptów, można wykonywać polecenia w naszym nowym kontenerze.</description>
-    </item>
-    
-    <item>
-      <title>Asciinema</title>
-      <link>https://zbychuk79.github.io/posts/asciinema/</link>
-      <pubDate>Sun, 21 Feb 2021 04:35:28 +0100</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/asciinema/</guid>
-      <description> Asciinema to bardzo przydatny program do nagrywania sesji terminalowej.
-Linki:
-How asciinema works Embedding asciinema cast in your hugo site </description>
-    </item>
-    
-    <item>
-      <title>Wireguard</title>
-      <link>https://zbychuk79.github.io/posts/wireguard/</link>
-      <pubDate>Fri, 12 Jun 2020 12:24:21 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/wireguard/</guid>
-      <description>2020.06.12.
-Udało mi się dzisiaj uruchomić serwer VPN WireGuard pod Docker-em na Raspberry Pi 4.
-Mam na tym urządzeniu zainstalowany OpenMediaVault 5 na 32-bitowym systemie RaspiOS Lite. Do tego jeszcze mam tam zainstalowany kontener Portainer do zarządzania Docker-em.
-Posłużyłem się dokumentacją na stronie kontenera linuxserver/wireguard.
-Poniżej jest mój skrypt, który tworzy kontener na podstawie powyższego Image:
-#!/bin/sh docker create \ --name=wireguard \ --cap-add=NET_ADMIN \ --cap-add=SYS_MODULE \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Europe/Warsaw \ -e SERVERURL=zbychuk.</description>
     </item>
     
     <item>

@@ -124,19 +124,6 @@ Pojemność cylindra (styl inline): $V = \pi r^2 h$</description>
     </item>
     
     <item>
-      <title>Monero daemon w mojej sieci LAN</title>
-      <link>https://zbychuk79.github.io/posts/monero/</link>
-      <pubDate>Tue, 22 Feb 2022 21:32:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/monero/</guid>
-      <description>Informacje na temat kryptowaluty Monero:
-Monero Means Money - Główna strona projektu W pierwszej kolejności uruchomiłem wersję z interfejsem graficznym na moim głównym komputerze.
-Pobrałem monero-gui-v0.17.3.1 i uruchomiłem monero-wallet-gui.
-Ustawiłem go aby działał w trybie expert. Spowoduje to pobranie całego łańcucha blockchain (trwało to dość długo). Teraz zajmuje on na dysku 133GB. Został on zapisany w katalogu ~/.bitmonero, który po zamknięciu programu skopiuję na mój serwer Raspberry Pi.
-Chcę zapisać ten blockchain na moim Raspberry Pi, aby mieć do niego dostęp na moim laptopie i nie zajmować większości dostępnej przestrzeni na dysku.</description>
-    </item>
-    
-    <item>
       <title>System ratunkowy Debian</title>
       <link>https://zbychuk79.github.io/posts/system-ratunkowy/</link>
       <pubDate>Wed, 01 Dec 2021 05:41:03 +0200</pubDate>

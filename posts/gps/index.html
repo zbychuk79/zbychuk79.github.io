@@ -6,7 +6,7 @@
 	<meta property="og:title" content="Garmin GPS" />
 <meta property="og:description" content="Obsługa mojego odbiornika Garmin GPS Map 76CSx pod Linuksem." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="ipns://k51qzi5uqu5djd6661nhjo1tqsg559uvezgih8oj0lxb5smh3hjj7dy9jmr12t/posts/gps/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://zbychuk79.github.io/posts/gps/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-26T09:24:34+02:00" />
 <meta property="article:modified_time" content="2020-04-26T09:24:34+02:00" />
 <meta name="twitter:card" content="summary"/>
@@ -15,7 +15,7 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" media="screen" href="ipns://k51qzi5uqu5djd6661nhjo1tqsg559uvezgih8oj0lxb5smh3hjj7dy9jmr12t/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://zbychuk79.github.io/css/main.css" />
 
 
 </head>
@@ -24,7 +24,7 @@
 		<div class="content">
 <header>
 <div class="main">
-	<a href="ipns://k51qzi5uqu5djd6661nhjo1tqsg559uvezgih8oj0lxb5smh3hjj7dy9jmr12t/">Zbychuk&#39;s HomePage</a>
+	<a href="https://zbychuk79.github.io/">Zbychuk&#39;s HomePage</a>
 </div>
 <nav>
 			
@@ -54,7 +54,7 @@
 <h2 id="programy-do-obróbki-danych-gps">Programy do obróbki danych GPS.</h2>
 <p>Do zarządzania danymi z mojego GPS znalazłem fajny program o nazwie <strong>QMapshack</strong>, a do wysyłania danych do odbiornika używam <strong>GPS Babel</strong> (a dokładniej jego interfejs graficzny).</p>
 <p>W momencie pisania tego akapitu używam systemu <strong>Arch Linux</strong> z jądrem systemu w wersji 4.5.4.</p>
-<p>Aby w programie <strong>QMapshack</strong> było widać listę logów z <strong>GPSMap 76CSx</strong> (i podobnych), trzeba uruchomić automatyczne montowanie urządzeń USB-Storage (opis jest <a href="https://wiki.archlinux.org/index.php/udisks">tu</a>). Należy jeszcze w katalogu <em>Garmin</em> na karcie pamięci odbiornika zapisać plik <em><a href="../../gps/GarminDevice.xml.txt">GarminDevice.xml</a></em>.</p>
+<p>Aby w programie <strong>QMapshack</strong> było widać listę logów z <strong>GPSMap 76CSx</strong> (i podobnych), trzeba uruchomić automatyczne montowanie urządzeń USB-Storage (opis jest <a href="https://wiki.archlinux.org/index.php/udisks">tu</a>). Należy jeszcze w katalogu <em>Garmin</em> na karcie pamięci odbiornika zapisać plik <em><a href="/gps/GarminDevice.xml.txt">GarminDevice.xml</a></em>.</p>
 <p>Pozwoli to przynajmniej na odczyt zapisanych śladów z odbiornika, po przełączeniu go w tryb pamięci masowej.</p>
 <p>Do obróbki i oglądania danych statystycznych z zapisanych logów GPS używam programu <strong>Viking</strong>.</p>
 <h2 id="wysyłanie-danych-do-gpsmap-76csx">Wysyłanie danych do <strong>GPSMap 76CSx</strong>.</h2>
@@ -87,7 +87,7 @@
 <p>Nowszą ich wersję można pobrać z <a href="https://www.eea.europa.eu/data-and-maps/data/copernicus-land-monitoring-service-eu-dem">tego adresu</a>. Trzeba tylko założyć sobie konto w ich serwisie, aby można było te dane pobrać. Mają one dużą objętość. Dla całej Europy jest tego ok. 45 GB.</p>
 <h2 id="dane-routingu">Dane routingu.</h2>
 <p>Zostało jeszcze dodać dane służące do wyznaczania tras. Oczywiście nie pobieramy danych dla całej Europy, ponieważ zajmują one ponad 21GB. Wybieramy tylko kraj, w którym mamy zamiar podróżować (może ich być kilka, albo może to być też tylko jedno województwo). Dokładnie chodzi o pliki <em>.osm.pbf</em>. W tym celu trzeba pobrać je z <a href="http://download.geofabrik.de/europe.html">http://download.geofabrik.de/europe.html</a> (<a href="http://download.geofabrik.de/europe/poland-latest.osm.pbf">Polska</a>,  <a href="http://download.geofabrik.de/europe/germany-latest.osm.pbf">Niemcy</a>).</p>
-<p>Napisałem sobie <a href="../../gps/gps">skrypt</a> (co jakiś czas jest on poprawiany), który się uruchamia na jednym z moich serwerków <strong>Raspberry Pi</strong>. Jest on uruchamiany codziennie o 4:40 rano. Sprawdza on czy pliki dostępne na serwerze w internecie są nowsze niż te, które już mamy. Jeśli tak jest, to zostanie pobrana ich nowa wersja i wygenerowane zostaną nowe dane dla programu <strong>QMapshack</strong> (mapa dla odbiornika Garmin z użyciem skryptu <a href="../../gps/create_omtb_garmin_img.sh">create_omtb_garmin_img.sh</a>).</p>
+<p>Napisałem sobie <a href="/gps/gps">skrypt</a> (co jakiś czas jest on poprawiany), który się uruchamia na jednym z moich serwerków <strong>Raspberry Pi</strong>. Jest on uruchamiany codziennie o 4:40 rano. Sprawdza on czy pliki dostępne na serwerze w internecie są nowsze niż te, które już mamy. Jeśli tak jest, to zostanie pobrana ich nowa wersja i wygenerowane zostaną nowe dane dla programu <strong>QMapshack</strong> (mapa dla odbiornika Garmin z użyciem skryptu <a href="/gps/create_omtb_garmin_img.sh">create_omtb_garmin_img.sh</a>).</p>
 <p>Po zalogowaniu się na serwer trzeba zapisać ten skrypt w odpowiednie miejsce. U mnie jest to <em>/home/pi/.bin/gps</em>.</p>
 <p>Następnie musimy jeszcze ustawić uruchamianie tego skryptu przez <strong>cron</strong>:</p>
 <pre><code>$ crontab -e

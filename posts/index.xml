@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Tue, 29 Aug 2023 16:41:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Aug 2023 02:38:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Węzeł IPFS w mojej sieci LAN</title>
+      <link>https://zbychuk79.github.io/posts/ipfs/</link>
+      <pubDate>Thu, 31 Aug 2023 02:38:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/ipfs/</guid>
+      <description>Informacje na temat IPFS:
+ipfs.io - Główna strona projektu To jest tylko mały indeks z linkami stron, które umieściłem w sieci IPFS.
+Galeria zdjęć Kilka moich plików DJVU Oto czynności, które wykonałem aby uruchomić węzeł IPFS na moim Raspberry Pi.
+Plik binarny ipfs przeznaczony dla Raspberry Pi zapisałem do katalogu /usr/local/binz/.
+W pierwszej kolejności uruchomiłem ipfs ręcznie z konta użytkownika pi.
+ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na adresie 127.</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -120,20 +134,6 @@ Monero Means Money - Główna strona projektu W pierwszej kolejności uruchomił
 Pobrałem monero-gui-v0.17.3.1 i uruchomiłem monero-wallet-gui.
 Ustawiłem go aby działał w trybie expert. Spowoduje to pobranie całego łańcucha blockchain (trwało to dość długo). Teraz zajmuje on na dysku 133GB. Został on zapisany w katalogu ~/.bitmonero, który po zamknięciu programu skopiuję na mój serwer Raspberry Pi.
 Chcę zapisać ten blockchain na moim Raspberry Pi, aby mieć do niego dostęp na moim laptopie i nie zajmować większości dostępnej przestrzeni na dysku.</description>
-    </item>
-    
-    <item>
-      <title>Węzeł IPFS w mojej sieci LAN</title>
-      <link>https://zbychuk79.github.io/posts/ipfs/</link>
-      <pubDate>Sun, 20 Feb 2022 15:26:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/ipfs/</guid>
-      <description>Informacje na temat IPFS:
-ipfs.io - Główna strona projektu To jest tylko mały indeks z linkami stron, które umieściłem w sieci IPFS.
-Galeria zdjęć Kilka moich plików DJVU Oto czynności, które wykonałem aby uruchomić węzeł IPFS na moim Raspberry Pi.
-Plik binarny ipfs przeznaczony dla Raspberry Pi zapisałem do katalogu /usr/local/binz/.
-W pierwszej kolejności uruchomiłem ipfs ręcznie z konta użytkownika pi.
-ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na adresie 127.</description>
     </item>
     
     <item>

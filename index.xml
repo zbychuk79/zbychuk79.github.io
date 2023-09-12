@@ -6,7 +6,18 @@
     <description>Recent content on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Thu, 31 Aug 2023 02:38:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Sep 2023 23:46:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
+      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
+      <pubDate>Tue, 12 Sep 2023 23:46:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
+      <description>22 marca 2021.
+W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
+Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
+    </item>
+    
     <item>
       <title>Węzeł IPFS w mojej sieci LAN</title>
       <link>https://zbychuk79.github.io/posts/ipfs/</link>
@@ -19,17 +30,6 @@ Galeria zdjęć Kilka moich plików DJVU Oto czynności, które wykonałem aby u
 Plik binarny ipfs przeznaczony dla Raspberry Pi zapisałem do katalogu /usr/local/binz/.
 W pierwszej kolejności uruchomiłem ipfs ręcznie z konta użytkownika pi.
 ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na adresie 127.</description>
-    </item>
-    
-    <item>
-      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
-      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
-      <pubDate>Tue, 29 Aug 2023 16:41:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
-      <description>22 marca 2021.
-W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
-Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
     </item>
     
     <item>

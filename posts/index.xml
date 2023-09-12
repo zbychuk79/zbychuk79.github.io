@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Tue, 12 Sep 2023 23:46:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Sep 2023 00:45:54 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ciekawe linki ...</title>
+      <link>https://zbychuk79.github.io/posts/linki/</link>
+      <pubDate>Wed, 13 Sep 2023 00:45:54 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/linki/</guid>
+      <description>Tomb - następca TrueCrypt i VeraCrypt ZFS on Linux - Debian 11 ZFS-Root Install Debian 12 (Bookworm) on an F2FS Partition Preventing external hard drive from sleeping Top 12 Things To Do After Installing Debian 11 (Bullseye) 15 Things To Do After Installing Debian 11 Basics of ZFS Snapshot Management ZFS Snapshots How to set up ZFS ARC size on Ubuntu/Debian Linux Install Syncthing on Debian Install Rust on Debian 11 How I Fixed Buzzing Noise Coming from Speakers in Linux Najciekawszy jest ostatni: baby monitor.</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -30,15 +39,6 @@ Galeria zdjęć Kilka moich plików DJVU Oto czynności, które wykonałem aby u
 Plik binarny ipfs przeznaczony dla Raspberry Pi zapisałem do katalogu /usr/local/binz/.
 W pierwszej kolejności uruchomiłem ipfs ręcznie z konta użytkownika pi.
 ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na adresie 127.</description>
-    </item>
-    
-    <item>
-      <title>Ciekawe linki ...</title>
-      <link>https://zbychuk79.github.io/posts/linki/</link>
-      <pubDate>Sun, 27 Aug 2023 16:26:54 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/linki/</guid>
-      <description>Tomb - następca TrueCrypt i VeraCrypt ZFS on Linux - Debian 11 ZFS-Root Install Debian 12 (Bookworm) on an F2FS Partition Top 12 Things To Do After Installing Debian 11 (Bullseye) 15 Things To Do After Installing Debian 11 Basics of ZFS Snapshot Management ZFS Snapshots How to set up ZFS ARC size on Ubuntu/Debian Linux Install Syncthing on Debian Install Rust on Debian 11 How I Fixed Buzzing Noise Coming from Speakers in Linux Najciekawszy jest ostatni: baby monitor.</description>
     </item>
     
     <item>

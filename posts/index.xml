@@ -39,17 +39,6 @@ Background sticking method (rosyjski) </description>
     </item>
     
     <item>
-      <title>Djvu</title>
-      <link>https://zbychuk79.github.io/posts/djvu/</link>
-      <pubDate>Fri, 01 Sep 2023 19:30:08 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/djvu/</guid>
-      <description> Używam progamu ScanTailor do obróbki obrazów stron skanowanych ksiazek.
-Do konwersji obrobionych obrazów na format DJVU używam progamu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick. Paczka graphicsmagick-imagemagick-compat musi być odinstalowana. Paczka graphicsmagick może być obecna w systemie.
-Background sticking method (rosyjski) </description>
-    </item>
-    
-    <item>
       <title>Węzeł IPFS w mojej sieci LAN</title>
       <link>https://zbychuk79.github.io/posts/ipfs/</link>
       <pubDate>Thu, 31 Aug 2023 02:38:00 +0200</pubDate>

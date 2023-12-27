@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Tue, 19 Dec 2023 09:55:00 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Dec 2023 18:54:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moje klucze publiczne GnuPG</title>
+      <link>https://zbychuk79.github.io/posts/gnupg/</link>
+      <pubDate>Wed, 27 Dec 2023 18:54:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
+      <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
+OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide Podpisywanie kluczy Key Signing Party Serwer kluczy keys.openpgp.org No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
+Pomocne informacje:
+Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys With Curve Ed25519 Maintaining Your Keypair and the Web Of Trust PGP Key Signing Party How to Roll a Strong Password with 20-Sided Dice and Fandom-Inspired Wordlists GnuPG cheatsheet GnuPG FAQ Generator wizytówek GnuPG 12 września 2022.</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -103,18 +115,6 @@ Bardzo fajna strona z mnóstwem przydatnych informacji na temat instalacji LED:<
       <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 11 “Bullseye”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
 Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
 #!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.5&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
-    </item>
-    
-    <item>
-      <title>Moje klucze publiczne GnuPG</title>
-      <link>https://zbychuk79.github.io/posts/gnupg/</link>
-      <pubDate>Mon, 26 Dec 2022 17:18:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
-      <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
-OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide Podpisywanie kluczy Key Signing Party Serwer kluczy keys.openpgp.org No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
-Pomocne informacje:
-Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys With Curve Ed25519 Maintaining Your Keypair and the Web Of Trust PGP Key Signing Party How to Roll a Strong Password with 20-Sided Dice and Fandom-Inspired Wordlists GnuPG cheatsheet GnuPG FAQ Generator wizytówek GnuPG 12 września 2022.</description>
     </item>
     
     <item>

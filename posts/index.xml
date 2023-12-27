@@ -6,7 +6,22 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Wed, 27 Dec 2023 19:33:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Dec 2023 19:50:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Węzeł IPFS w mojej sieci LAN</title>
+      <link>https://zbychuk79.github.io/posts/ipfs/</link>
+      <pubDate>Wed, 27 Dec 2023 19:50:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/ipfs/</guid>
+      <description>Nowy opis ustawienia:
+Ustawienie Kubo IPFS Informacje na temat IPFS:
+ipfs.io - Główna strona projektu To jest tylko mały indeks z linkami stron, które umieściłem w sieci IPFS.
+Galeria zdjęć Kilka moich plików DJVU Oto czynności, które wykonałem aby uruchomić węzeł IPFS na moim Raspberry Pi.
+Plik binarny ipfs przeznaczony dla Raspberry Pi zapisałem do katalogu /usr/local/binz/.
+W pierwszej kolejności uruchomiłem ipfs ręcznie z konta użytkownika pi.
+ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na adresie 127.</description>
+    </item>
+    
     <item>
       <title>Moje klucze publiczne GnuPG</title>
       <link>https://zbychuk79.github.io/posts/gnupg/</link>
@@ -48,20 +63,6 @@ Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, ż
       <description> Używam progamu ScanTailor do obróbki obrazów stron skanowanych ksiazek.
 Do konwersji obrobionych obrazów na format DJVU używam progamu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick. Paczka graphicsmagick-imagemagick-compat musi być odinstalowana. Paczka graphicsmagick może być obecna w systemie.
 Background sticking method (rosyjski) </description>
-    </item>
-    
-    <item>
-      <title>Węzeł IPFS w mojej sieci LAN</title>
-      <link>https://zbychuk79.github.io/posts/ipfs/</link>
-      <pubDate>Thu, 31 Aug 2023 02:38:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/ipfs/</guid>
-      <description>Informacje na temat IPFS:
-ipfs.io - Główna strona projektu To jest tylko mały indeks z linkami stron, które umieściłem w sieci IPFS.
-Galeria zdjęć Kilka moich plików DJVU Oto czynności, które wykonałem aby uruchomić węzeł IPFS na moim Raspberry Pi.
-Plik binarny ipfs przeznaczony dla Raspberry Pi zapisałem do katalogu /usr/local/binz/.
-W pierwszej kolejności uruchomiłem ipfs ręcznie z konta użytkownika pi.
-ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na adresie 127.</description>
     </item>
     
     <item>

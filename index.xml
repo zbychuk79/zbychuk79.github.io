@@ -6,11 +6,22 @@
     <description>Recent content on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Wed, 27 Dec 2023 22:06:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Dec 2023 23:05:00 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
+      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
+      <pubDate>Wed, 27 Dec 2023 23:05:00 +0100</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
+      <description>22 marca 2021.
+W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
+Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
+    </item>
+    
     <item>
       <title>Moje klucze publiczne GnuPG</title>
       <link>https://zbychuk79.github.io/posts/gnupg/</link>
-      <pubDate>Wed, 27 Dec 2023 22:06:00 +0200</pubDate>
+      <pubDate>Wed, 27 Dec 2023 23:17:00 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
       <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:
@@ -20,29 +31,23 @@ Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys
     </item>
     
     <item>
-      <title>Węzeł IPFS w mojej sieci LAN</title>
-      <link>https://zbychuk79.github.io/posts/ipfs/</link>
-      <pubDate>Wed, 27 Dec 2023 20:53:00 +0200</pubDate>
+      <title>OpenWRT Image Builder</title>
+      <link>https://zbychuk79.github.io/posts/openwrt/</link>
+      <pubDate>Tue, 26 Dec 2023 20:44:28 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/ipfs/</guid>
-      <description>Nowy opis ustawienia:
-Ustawienie Kubo IPFS Informacje na temat IPFS:
-ipfs.io - Główna strona projektu To jest tylko mały indeks z linkami stron, które umieściłem w sieci IPFS.
-Galeria zdjęć Kilka moich plików DJVU Oto czynności, które wykonałem aby uruchomić węzeł IPFS na moim Raspberry Pi.
-Plik binarny ipfs przeznaczony dla Raspberry Pi zapisałem do katalogu /usr/local/binz/.
-W pierwszej kolejności uruchomiłem ipfs ręcznie z konta użytkownika pi.
-ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na adresie 127.</description>
+      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
+      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
+Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
+#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.6&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
     </item>
     
     <item>
-      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
-      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
-      <pubDate>Tue, 19 Dec 2023 09:55:00 +0100</pubDate>
+      <title>Raspberry Pi Pico</title>
+      <link>https://zbychuk79.github.io/posts/rpipico/</link>
+      <pubDate>Wed, 27 Sep 2023 12:01:31 +0200</pubDate>
       
-      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
-      <description>22 marca 2021.
-W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
-Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
+      <guid>https://zbychuk79.github.io/posts/rpipico/</guid>
+      <description> </description>
     </item>
     
     <item>
@@ -108,17 +113,6 @@ Bardzo fajna strona z mnóstwem przydatnych informacji na temat instalacji LED:<
     </item>
     
     <item>
-      <title>OpenWRT Image Builder</title>
-      <link>https://zbychuk79.github.io/posts/openwrt/</link>
-      <pubDate>Fri, 09 Jun 2023 20:44:28 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
-      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian 11 “Bullseye”. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
-Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
-#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.5&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
-    </item>
-    
-    <item>
       <title>Docker - debian-wrt image</title>
       <link>https://zbychuk79.github.io/posts/docker-wrt/</link>
       <pubDate>Mon, 12 Apr 2021 07:22:00 +0200</pubDate>
@@ -148,16 +142,6 @@ korytarz w piwnicy pokój gościnny na parterze pokój na piętrze, gdzie śpię
       
       <guid>https://zbychuk79.github.io/posts/qmapshack/</guid>
       <description> Kurs wideo na temat programu QmapShack: część 1 część 2 część 3 część 4 </description>
-    </item>
-    
-    <item>
-      <title>Garmin GPS</title>
-      <link>https://zbychuk79.github.io/posts/gps/</link>
-      <pubDate>Sun, 26 Apr 2020 09:24:34 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/gps/</guid>
-      <description>Posiadam odbiornik GPSMap 76CSx firmy Garmin z dodatkowym uchwytem na rower. Wraz z odbiornikiem zakupiłem GPMapa 2007, ale dodatkowych aktualizacji już nie kupowałem.
-Darmowe mapy do Garmin GPSMap 76CSx. Miałem załadowaną do niego mapę UMP-PL TOPO. Mapa ta nadawała się doskonale do jazdy na rowerze, po wcześniejszym załadowaniu trasy. Powodem tego jest to, że posiada zaznaczone dużo obiektów i szlaków, których próżno szukać na innych mapach oraz to, że uaktualniana jest prawie codziennie.</description>
     </item>
     
     <item>

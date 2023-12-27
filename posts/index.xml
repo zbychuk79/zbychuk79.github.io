@@ -6,11 +6,11 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Wed, 27 Dec 2023 20:05:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Dec 2023 20:51:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Węzeł IPFS w mojej sieci LAN</title>
       <link>https://zbychuk79.github.io/posts/ipfs/</link>
-      <pubDate>Wed, 27 Dec 2023 20:05:00 +0200</pubDate>
+      <pubDate>Wed, 27 Dec 2023 20:51:00 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/ipfs/</guid>
       <description>Nowy opis ustawienia:
@@ -25,7 +25,7 @@ ipfs Potem w pliku konfiguracyjnym ustawiłem, żeby ipfs nie działał tylko na
     <item>
       <title>Moje klucze publiczne GnuPG</title>
       <link>https://zbychuk79.github.io/posts/gnupg/</link>
-      <pubDate>Wed, 27 Dec 2023 19:33:00 +0200</pubDate>
+      <pubDate>Wed, 27 Dec 2023 20:24:00 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/gnupg/</guid>
       <description>Jakiś czas temu (2019.09.24) przeczytałem kilka artykułów na temat bezpieczeństwa kluczy szyfrujących:

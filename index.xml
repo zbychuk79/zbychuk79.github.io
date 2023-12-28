@@ -6,7 +6,18 @@
     <description>Recent content on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Wed, 27 Dec 2023 23:05:00 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Dec 2023 01:33:28 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenWRT Image Builder</title>
+      <link>https://zbychuk79.github.io/posts/openwrt/</link>
+      <pubDate>Thu, 28 Dec 2023 01:33:28 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
+      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
+Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
+#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.6&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -28,17 +39,6 @@ Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, ż
 OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide Podpisywanie kluczy Key Signing Party Serwer kluczy keys.openpgp.org No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
 Pomocne informacje:
 Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys With Curve Ed25519 Maintaining Your Keypair and the Web Of Trust PGP Key Signing Party How to Roll a Strong Password with 20-Sided Dice and Fandom-Inspired Wordlists GnuPG cheatsheet GnuPG FAQ Generator wizytówek GnuPG 12 września 2022.</description>
-    </item>
-    
-    <item>
-      <title>OpenWRT Image Builder</title>
-      <link>https://zbychuk79.github.io/posts/openwrt/</link>
-      <pubDate>Tue, 26 Dec 2023 20:44:28 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/openwrt/</guid>
-      <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
-Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
-#!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.6&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
     </item>
     
     <item>

@@ -6,7 +6,18 @@
     <description>Recent content on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Mon, 08 Jan 2024 00:53:00 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jan 2024 03:07:00 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
+      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
+      <pubDate>Sun, 14 Jan 2024 03:07:00 +0100</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
+      <description>22 marca 2021.
+W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
+Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
+    </item>
+    
     <item>
       <title>Moje klucze publiczne GnuPG</title>
       <link>https://zbychuk79.github.io/posts/gnupg/</link>
@@ -17,17 +28,6 @@
 OpenPGP - The almost perfect key pair OpenPGP Best Practices - riseup.net How to rotate your OpenPGP / GnuPG keys - GeekWare Generating More Secure GPG Keys: A Step-by-Step Guide Podpisywanie kluczy Key Signing Party No i stwierdziłem, że trzeba utworzyć nową parę kluczy, a stare unieważnić.
 Pomocne informacje:
 Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys With Curve Ed25519 Maintaining Your Keypair and the Web Of Trust PGP Key Signing Party How to Roll a Strong Password with 20-Sided Dice and Fandom-Inspired Wordlists GnuPG cheatsheet GnuPG FAQ Generator wizytówek GnuPG Create GnuPG Master Keys and Subkeys How To Setup A Yubikey 12 września 2022.</description>
-    </item>
-    
-    <item>
-      <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
-      <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
-      <pubDate>Mon, 08 Jan 2024 00:42:00 +0100</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
-      <description>22 marca 2021.
-W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
-Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
     </item>
     
     <item>

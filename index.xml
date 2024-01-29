@@ -6,7 +6,16 @@
     <description>Recent content on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sat, 27 Jan 2024 19:10:00 +0100</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jan 2024 13:01:06 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KiCad EDA - projektowanie płytek PCB</title>
+      <link>https://zbychuk79.github.io/posts/kicad/</link>
+      <pubDate>Mon, 29 Jan 2024 13:01:06 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/kicad/</guid>
+      <description> KiCAD 7 - projektowanie PCB w 2 godziny 6 najczęstrzych błędów w projektach płytek PCB 15 częstych błędów w płytkach PCB </description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>

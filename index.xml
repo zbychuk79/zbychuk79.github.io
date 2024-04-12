@@ -154,18 +154,6 @@ korytarz w piwnicy pokój gościnny na parterze pokój na piętrze, gdzie śpię
     </item>
     
     <item>
-      <title>iPXE w mojej sieci LAN</title>
-      <link>https://zbychuk79.github.io/posts/ipxe/</link>
-      <pubDate>Tue, 21 Apr 2020 17:56:50 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/ipxe/</guid>
-      <description>W tym miejscu opiszę jak można ustawić proste (lub też bardzo rozbudowane) środowisko do startowania systemu operacyjnego lub jego instalatora bez pobierania z Internetu dużego pliku nośnika startowego typu CD-Rom lub Pendrive.
-Przedstawię jak skompilować własną wersję iPXE.
-Najpierw przygotuję system Debian, gdzie będę przeprowadzał całą procedurę.
-Zrobiłem to pod VirtualBox dlatego, że jest mi tym sposobem łatwiej (czynności te zadziałają też w kontenerze Docker-a). System host&amp;rsquo;a to ArchLinux, który działa dobrze, ale prościej mi się pod Debian&amp;rsquo;em to ustawia i łatwiej jest wyłapać błędy na prawie gołym systemie.</description>
-    </item>
-    
-    <item>
       <title>O mnie</title>
       <link>https://zbychuk79.github.io/posts/omnie/</link>
       <pubDate>Tue, 21 Apr 2020 16:49:35 +0200</pubDate>

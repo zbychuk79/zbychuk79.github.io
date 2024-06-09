@@ -6,7 +6,19 @@
     <description>Recent content on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Tue, 04 Jun 2024 08:16:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jun 2024 06:14:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skaner książek</title>
+      <link>https://zbychuk79.github.io/posts/book-scanner/</link>
+      <pubDate>Sun, 09 Jun 2024 06:14:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
+      <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
+W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
+Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
+Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -28,18 +40,6 @@ Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, ż
 Używam progamu ScanTailor do obróbki skorygowanych w/w metodą zdjęć.
 Do konwersji obrobionych obrazów na format DJVU używam progamu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick. Paczka graphicsmagick-imagemagick-compat musi być odinstalowana. Paczka graphicsmagick może być obecna w systemie.
 Background sticking method (rosyjski) </description>
-    </item>
-    
-    <item>
-      <title>Skaner książek</title>
-      <link>https://zbychuk79.github.io/posts/book-scanner/</link>
-      <pubDate>Sun, 02 Jun 2024 18:19:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
-      <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
-W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
-Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
-Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
     </item>
     
     <item>

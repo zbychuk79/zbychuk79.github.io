@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zbychuk79.github.io/posts/</loc>
-    <lastmod>2024-06-17T02:52:00+02:00</lastmod>
+    <loc>https://zbychuk79.github.io/posts/cnc/</loc>
+    <lastmod>2024-06-24T13:19:27+02:00</lastmod>
   </url><url>
-    <loc>https://zbychuk79.github.io/posts/book-scanner/</loc>
-    <lastmod>2024-06-17T02:52:00+02:00</lastmod>
+    <loc>https://zbychuk79.github.io/posts/</loc>
+    <lastmod>2024-06-24T13:19:27+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/</loc>
+    <lastmod>2024-06-24T13:19:27+02:00</lastmod>
+  </url><url>
+    <loc>https://zbychuk79.github.io/posts/book-scanner/</loc>
     <lastmod>2024-06-17T02:52:00+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/posts/drukarka3d/</loc>

@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Tue, 02 Jul 2024 23:26:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Jul 2024 19:56:08 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Djvu</title>
+      <link>https://zbychuk79.github.io/posts/djvu/</link>
+      <pubDate>Sun, 07 Jul 2024 19:56:08 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/djvu/</guid>
+      <description>Zdjęcia książek, które skanuję na moim skanerze poddaję korekcie geometrycznej przy pomocy programu ppmunwarp z repozytorium ppmrose.
+Używam progamu ScanTailor do obróbki skorygowanych w/w metodą zdjęć.
+Do konwersji obrobionych obrazów na format DJVU używam programu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick. Paczka graphicsmagick-imagemagick-compat musi być odinstalowana. Paczka graphicsmagick może być obecna w systemie.
+Ciekawe informacje na temat obróbki zdjęć książek:
+Learning to Create Tiny DJVU files - DIY Book Scanner Converting Color/Grayscale Text Scans to Black &amp;amp; White - DIY Book Scanner Materiały w mniej preferowanych językach:</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -38,18 +51,6 @@ The Best Arduino DIY CNC Router Projects in 2024 The Best Arduino CNC Software <
 W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
 Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
 Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
-    </item>
-    
-    <item>
-      <title>Djvu</title>
-      <link>https://zbychuk79.github.io/posts/djvu/</link>
-      <pubDate>Sun, 02 Jun 2024 18:27:08 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/djvu/</guid>
-      <description> Zdjęcia książek, które skanuję na moim skanerze poddaję korekcie geometrycznej przy pomocy programu ppmunwarp z repozytorium ppmrose.
-Używam progamu ScanTailor do obróbki skorygowanych w/w metodą zdjęć.
-Do konwersji obrobionych obrazów na format DJVU używam progamu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick. Paczka graphicsmagick-imagemagick-compat musi być odinstalowana. Paczka graphicsmagick może być obecna w systemie.
-Background sticking method (rosyjski) </description>
     </item>
     
     <item>

@@ -6,29 +6,28 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sat, 20 Jul 2024 20:19:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Jul 2024 01:37:08 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Djvu</title>
+      <link>https://zbychuk79.github.io/posts/djvu/</link>
+      <pubDate>Sat, 27 Jul 2024 01:37:08 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/djvu/</guid>
+      <description>Zdjęcia książek, które skanuję na moim skanerze poddaję korekcie geometrycznej przy pomocy programu ppmunwarp z repozytorium ppmrose.
+Używam progamu ScanTailor do obróbki skorygowanych w/w metodą zdjęć.
+Do konwersji obrobionych obrazów na książkę w pliku DJVU używam programu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick. Paczka graphicsmagick-imagemagick-compat musi być odinstalowana. Paczka graphicsmagick może być obecna w systemie.
+Ciekawe informacje na temat obróbki zdjęć książek:</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
-      <pubDate>Sat, 20 Jul 2024 20:19:00 +0200</pubDate>
+      <pubDate>Sat, 27 Jul 2024 01:34:00 +0200</pubDate>
       
       <guid>https://zbychuk79.github.io/posts/drukarka3d/</guid>
       <description>22 marca 2021.
 W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
 Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
-    </item>
-    
-    <item>
-      <title>Djvu</title>
-      <link>https://zbychuk79.github.io/posts/djvu/</link>
-      <pubDate>Sun, 07 Jul 2024 19:56:08 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/djvu/</guid>
-      <description>Zdjęcia książek, które skanuję na moim skanerze poddaję korekcie geometrycznej przy pomocy programu ppmunwarp z repozytorium ppmrose.
-Używam progamu ScanTailor do obróbki skorygowanych w/w metodą zdjęć.
-Do konwersji obrobionych obrazów na format DJVU używam programu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick. Paczka graphicsmagick-imagemagick-compat musi być odinstalowana. Paczka graphicsmagick może być obecna w systemie.
-Ciekawe informacje na temat obróbki zdjęć książek:
-Learning to Create Tiny DJVU files - DIY Book Scanner Converting Color/Grayscale Text Scans to Black &amp;amp; White - DIY Book Scanner Materiały w mniej preferowanych językach:</description>
     </item>
     
     <item>

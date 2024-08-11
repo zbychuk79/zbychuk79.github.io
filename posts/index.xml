@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Sat, 27 Jul 2024 01:37:08 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Aug 2024 19:26:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CNC Router</title>
+      <link>https://zbychuk79.github.io/posts/cnc/</link>
+      <pubDate>Sun, 11 Aug 2024 19:26:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/cnc/</guid>
+      <description>Może zbuduję sobie prosty router CNC. Na ten moment poznaję temat i szukam informacji.
+The Best Arduino DIY CNC Router Projects in 2024 The Best Arduino CNC Software The Best Free CAM Software in 2024 </description>
+    </item>
+    
     <item>
       <title>Djvu</title>
       <link>https://zbychuk79.github.io/posts/djvu/</link>
@@ -28,16 +38,6 @@ Ciekawe informacje na temat obróbki zdjęć książek:</description>
       <description>22 marca 2021.
 W końcu zdecydowałem się na zakup drukarki 3D. Dość długo się zastanawiałem jaką wybrać.
 Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, że jak wydrukował mi na niej jeden element do mojego skanera książek, to wyszło mu to lepiej niż innym ludziom z pracy, którzy mieli do dyspozycji drukarkę za 12500 złotych (chyba mają ją uszkodzoną, albo nie wiedzą jak jej używać).</description>
-    </item>
-    
-    <item>
-      <title>CNC Router</title>
-      <link>https://zbychuk79.github.io/posts/cnc/</link>
-      <pubDate>Mon, 24 Jun 2024 13:19:27 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/cnc/</guid>
-      <description>Może zbuduję sobie prosty router CNC. Na ten moment poznaję temat i szukam informacji.
-The Best Arduino DIY CNC Router Projects in 2024 The Best Arduino CNC Software </description>
     </item>
     
     <item>

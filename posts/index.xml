@@ -14,7 +14,7 @@
       
       <guid>https://zbychuk79.github.io/posts/djvu/</guid>
       <description>Zdjęcia książek, które skanuję na moim skanerze poddaję korekcie geometrycznej przy pomocy programu ppmunwarp z repozytorium ppmrose.
-Proces korekcji zdjęć jest dokładnie opisany na forum DIY BookScanner w artykule Dewarping with a regular calibration point grid
+Proces korekcji zdjęć jest dokładnie opisany na forum DIY BookScanner w artykule Dewarping with a regular calibration point grid.
 Używam progamu ScanTailor do obróbki skorygowanych w/w metodą zdjęć.
 Do konwersji obrobionych obrazów na książkę w pliku DJVU używam programu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick.</description>
     </item>

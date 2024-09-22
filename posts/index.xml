@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Mon, 23 Sep 2024 00:10:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Sep 2024 00:39:08 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Djvu</title>
+      <link>https://zbychuk79.github.io/posts/djvu/</link>
+      <pubDate>Mon, 23 Sep 2024 00:39:08 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/djvu/</guid>
+      <description>Zdjęcia książek, które skanuję na moim skanerze poddaję korekcie geometrycznej przy pomocy programu ppmunwarp z repozytorium ppmrose.
+Proces korekcji zdjęć jest dokładnie opisany na forum DIY BookScanner w artykule Dewarping with a regular calibration point grid
+Używam progamu ScanTailor do obróbki skorygowanych w/w metodą zdjęć.
+Do konwersji obrobionych obrazów na książkę w pliku DJVU używam programu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick.</description>
+    </item>
+    
     <item>
       <title>CNC Router</title>
       <link>https://zbychuk79.github.io/posts/cnc/</link>
@@ -15,18 +27,6 @@
       <guid>https://zbychuk79.github.io/posts/cnc/</guid>
       <description>Może zbuduję sobie prosty router CNC. Na ten moment poznaję temat i szukam informacji.
 The Best Free CAM Software in 2024 GRBL Software: All You Need to Know The Best Arduino CNC Software The Best Arduino DIY CNC Router Projects in 2024 DIY CNC Router: Which Parts Do You Need to Build Your Own? </description>
-    </item>
-    
-    <item>
-      <title>Djvu</title>
-      <link>https://zbychuk79.github.io/posts/djvu/</link>
-      <pubDate>Sat, 27 Jul 2024 01:37:08 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/djvu/</guid>
-      <description>Zdjęcia książek, które skanuję na moim skanerze poddaję korekcie geometrycznej przy pomocy programu ppmunwarp z repozytorium ppmrose.
-Używam progamu ScanTailor do obróbki skorygowanych w/w metodą zdjęć.
-Do konwersji obrobionych obrazów na książkę w pliku DJVU używam programu img2djvu. Aby on poprawnie działał w systemie Debian 12, trzeba mieć zainstalowaną paczkę imagemagick. Paczka graphicsmagick-imagemagick-compat musi być odinstalowana. Paczka graphicsmagick może być obecna w systemie.
-Ciekawe informacje na temat obróbki zdjęć książek:</description>
     </item>
     
     <item>

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Thu, 17 Oct 2024 23:54:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Oct 2024 17:09:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ciekawe linki ...</title>
+      <link>https://zbychuk79.github.io/posts/linki/</link>
+      <pubDate>Mon, 21 Oct 2024 17:09:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/linki/</guid>
+      <description>Tomb - następca TrueCrypt i VeraCrypt ZFS on Linux - Debian 11 ZFS-Root Install Debian 12 (Bookworm) on an F2FS Partition Preventing external hard drive from sleeping Top 12 Things To Do After Installing Debian 11 (Bullseye) 15 Things To Do After Installing Debian 11 Basics of ZFS Snapshot Management ZFS Snapshots How to set up ZFS ARC size on Ubuntu/Debian Linux Install Syncthing on Debian Install Rust on Debian 11 How I Fixed Buzzing Noise Coming from Speakers in Linux Najciekawszy jest ostatni: baby monitor.</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -91,15 +100,6 @@ Kernel Maintainer PGP guide Protecting code integrity with PGP Generate GPG Keys
       <description>Ustawienie OpenWRT Image Builder Napisałem skrypt, który uruchamiam pod systemem Debian. Jego zadaniem jest generowanie obrazu firmware dla moich punktów WiFi AP.
 Skrypt ten zapisałem jako wrt-22. Dodatkowe pliki konfiguracyjne dla moich urządzeń są tu. Są one automatycznie pobierane przez mój skrypt.
 #!/bin/bash # Wersja RPi dla generowanego obrazu. # ap_rpi=&amp;#34;bcm2708&amp;#34; rt_rpi=&amp;#34;bcm2710&amp;#34; wersja=&amp;#34;22.03.6&amp;#34; link=&amp;#34;https://downloads.openwrt.org/releases&amp;#34; tmp=&amp;#34;tmp&amp;#34; czas=`date +%Y.%m.%d-%H.%M.%S` usage() { echo &amp;#34; Jak używać: wrt [ -w wersja ] [ -c ] | [ -h ] -w wersja OpenWRT do budowy (domyślne: $wersja) -c czyści swoje pliki z systemu -h wyświetlenie tej instrukcji &amp;#34; } if [ &amp;#34;$#&amp;#34; = 0 ]; then usage echo fi while [ &amp;#34;$1&amp;#34; !</description>
-    </item>
-    
-    <item>
-      <title>Ciekawe linki ...</title>
-      <link>https://zbychuk79.github.io/posts/linki/</link>
-      <pubDate>Tue, 26 Sep 2023 17:03:54 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/linki/</guid>
-      <description>Tomb - następca TrueCrypt i VeraCrypt ZFS on Linux - Debian 11 ZFS-Root Install Debian 12 (Bookworm) on an F2FS Partition Preventing external hard drive from sleeping Top 12 Things To Do After Installing Debian 11 (Bullseye) 15 Things To Do After Installing Debian 11 Basics of ZFS Snapshot Management ZFS Snapshots How to set up ZFS ARC size on Ubuntu/Debian Linux Install Syncthing on Debian Install Rust on Debian 11 How I Fixed Buzzing Noise Coming from Speakers in Linux Najciekawszy jest ostatni: baby monitor.</description>
     </item>
     
     <item>

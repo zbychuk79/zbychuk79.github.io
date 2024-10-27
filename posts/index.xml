@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Fri, 25 Oct 2024 13:13:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Oct 2024 01:11:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skaner książek</title>
+      <link>https://zbychuk79.github.io/posts/book-scanner/</link>
+      <pubDate>Sun, 27 Oct 2024 01:11:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
+      <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
+W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
+Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
+Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -47,18 +59,6 @@ Do konwersji obrobionych obrazów na książkę w pliku DJVU używam programu im
       <guid>https://zbychuk79.github.io/posts/cnc/</guid>
       <description>Może zbuduję sobie prosty router CNC. Na ten moment poznaję temat i szukam informacji.
 The Best Free CAM Software in 2024 GRBL Software: All You Need to Know The Best Arduino CNC Software The Best Arduino DIY CNC Router Projects in 2024 DIY CNC Router: Which Parts Do You Need to Build Your Own? </description>
-    </item>
-    
-    <item>
-      <title>Skaner książek</title>
-      <link>https://zbychuk79.github.io/posts/book-scanner/</link>
-      <pubDate>Mon, 17 Jun 2024 02:52:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/book-scanner/</guid>
-      <description>W roku 2019 postanowiłem zbudować sobie skaner książek, działający na zasadzie użycia cyfrowego aparatu fotograficznego jako urządzenia skanującego.
-W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
-Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
-Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
     </item>
     
     <item>

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Zbychuk&#39;s HomePage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl-PL</language>
-    <lastBuildDate>Fri, 01 Nov 2024 16:02:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Nov 2024 01:17:00 +0200</lastBuildDate><atom:link href="https://zbychuk79.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ciekawe linki ...</title>
+      <link>https://zbychuk79.github.io/posts/linki/</link>
+      <pubDate>Wed, 06 Nov 2024 01:17:00 +0200</pubDate>
+      
+      <guid>https://zbychuk79.github.io/posts/linki/</guid>
+      <description>Tomb - następca TrueCrypt i VeraCrypt ZFS on Linux - Debian 11 ZFS-Root Install Debian 12 (Bookworm) on an F2FS Partition Preventing external hard drive from sleeping Top 12 Things To Do After Installing Debian 11 (Bullseye) 15 Things To Do After Installing Debian 11 Basics of ZFS Snapshot Management ZFS Snapshots How to set up ZFS ARC size on Ubuntu/Debian Linux Install Syncthing on Debian Install Rust on Debian 11 How I Fixed Buzzing Noise Coming from Speakers in Linux Najciekawszy jest ostatni: baby monitor.</description>
+    </item>
+    
     <item>
       <title>Drukarka 3D - Original Prusa i3 MK3S&#43;</title>
       <link>https://zbychuk79.github.io/posts/drukarka3d/</link>
@@ -28,15 +37,6 @@ Kolega z pracy ma drukarkę Anet A8-B. Dał za nią $110. Muszę powiedzieć, ż
 W pierwotnej wersji zbudowałem dość duże urządzenie, do którego mogę podpiąć jedną z moich lustrzanek cyfrowych Nikon D70s lub Nikon D7100.
 Na górnym ramieniu całej konstrukcji miałem zamontowaną lampę LED o mocy ok. 30W. Jest ona dość mocna, więc na fotografowany materiał docierało wystarczająco dużo światła.
 Ogólnie rzecz biorąc, to dało się używać tej konstrukcji, ale nie miałem w niej żadnego mechanizmu podpierającego książkę.</description>
-    </item>
-    
-    <item>
-      <title>Ciekawe linki ...</title>
-      <link>https://zbychuk79.github.io/posts/linki/</link>
-      <pubDate>Thu, 24 Oct 2024 18:14:00 +0200</pubDate>
-      
-      <guid>https://zbychuk79.github.io/posts/linki/</guid>
-      <description>Tomb - następca TrueCrypt i VeraCrypt ZFS on Linux - Debian 11 ZFS-Root Install Debian 12 (Bookworm) on an F2FS Partition Preventing external hard drive from sleeping Top 12 Things To Do After Installing Debian 11 (Bullseye) 15 Things To Do After Installing Debian 11 Basics of ZFS Snapshot Management ZFS Snapshots How to set up ZFS ARC size on Ubuntu/Debian Linux Install Syncthing on Debian Install Rust on Debian 11 How I Fixed Buzzing Noise Coming from Speakers in Linux Najciekawszy jest ostatni: baby monitor.</description>
     </item>
     
     <item>

@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zbychuk79.github.io/posts/linki/</loc>
-    <lastmod>2024-11-06T01:17:00+02:00</lastmod>
+    <loc>https://zbychuk79.github.io/posts/drukarka3d/</loc>
+    <lastmod>2025-01-01T04:58:00+01:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/posts/</loc>
-    <lastmod>2024-11-06T01:17:00+02:00</lastmod>
+    <lastmod>2025-01-01T04:58:00+01:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/</loc>
+    <lastmod>2025-01-01T04:58:00+01:00</lastmod>
+  </url><url>
+    <loc>https://zbychuk79.github.io/posts/linki/</loc>
     <lastmod>2024-11-06T01:17:00+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/posts/book-scanner/</loc>
@@ -51,8 +54,6 @@
     <lastmod>2020-04-21T16:49:35+02:00</lastmod>
   </url><url>
     <loc>https://zbychuk79.github.io/categories/</loc>
-  </url><url>
-    <loc>https://zbychuk79.github.io/posts/drukarka3d/</loc>
   </url><url>
     <loc>https://zbychuk79.github.io/tags/</loc>
   </url>
